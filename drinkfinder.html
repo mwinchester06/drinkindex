@@ -1207,8 +1207,30 @@
         }
 
         async function loadDrinkSpecificPlaces(selectedKeys) {
+          function buildCuratedOutput(keys) {
+            const curatedNames = [];
+            const curatedBuckets = keys.map(function (key) {
+              return (mugCuratedPlaces[key] || []).slice();
+            });
+            const maxBucketLength = curatedBuckets.reduce(function (max, bucket) {
+              return Math.max(max, bucket.length);
+            }, 0);
+            for (let i = 0; i < maxBucketLength; i += 1) {
+              curatedBuckets.forEach(function (bucket) {
+                const name = bucket[i];
+                if (!name) return;
+                if (!curatedNames.includes(name)) curatedNames.push(name);
+              });
+            }
+            return filterBlockedPlaceNames(curatedNames).slice(0, 10);
+          }
+
           const rawCoords = sessionStorage.getItem("drinkindexCoords");
-          if (!rawCoords) return;
+          if (!rawCoords) {
+            const curatedOnly = rotatePlacesForSelection(buildCuratedOutput(selectedKeys), selectedKeys);
+            if (curatedOnly.length) setPlaceLabels(curatedOnly);
+            return;
+          }
           let coords = null;
           try {
             const parsed = JSON.parse(rawCoords);
@@ -1216,9 +1238,15 @@
               coords = parsed;
             }
           } catch (_error) {
+            const curatedOnly = rotatePlacesForSelection(buildCuratedOutput(selectedKeys), selectedKeys);
+            if (curatedOnly.length) setPlaceLabels(curatedOnly);
             return;
           }
-          if (!coords) return;
+          if (!coords) {
+            const curatedOnly = rotatePlacesForSelection(buildCuratedOutput(selectedKeys), selectedKeys);
+            if (curatedOnly.length) setPlaceLabels(curatedOnly);
+            return;
+          }
 
           const terms = [];
           selectedKeys.forEach(function (key) {
@@ -1308,20 +1336,7 @@
 
           if (merged.length || selectedKeys.some(function (k) { return (mugCuratedPlaces[k] || []).length > 0; })) {
             const rankedNames = merged.map(function (item) { return item.name; });
-            const curatedNames = [];
-            const curatedBuckets = selectedKeys.map(function (key) {
-              return (mugCuratedPlaces[key] || []).slice();
-            });
-            const maxBucketLength = curatedBuckets.reduce(function (max, bucket) {
-              return Math.max(max, bucket.length);
-            }, 0);
-            for (let i = 0; i < maxBucketLength; i += 1) {
-              curatedBuckets.forEach(function (bucket) {
-                const name = bucket[i];
-                if (!name) return;
-                if (!curatedNames.includes(name)) curatedNames.push(name);
-              });
-            }
+            const curatedNames = buildCuratedOutput(selectedKeys);
             const output = [];
             curatedNames.forEach(function (name) {
               if (!output.includes(name)) output.push(name);
