@@ -25,12 +25,8 @@
   --iphone-bezel: 0px;
   --iphone-device-width: calc(var(--frame-width) + var(--iphone-bezel) * 2);
   --iphone-device-height: calc(var(--frame-height) + var(--iphone-bezel) * 2);
-  /* Zoom out so the full handset fits; shrinks further on short/narrow viewports */
-  --device-scale: min(
-    1,
-    calc((100vw - 12px) / 402px),
-    calc((100vh - 12px) / 874px)
-  );
+  /* Phone-first scaling: fill width to avoid side gutters. */
+  --device-scale: min(1, calc(100vw / 402px));
   --iphone-outer-radius: 0px;
   --iphone-screen-radius: 0px;
   --screen-glass-highlight: rgba(255, 255, 255, 0.52);
