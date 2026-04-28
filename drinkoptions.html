@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page 3</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="device-scale-slot">
+      <div class="iphone-17-device">
+        <div class="iphone-17-rail iphone-17-rail--left" aria-hidden="true"></div>
+        <div class="iphone-17-rail iphone-17-rail--right" aria-hidden="true"></div>
+        <div class="iphone-17-frame">
+          <div class="iphone-17-island" aria-hidden="true"></div>
+          <main class="phone p3-screen" id="p3-screen" aria-label="Drink options screen">
+            <div class="p3-content">
+              <div class="p3-header-bar" aria-hidden="true"></div>
+              <p class="p3-headline p3-headline-drink">Drink</p>
+              <p class="p3-headline p3-headline-menu">Menu</p>
+              <img class="p3-header-star p3-header-star--a" src="https://www.figma.com/api/mcp/asset/594b0dea-b54f-4cdc-a1e5-f1e14fcb370a" alt="" />
+              <img class="p3-header-star p3-header-star--b" src="https://www.figma.com/api/mcp/asset/82c9febf-6c2e-4f15-b16a-965001b228d3" alt="" />
+              <div class="p3-board"></div>
+              <img class="p3-mug p3-mug-pink p3-mug-option" data-mug="pink" src="https://www.figma.com/api/mcp/asset/8ff5bbb2-912d-46b5-817d-3dcda4889780" alt="Choose pink drink" />
+              <img class="p3-mug p3-mug-green p3-mug-option" data-mug="green" src="https://www.figma.com/api/mcp/asset/3773ac8d-4ff8-4025-8ca2-a1265d53bef1" alt="Choose green drink" />
+              <img class="p3-mug p3-mug-blue p3-mug-option" data-mug="blue" src="https://www.figma.com/api/mcp/asset/6af1cc28-5975-4308-b299-ca3679682262" alt="Choose blue drink" />
+              <img class="p3-mug p3-mug-purple p3-mug-option" data-mug="purple" src="https://www.figma.com/api/mcp/asset/9b75e1b7-6731-424e-81d8-44b4c54a7fa9" alt="Choose purple drink" />
+              <img class="p3-mug p3-mug-orange p3-mug-option" data-mug="orange" src="./assets/orangemug.png" alt="Choose orange drink" />
+              <img class="p3-mug-picker-chip" src="https://www.figma.com/api/mcp/asset/32627e89-43b3-49f4-a72e-d5fb1f4b664c" alt="" aria-hidden="true" />
+              <button class="p3-mug-picker-go" id="p3-mug-picker-go" type="button" aria-label="Find places for selected drinks">
+                <img src="https://www.figma.com/api/mcp/asset/ee6b5955-c138-433a-ab74-d4dd9b425eeb" alt="" aria-hidden="true" />
+              </button>
+            </div>
+
+            <div class="p3-menu-bar"></div>
+            <!-- Nav assets: same as index (Figma 96:110) so layout + icon sizing match -->
+            <img
+              class="p3-nav-figma p3-nav-figma--home-outline"
+              src="https://www.figma.com/api/mcp/asset/fdce71a9-de3a-409b-a5e1-1d2861e65736"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="p3-nav-figma p3-nav-figma--home-door"
+              src="https://www.figma.com/api/mcp/asset/0af53790-ceb4-49cf-a253-40317e5dcae6"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="p3-nav-figma p3-nav-figma--sticker"
+              src="https://www.figma.com/api/mcp/asset/8cfb0de2-3fad-46c4-b49e-5455b02a03d8"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="p3-nav-figma p3-nav-figma--sip-cup"
+              src="https://www.figma.com/api/mcp/asset/4400277d-d0f2-493b-9293-8413c256a862"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="p3-nav-figma p3-nav-figma--sip-handle"
+              src="https://www.figma.com/api/mcp/asset/9143d1b8-5b61-486e-8510-8a57ed2e694c"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="p3-nav-figma p3-nav-figma--sip-steam p3-nav-figma--sip-steam-l"
+              src="https://www.figma.com/api/mcp/asset/c3f87d79-9f67-4d92-b814-0ff15a05ee62"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="p3-nav-figma p3-nav-figma--sip-steam p3-nav-figma--sip-steam-c"
+              src="https://www.figma.com/api/mcp/asset/c3f87d79-9f67-4d92-b814-0ff15a05ee62"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="p3-nav-figma p3-nav-figma--sip-steam p3-nav-figma--sip-steam-r"
+              src="https://www.figma.com/api/mcp/asset/c3f87d79-9f67-4d92-b814-0ff15a05ee62"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="p3-nav-figma p3-nav-figma--profile"
+              src="https://www.figma.com/api/mcp/asset/133a126c-de51-4923-ac69-f36c962c95bc"
+              alt=""
+              aria-hidden="true"
+            />
+            <a
+              class="p3-home-hit"
+              href="./homepage.html"
+              aria-label="Go to home"
+              onclick="sessionStorage.setItem('drinkindexSkipSplashOnce','true')"
+            ></a>
+            <a class="p3-star-hit" href="./stickercollection.html" aria-label="Go to sticker collection"></a>
+            <a class="p3-page3-hit" href="./drinkoptions.html" aria-current="page" aria-label="Current page: drink options"></a>
+            <a class="p3-profile-hit" href="./profile.html" aria-label="Go to journal"></a>
+            <span class="p3-nav-label p3-nav-label--home" aria-hidden="true">Home</span>
+            <span class="p3-nav-label p3-nav-label--stickers" aria-hidden="true">Stickers</span>
+            <span class="p3-nav-label p3-nav-label--sips" aria-hidden="true">Sips</span>
+            <span class="p3-nav-label p3-nav-label--profile" aria-hidden="true">Journal</span>
+
+            <section class="p3-permission-modal" id="p3-permission-modal" role="dialog" aria-modal="true" aria-label="Location permission request">
+              <div class="p3-permission-card">
+                <header class="p3-permission-header">
+                  <h2>Allow “StarSips” to use your location?</h2>
+                  <p>Location access is required to find fun drinks near you.</p>
+                </header>
+                <div class="p3-permission-map"></div>
+                <button class="p3-permission-action" id="p3-allow-once" type="button">Allow Once</button>
+                <button class="p3-permission-action" id="p3-allow-while-using" type="button">Allow While Using App</button>
+                <button class="p3-permission-action" id="p3-dont-allow" type="button">Don’t Allow</button>
+              </div>
+            </section>
+          </main>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const screen = document.getElementById("p3-screen");
+        const modal = document.getElementById("p3-permission-modal");
+        const mugOptions = Array.from(document.querySelectorAll(".p3-mug-option"));
+        const mugPickerGo = document.getElementById("p3-mug-picker-go");
+        const allowOnce = document.getElementById("p3-allow-once");
+        const allowWhileUsing = document.getElementById("p3-allow-while-using");
+        const dontAllow = document.getElementById("p3-dont-allow");
+        if (!screen || !modal || !allowOnce || !allowWhileUsing || !dontAllow || !mugPickerGo) return;
+
+        const pendingKey = "drinkLocationPromptPending";
+        const coordsKey = "drinkindexCoords";
+        const selectedMugsKey = "drinkindexSelectedMugs";
+        const shouldShow = sessionStorage.getItem(pendingKey) === "true";
+
+        if (shouldShow) {
+          screen.classList.add("is-permission-open");
+          modal.hidden = false;
+        } else {
+          modal.hidden = true;
+        }
+
+        function closeModal() {
+          screen.classList.remove("is-permission-open");
+          modal.hidden = true;
+          sessionStorage.removeItem(pendingKey);
+        }
+
+        function saveCoords(position) {
+          const payload = {
+            lat: position.coords.latitude,
+            lon: position.coords.longitude,
+            capturedAt: Date.now()
+          };
+          sessionStorage.setItem(coordsKey, JSON.stringify(payload));
+        }
+
+        function requestLocationThenClose() {
+          if (!("geolocation" in navigator)) {
+            closeModal();
+            return;
+          }
+          navigator.geolocation.getCurrentPosition(
+            function (position) {
+              saveCoords(position);
+              closeModal();
+            },
+            function () {
+              closeModal();
+            },
+            {
+              enableHighAccuracy: true,
+              timeout: 10000,
+              maximumAge: 300000
+            }
+          );
+        }
+
+        allowOnce.addEventListener("click", function () {
+          requestLocationThenClose();
+        });
+
+        allowWhileUsing.addEventListener("click", function () {
+          requestLocationThenClose();
+        });
+
+        dontAllow.addEventListener("click", function () {
+          closeModal();
+        });
+
+        const selectedMugs = new Set();
+
+        function syncMugUi() {
+          mugOptions.forEach(function (mug) {
+            const key = mug.getAttribute("data-mug");
+            if (!key) return;
+            mug.classList.toggle("is-selected", selectedMugs.has(key));
+          });
+          mugPickerGo.classList.toggle("is-disabled", selectedMugs.size === 0);
+          mugPickerGo.disabled = selectedMugs.size === 0;
+        }
+
+        mugOptions.forEach(function (mug) {
+          mug.addEventListener("click", function () {
+            const mugKey = mug.getAttribute("data-mug");
+            if (!mugKey) return;
+            if (selectedMugs.has(mugKey)) {
+              selectedMugs.delete(mugKey);
+            } else {
+              selectedMugs.add(mugKey);
+            }
+            syncMugUi();
+          });
+        });
+
+        mugPickerGo.addEventListener("click", function () {
+          const list = Array.from(selectedMugs);
+          if (!list.length) return;
+          sessionStorage.setItem(selectedMugsKey, JSON.stringify(list));
+          window.location.href = "./drinkfinder.html?mugs=" + encodeURIComponent(list.join(","));
+        });
+
+        syncMugUi();
+      })();
+    </script>
+  </body>
+</html>

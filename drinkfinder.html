@@ -1,0 +1,1399 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drink Finder</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="device-scale-slot">
+      <div class="iphone-17-device">
+        <div class="iphone-17-rail iphone-17-rail--left" aria-hidden="true"></div>
+        <div class="iphone-17-rail iphone-17-rail--right" aria-hidden="true"></div>
+        <div class="iphone-17-frame">
+          <div class="iphone-17-island" aria-hidden="true"></div>
+          <main class="phone df-screen">
+            <div class="df-scroll">
+            <div class="df-layer df-bg-top"></div>
+            <div class="df-layer df-bg-bottom"></div>
+
+            <p class="df-title df-title-top">Locations</p>
+            <p class="df-title df-title-bottom">Including</p>
+            <p class="df-include-label" id="df-include-label">your chosen drink</p>
+
+            <img class="df-layer df-star-main" src="https://www.figma.com/api/mcp/asset/a4c7f513-7750-4ad6-bc87-b1e3c6d4bfac" alt="" />
+            <img class="df-layer df-star-small" src="https://www.figma.com/api/mcp/asset/be7a0b19-4352-49af-801d-9278b1143270" alt="" />
+            <a class="df-back-arrow" href="./drinkoptions.html" aria-label="Back to drink options">
+              <img src="https://www.figma.com/api/mcp/asset/92142862-e4ac-4213-a0ee-6ae1fcd72904" alt="" aria-hidden="true" />
+            </a>
+
+            <div class="df-include-shell-inner"></div>
+            <div class="df-selected-mugs" id="df-selected-mugs" aria-label="Selected drinks"></div>
+
+            <div class="df-card df-card-a"></div>
+            <div class="df-card df-card-b"></div>
+            <div class="df-card df-card-c"></div>
+            <div class="df-card df-card-d"></div>
+            <div class="df-card df-card-e"></div>
+            <button class="df-card-trigger df-card-trigger-a" id="df-card-trigger-1" type="button" aria-label="Open location details 1"></button>
+            <button class="df-card-trigger df-card-trigger-b" id="df-card-trigger-2" type="button" aria-label="Open location details 2"></button>
+            <button class="df-card-trigger df-card-trigger-c" id="df-card-trigger-3" type="button" aria-label="Open location details 3"></button>
+            <button class="df-card-trigger df-card-trigger-d" id="df-card-trigger-4" type="button" aria-label="Open location details 4"></button>
+            <button class="df-card-trigger df-card-trigger-e" id="df-card-trigger-5" type="button" aria-label="Open location details 5"></button>
+
+            <img class="df-photo df-photo-a" id="df-photo-1" src="https://www.figma.com/api/mcp/asset/438abd2e-0f01-41d9-baef-44e6d7a308e7" alt="Location image" />
+            <img class="df-photo df-photo-b" id="df-photo-2" src="https://www.figma.com/api/mcp/asset/c2feed7c-598f-424c-b282-7b48aede68d1" alt="Location image" />
+            <img class="df-photo df-photo-c" id="df-photo-3" src="https://www.figma.com/api/mcp/asset/fa662d17-81cb-4e20-bb5e-14a78441de71" alt="Location image" />
+            <img class="df-photo df-photo-d" id="df-photo-4" src="https://www.figma.com/api/mcp/asset/438abd2e-0f01-41d9-baef-44e6d7a308e7" alt="Location image" />
+            <img class="df-photo df-photo-e" id="df-photo-5" src="https://www.figma.com/api/mcp/asset/c2feed7c-598f-424c-b282-7b48aede68d1" alt="Location image" />
+
+            <p class="df-name df-name-popular" id="df-name-popular">Life House Coffee</p>
+            <p class="df-name df-name-2a" id="df-name-2a">Wild Love</p>
+            <p class="df-name df-name-2b" id="df-name-2b">Bakehouse</p>
+            <p class="df-name df-name-3" id="df-name-3">Hey Bear Cafe</p>
+
+            <div class="df-place-mugs df-place-mugs-a" id="df-place-mugs-1" aria-hidden="true"></div>
+            <div class="df-place-mugs df-place-mugs-b" id="df-place-mugs-2" aria-hidden="true"></div>
+            <div class="df-place-mugs df-place-mugs-c" id="df-place-mugs-3" aria-hidden="true"></div>
+            <div class="df-place-mugs df-place-mugs-d" id="df-place-mugs-4" aria-hidden="true"></div>
+            <div class="df-place-mugs df-place-mugs-e" id="df-place-mugs-5" aria-hidden="true"></div>
+            </div>
+
+            <section class="df-location-modal" id="df-location-modal" hidden role="dialog" aria-modal="true" aria-labelledby="df-location-modal-title">
+              <div class="df-location-modal-card">
+                <h3 class="df-location-modal-title" id="df-location-modal-title">Location</h3>
+                <p class="df-location-modal-subtitle" id="df-location-modal-subtitle">Knoxville area</p>
+                <p class="df-location-modal-copy" id="df-location-modal-copy">Great spot for a drink.</p>
+                <a class="df-location-modal-map-link" id="df-location-modal-map-link" href="https://maps.google.com" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+              </div>
+            </section>
+
+            <div class="df-menu-bar"></div>
+            <img class="df-nav-figma df-nav-figma--home-outline" src="https://www.figma.com/api/mcp/asset/fdce71a9-de3a-409b-a5e1-1d2861e65736" alt="" aria-hidden="true" />
+            <img class="df-nav-figma df-nav-figma--home-door" src="https://www.figma.com/api/mcp/asset/0af53790-ceb4-49cf-a253-40317e5dcae6" alt="" aria-hidden="true" />
+            <img class="df-nav-figma df-nav-figma--sticker" src="https://www.figma.com/api/mcp/asset/8cfb0de2-3fad-46c4-b49e-5455b02a03d8" alt="" aria-hidden="true" />
+            <img class="df-nav-figma df-nav-figma--sip-cup" src="https://www.figma.com/api/mcp/asset/4400277d-d0f2-493b-9293-8413c256a862" alt="" aria-hidden="true" />
+            <img class="df-nav-figma df-nav-figma--sip-handle" src="https://www.figma.com/api/mcp/asset/9143d1b8-5b61-486e-8510-8a57ed2e694c" alt="" aria-hidden="true" />
+            <img class="df-nav-figma df-nav-figma--sip-steam df-nav-figma--sip-steam-l" src="https://www.figma.com/api/mcp/asset/c3f87d79-9f67-4d92-b814-0ff15a05ee62" alt="" aria-hidden="true" />
+            <img class="df-nav-figma df-nav-figma--sip-steam df-nav-figma--sip-steam-c" src="https://www.figma.com/api/mcp/asset/c3f87d79-9f67-4d92-b814-0ff15a05ee62" alt="" aria-hidden="true" />
+            <img class="df-nav-figma df-nav-figma--sip-steam df-nav-figma--sip-steam-r" src="https://www.figma.com/api/mcp/asset/c3f87d79-9f67-4d92-b814-0ff15a05ee62" alt="" aria-hidden="true" />
+            <img class="df-nav-figma df-nav-figma--profile" src="https://www.figma.com/api/mcp/asset/133a126c-de51-4923-ac69-f36c962c95bc" alt="" aria-hidden="true" />
+            <a class="df-home-hit" href="./homepage.html" aria-label="Go to home" onclick="sessionStorage.setItem('drinkindexSkipSplashOnce','true')"></a>
+            <a class="df-star-hit" href="./stickercollection.html" aria-label="Go to sticker collection"></a>
+            <a class="df-page3-hit" href="./drinkoptions.html" aria-label="Go to drink options"></a>
+            <a class="df-profile-hit" href="./profile.html" aria-label="Go to journal"></a>
+            <span class="df-nav-label df-nav-label--home" aria-hidden="true">Home</span>
+            <span class="df-nav-label df-nav-label--stickers" aria-hidden="true">Stickers</span>
+            <span class="df-nav-label df-nav-label--sips" aria-hidden="true">Sips</span>
+            <span class="df-nav-label df-nav-label--profile" aria-hidden="true">Journal</span>
+          </main>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const mugWrap = document.getElementById("df-selected-mugs");
+        const includeLabel = document.getElementById("df-include-label");
+        const scrollLayer = document.querySelector(".df-scroll") || document.querySelector(".df-screen");
+        let namePopular = document.getElementById("df-name-popular");
+        let name2a = document.getElementById("df-name-2a");
+        let name2b = document.getElementById("df-name-2b");
+        let name3 = document.getElementById("df-name-3");
+        let location4 = document.getElementById("df-location-4");
+        let location5 = document.getElementById("df-location-5");
+        let photo4 = document.getElementById("df-photo-4");
+        let photo5 = document.getElementById("df-photo-5");
+        const locationModal = document.getElementById("df-location-modal");
+        const locationModalTitle = document.getElementById("df-location-modal-title");
+        const locationModalSubtitle = document.getElementById("df-location-modal-subtitle");
+        const locationModalCopy = document.getElementById("df-location-modal-copy");
+        const locationModalMapLink = document.getElementById("df-location-modal-map-link");
+        const screen = document.querySelector(".df-screen");
+        if (!mugWrap || !includeLabel || !scrollLayer || !locationModal || !locationModalTitle || !locationModalSubtitle || !locationModalCopy || !locationModalMapLink || !screen) return;
+
+        const mugMap = {
+          pink: {
+            src: "https://www.figma.com/api/mcp/asset/8ff5bbb2-912d-46b5-817d-3dcda4889780",
+            label: "pink drink"
+          },
+          green: {
+            src: "https://www.figma.com/api/mcp/asset/3773ac8d-4ff8-4025-8ca2-a1265d53bef1",
+            label: "green drink"
+          },
+          blue: {
+            src: "https://www.figma.com/api/mcp/asset/6af1cc28-5975-4308-b299-ca3679682262",
+            label: "blue drink"
+          },
+          purple: {
+            src: "https://www.figma.com/api/mcp/asset/9b75e1b7-6731-424e-81d8-44b4c54a7fa9",
+            label: "purple drink"
+          },
+          orange: {
+            src: "./assets/orangemug.png",
+            label: "orange drink"
+          }
+        };
+
+        const mugToSearchTerms = {
+          pink: ["coffee", "espresso", "latte", "cappuccino", "roastery"],
+          green: ["matcha", "green tea latte", "matcha latte"],
+          blue: ["tea", "chai", "chai latte", "tea house", "teahouse"],
+          purple: ["boba", "bubble tea", "milk tea", "tapioca"],
+          orange: ["energy drink", "juice bar", "smoothie bar", "caffeine bar"]
+        };
+
+        const mugCategories = {
+          pink: [/coffee/i, /espresso/i, /roast/i, /cafe/i],
+          green: [/matcha/i, /tea/i, /cafe/i],
+          blue: [/tea/i, /chai/i, /teahouse/i, /tea house/i],
+          purple: [/boba/i, /bubble tea/i, /milk tea/i, /tea/i],
+          orange: [/juice/i, /smoothie/i, /energy/i, /cafe/i]
+        };
+
+        const mugPreferredPlaceNames = {
+          pink: [
+            /life\s*house\s*coffee/i,
+            /wild\s*love\s*bake(?:r|h)/i,
+            /jacks?/i
+          ],
+          green: [
+            /life\s*house\s*coffee/i,
+            /wild\s*love\s*bake(?:r|h)/i,
+            /partial\s*cafe/i,
+            /coffee\s*(?:and|&)\s*chocolate/i
+          ],
+          blue: [
+            /spice\s*(?:and|&)\s*tea\s*exchange/i,
+            /hummingbird\s*apothecary/i,
+            /tonya\s*rea'?s/i
+          ],
+          purple: [
+            /kung\s*fu\s*tea/i,
+            /hey\s*bear\s*cafe/i,
+            /hello\s*tea\s*house/i,
+            /pretty\s*girl\s*pours/i
+          ],
+          orange: [
+            /dutch\s*bros?/i,
+            /hey\s*bear\s*cafe/i,
+            /hummingbird\s*apothecary/i
+          ]
+        };
+
+        const mugCuratedPlaces = {
+          pink: [
+            "Mahalo",
+            "Life House Coffee",
+            "Coffee & Chocolate",
+            "Velocity Coffee & Roasters",
+            "Scooter's Coffee",
+            "Starbucks",
+            "Fable Hollow",
+            "Partial Cafe",
+            "Cultivate Coffee + Flowers",
+            "Brewtopia Craft Coffee",
+            "Mia Piccola - North Knoxville",
+            "Likewise Coffee",
+            "Wild Love Bakehouse",
+            "Seed Coffee Co",
+            "Awaken Coffee",
+            "Scruffy's Cafe",
+            "Five & Hoek Coffee Co.",
+            "Intrepid Nitro Coffee and Tea Bar",
+            "Remedy Coffee",
+            "Capybara Coffee",
+            "Hey Bear Cafe",
+            "Just Love Coffee Cafe",
+            "Jacks",
+            "K Brew",
+            "Empty Cup",
+            "Dutch Bros Coffee"
+          ],
+          green: [
+            "Mahalo",
+            "Mia Piccola - North Knoxville",
+            "Velocity Coffee & Roasters",
+            "Cultivate Coffee + Flowers",
+            "Bestia Blooms Cafe",
+            "Coffee & Chocolate",
+            "The Kraken's Cup Tearoom",
+            "Five & Hoek Coffee Co.",
+            "Partial Cafe",
+            "Seed Coffee Co",
+            "Tonya Rea's Tea",
+            "Intrepid Nitro Coffee and Tea Bar",
+            "Likewise Coffee",
+            "Wild Love Bakehouse",
+            "Life House Coffee",
+            "Starbucks",
+            "Dutch Bros Coffee"
+          ],
+          blue: [
+            "Hummingbird Apothecary",
+            "Tonya Rea's Tea",
+            "Hello Tea House",
+            "Emory Station Nutrition",
+            "The Spice & Tea Exchange",
+            "Hey Bear Cafe",
+            "Intrepid Nitro Coffee And Tea Bar",
+            "Hummingbird Apothecary South",
+            "Wild Love Bakehouse",
+            "Applecake Tea Room",
+            "Dutch Bros Coffee"
+          ],
+          purple: [
+            "Hey Bear Cafe",
+            "Hello Tea House",
+            "Angry Dumplings Tea",
+            "VOLS BOBA TEA",
+            "Hungry Sumo Hibachi House",
+            "Yum Tra Knoxville",
+            "Pretty Girl Pours",
+            "Hey Bear Cafe",
+            "Tonya Rea's Tea",
+            "BobaMi",
+            "KUNG FU TEA",
+            "Thai Time Knoxville",
+            "Sticky Rice Cafe",
+            "Tealicious",
+            "Komma Tea - West Town Mall",
+            "Jai Dee Thai Kitchen",
+            "Kyuramen x TBaar - Knoxville",
+            "Christea Boba",
+            "Dutch Bros Coffee"
+          ],
+          orange: [
+            "Dutch Bros Coffee",
+            "Coffee & Chocolate",
+            "Scooter's Coffee",
+            "Life House Coffee",
+            "Starbucks"
+          ]
+        };
+
+        function splitTwoLines(value) {
+          const text = (value || "").trim();
+          if (!text) return ["Wild Love", "Bakehouse"];
+          if (/^scooter'?s\s+coffee$/i.test(text)) return ["Scooter's Coffee", ""];
+          if (/^fable\s+hollow$/i.test(text)) return ["Fable Hollow", ""];
+          if (/^fable\s+hollow\s+coffee\s*(?:&|and)\s*bookshoppe$/i.test(text)) {
+            return ["Fable Hollow", "Coffee & Bookshoppe"];
+          }
+          const words = text.split(/\s+/);
+          if (words.length === 1) return [text, ""];
+          const midpoint = Math.ceil(words.length / 2);
+          return [words.slice(0, midpoint).join(" "), words.slice(midpoint).join(" ")];
+        }
+
+        function formatPlaceNameForCard(name) {
+          const raw = String(name || "").trim();
+          if (!raw) return raw;
+          if (/^mia\s+piccola/i.test(raw)) return "Mia Piccola";
+          if (/^mia\s+piccola\s*-\s*north\s+knoxville$/i.test(raw)) return "Mia Piccola";
+          if (/^mahalo\s+coffee\s+roasters$/i.test(raw)) return "Mahalo";
+          if (/^fable\s+hollow\s+coffee\s*(?:&|and)\s*bookshoppe$/i.test(raw)) return "Fable Hollow";
+          if (/^velocity\s+coffee\s*(?:&|and)\s*roasters$/i.test(raw)) return "Velocity";
+          if (/^coffee\s*(?:&|and)\s*chocolate(?:\s+powell)?$/i.test(raw)) return "Coffee & Chocolate";
+          if (/^just\s+love\s+coffee\s+cafe(?:\s*-\s*knoxville)?$/i.test(raw)) return "Just Love Coffee";
+          if (/^intrepid\s+nitro\s+coffee\s+and\s+tea\s+bar$/i.test(raw)) return "Intrepid Nitro";
+          if (/^komma\s+tea\s*-\s*west\s+town\s+mall$/i.test(raw)) return "Komma Tea";
+          if (/^kyuramen\s*x\s*tbaar\s*-\s*knoxville$/i.test(raw)) return "Kyuramen x TBaar";
+          if (/^hey\s+bear\s+cafe\s+at\s+kern'?s\s+food\s+hall$/i.test(raw)) return "Hey Bear Cafe";
+          return raw.replace(/\s*-\s*(north|south|central)\s+knoxville$/i, "").trim();
+        }
+
+        function setTwoLineText(node, value) {
+          if (!node) return;
+          const lines = splitTwoLines(value);
+          node.textContent = "";
+          node.appendChild(document.createTextNode(lines[0] || ""));
+          if (lines[1]) {
+            node.appendChild(document.createElement("br"));
+            node.appendChild(document.createTextNode(lines[1]));
+          }
+        }
+
+        function ensureLocationTextNode(existingNode, id, className) {
+          if (existingNode) return existingNode;
+          const node = document.createElement("p");
+          node.id = id;
+          node.className = "df-location-text " + className;
+          scrollLayer.appendChild(node);
+          return node;
+        }
+
+        function ensureNameNode(existingNode, id, className, fallbackText) {
+          if (existingNode) return existingNode;
+          const node = document.createElement("p");
+          node.id = id;
+          node.className = "df-name " + className;
+          node.textContent = fallbackText;
+          scrollLayer.appendChild(node);
+          return node;
+        }
+
+        function ensurePhotoNode(existingNode, id, className, fallbackSrc) {
+          if (existingNode) return existingNode;
+          const node = document.createElement("img");
+          node.id = id;
+          node.className = "df-photo " + className;
+          node.src = fallbackSrc;
+          node.alt = "Location image";
+          scrollLayer.appendChild(node);
+          return node;
+        }
+
+        function ensurePlaceMugTray(existingNode, id, className) {
+          if (existingNode) return existingNode;
+          const node = document.createElement("div");
+          node.id = id;
+          node.className = "df-place-mugs " + className;
+          node.setAttribute("aria-hidden", "true");
+          scrollLayer.appendChild(node);
+          return node;
+        }
+
+        function normalizePlaceName(name) {
+          return String(name || "")
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, " ")
+            .trim();
+        }
+
+        function isBlockedPlaceName(name) {
+          const normalized = normalizePlaceName(name);
+          return /cobra\s*energy\s*drink/.test(normalized) ||
+            /las\s*vegas\s*power/.test(normalized) ||
+            /b2\s*energy\s*drink/.test(normalized) ||
+            /b52(?:\s*energy\s*drink)?/.test(normalized) ||
+            /hell\s*energy\s*drink/.test(normalized);
+        }
+
+        function filterBlockedPlaceNames(names) {
+          return (Array.isArray(names) ? names : []).filter(function (name) {
+            return !isBlockedPlaceName(name);
+          });
+        }
+
+        const uploadedPhotoByPlace = {
+          "life house coffee": "./assets/life-house-coffee.png",
+          "wild love bakehouse": "./assets/wild-love-bakehouse.png",
+          "hey bear cafe": "./assets/hey-bear-cafe.png",
+          "hey bear cafe at kern s food hall": "./assets/hey-bear-cafe.png",
+          "mahalo": "./assets/mahalo-coffee-roasters.png",
+          "mahalo coffee roasters": "./assets/mahalo-coffee-roasters.png",
+          "coffee chocolate": "./assets/coffee-and-chocolate-powell.png",
+          "coffee chocolate powell": "./assets/coffee-and-chocolate-powell.png",
+          "velocity coffee roasters": "./assets/velocity-coffee-roasters.png",
+          "scooter s coffee": "./assets/scooters-coffee.png",
+          "starbucks": "./assets/starbucks.png",
+          "partial cafe": "./assets/partial-cafe.png",
+          "fable hollow": "./assets/fable-hollow-coffee-bookshoppe.png",
+          "fable hollow coffee bookshoppe": "./assets/fable-hollow-coffee-bookshoppe.png",
+          "cultivate coffee flowers": "./assets/cultivate-coffee-flowers.png",
+          "brewtopia craft coffee": "./assets/brewtopia-craft-coffee.png",
+          "mia piccola north knoxville": "./assets/mia-piccola-north-knoxville.png",
+          "likewise coffee": "./assets/likewise-coffee.png",
+          "seed coffee co": "./assets/seed-coffee-co.png",
+          "awaken coffee": "./assets/awaken-coffee.png",
+          "scruffy s cafe": "./assets/scruffys-cafe.png",
+          "five hoek coffee co": "./assets/five-and-hoek-coffee-co.png",
+          "intrepid nitro coffee and tea bar": "./assets/intrepid-nitro-coffee-and-tea-bar.png",
+          "remedy coffee": "./assets/remedy-coffee.png",
+          "capybara coffee": "./assets/capybara-coffee.png",
+          "just love coffee cafe": "./assets/just-love-coffee-cafe-knoxville.png",
+          "just love coffee cafe knoxville": "./assets/just-love-coffee-cafe-knoxville.png",
+          "jacks": "./assets/jacks.png",
+          "k brew": "./assets/k-brew.png",
+          "empty cup": "./assets/empty-cup.png",
+          "bestia blooms cafe": "./assets/bestia-blooms-cafe.png",
+          "the kraken s cup tearoom": "./assets/krakens-cup-tearoom.png",
+          "tonya rea s tea": "./assets/tonya-reas-tea.png",
+          "hummingbird apothecary": "./assets/hummingbird-apothecary.png",
+          "hello tea house": "./assets/hello-tea-house.png",
+          "emory station nutrition": "./assets/emory-station-nutrition.png",
+          "the spice tea exchange": "./assets/the-spice-tea-exchange.png",
+          "applecake tea room": "./assets/applecake-tea-room.png",
+          "angry dumplings tea": "./assets/angry-dumplings-tea.png",
+          "vols boba tea": "./assets/vols-boba-tea.png",
+          "hungry sumo hibachi house": "./assets/hungry-sumo-hibachi-house.png",
+          "yum tra knoxville": "./assets/yum-tra-knoxville.png",
+          "pretty girl pours": "./assets/pretty-girl-pours.png",
+          "bobami": "./assets/bobami.png",
+          "kung fu tea": "./assets/kung-fu-tea.png",
+          "thai time knoxville": "./assets/thai-time-knoxville.png",
+          "sticky rice cafe": "./assets/sticky-rice-cafe.png",
+          "tealicious": "./assets/tealicious.png",
+          "komma tea west town mall": "./assets/komma-tea-west-town-mall.png",
+          "jai dee thai kitchen": "./assets/jai-dee-thai-kitchen.png",
+          "kyuramen x tbaar knoxville": "./assets/kyuramen-tbaar-knoxville.png",
+          "christea boba": "./assets/christea-boba.png",
+          "dutch bros coffee": "./assets/dutch-bros-coffee.png"
+        };
+
+        const placeMugLookup = {};
+        Object.keys(mugCuratedPlaces).forEach(function (mugKey) {
+          (mugCuratedPlaces[mugKey] || []).forEach(function (placeName) {
+            const normalized = normalizePlaceName(placeName);
+            if (!normalized) return;
+            if (!placeMugLookup[normalized]) placeMugLookup[normalized] = [];
+            if (!placeMugLookup[normalized].includes(mugKey)) {
+              placeMugLookup[normalized].push(mugKey);
+            }
+          });
+        });
+
+        namePopular = ensureNameNode(namePopular, "df-name-popular", "df-name-popular", "Life House Coffee");
+        name2a = ensureNameNode(name2a, "df-name-2a", "df-name-2a", "Wild Love");
+        name2b = ensureNameNode(name2b, "df-name-2b", "df-name-2b", "Bakehouse");
+        name3 = ensureNameNode(name3, "df-name-3", "df-name-3", "Hey Bear Cafe");
+        location4 = ensureLocationTextNode(location4, "df-location-4", "df-location-4");
+        location5 = ensureLocationTextNode(location5, "df-location-5", "df-location-5");
+        photo4 = ensurePhotoNode(photo4, "df-photo-4", "df-photo-d", "https://www.figma.com/api/mcp/asset/438abd2e-0f01-41d9-baef-44e6d7a308e7");
+        photo5 = ensurePhotoNode(photo5, "df-photo-5", "df-photo-e", "https://www.figma.com/api/mcp/asset/c2feed7c-598f-424c-b282-7b48aede68d1");
+        const placeMugTray1 = ensurePlaceMugTray(document.getElementById("df-place-mugs-1"), "df-place-mugs-1", "df-place-mugs-a");
+        const placeMugTray2 = ensurePlaceMugTray(document.getElementById("df-place-mugs-2"), "df-place-mugs-2", "df-place-mugs-b");
+        const placeMugTray3 = ensurePlaceMugTray(document.getElementById("df-place-mugs-3"), "df-place-mugs-3", "df-place-mugs-c");
+        const placeMugTray4 = ensurePlaceMugTray(document.getElementById("df-place-mugs-4"), "df-place-mugs-4", "df-place-mugs-d");
+        const placeMugTray5 = ensurePlaceMugTray(document.getElementById("df-place-mugs-5"), "df-place-mugs-5", "df-place-mugs-e");
+        const extraRows = {};
+        const rowTriggers = {};
+        const currentPlaceNames = [];
+        const bgBottom = document.querySelector(".df-bg-bottom");
+        const minVisiblePlaces = 5;
+        const maxVisiblePlaces = 5;
+
+        function getRowTop(index) {
+          return 387 + index * 166;
+        }
+
+        function ensureExtraRow(index) {
+          if (extraRows[index]) return extraRows[index];
+          const rowNumber = index + 1;
+          const rowTop = getRowTop(index);
+
+          const card = document.createElement("div");
+          card.id = "df-card-" + rowNumber;
+          card.className = "df-card";
+          card.style.left = "11px";
+          card.style.top = rowTop + "px";
+          scrollLayer.appendChild(card);
+
+          const photo = document.createElement("img");
+          photo.id = "df-photo-" + rowNumber;
+          photo.className = "df-photo";
+          photo.style.left = "11px";
+          photo.style.top = rowTop + "px";
+          photo.alt = "Location image";
+          scrollLayer.appendChild(photo);
+
+          const name = document.createElement("p");
+          name.id = "df-name-" + rowNumber;
+          name.className = "df-name df-name-extra";
+          name.style.left = "219px";
+          name.style.top = rowTop + 37 + "px";
+          name.style.width = "151px";
+          scrollLayer.appendChild(name);
+
+          const mugs = document.createElement("div");
+          mugs.id = "df-place-mugs-" + rowNumber;
+          mugs.className = "df-place-mugs";
+          mugs.style.left = "247px";
+          mugs.style.top = rowTop - 19 + "px";
+          mugs.setAttribute("aria-hidden", "true");
+          scrollLayer.appendChild(mugs);
+
+          const trigger = document.createElement("button");
+          trigger.id = "df-card-trigger-" + rowNumber;
+          trigger.className = "df-card-trigger";
+          trigger.style.left = "11px";
+          trigger.style.top = rowTop + "px";
+          trigger.style.width = "379px";
+          trigger.style.height = "129px";
+          trigger.type = "button";
+          trigger.setAttribute("aria-label", "Open location details " + rowNumber);
+          scrollLayer.appendChild(trigger);
+
+          rowTriggers[index] = trigger;
+          extraRows[index] = { card: card, photo: photo, name: name, mugs: mugs, trigger: trigger };
+          return extraRows[index];
+        }
+
+        function getTriggerNode(index) {
+          if (rowTriggers[index]) return rowTriggers[index];
+          if (index <= 4) {
+            rowTriggers[index] = document.getElementById("df-card-trigger-" + (index + 1));
+          } else {
+            rowTriggers[index] = ensureExtraRow(index).trigger;
+          }
+          return rowTriggers[index];
+        }
+
+        function getPhotoNode(index) {
+          if (index === 0) return document.getElementById("df-photo-1");
+          if (index === 1) return document.getElementById("df-photo-2");
+          if (index === 2) return document.getElementById("df-photo-3");
+          if (index === 3) return photo4;
+          if (index === 4) return photo5;
+          return ensureExtraRow(index).photo;
+        }
+
+        function getMugTrayNode(index) {
+          if (index === 0) return placeMugTray1;
+          if (index === 1) return placeMugTray2;
+          if (index === 2) return placeMugTray3;
+          if (index === 3) return placeMugTray4;
+          if (index === 4) return placeMugTray5;
+          return ensureExtraRow(index).mugs;
+        }
+
+        function hideUnusedRows(visibleCount) {
+          Object.keys(extraRows).forEach(function (key) {
+            const index = Number(key);
+            const show = index < visibleCount;
+            const row = extraRows[index];
+            if (!row) return;
+            row.card.style.display = show ? "block" : "none";
+            row.photo.style.display = show ? "block" : "none";
+            row.name.style.display = show ? "block" : "none";
+            row.mugs.style.display = show ? "flex" : "none";
+            row.trigger.style.display = show ? "block" : "none";
+          });
+          for (let i = 0; i < Math.min(5, visibleCount); i += 1) {
+            const trigger = getTriggerNode(i);
+            if (trigger) trigger.style.display = "block";
+          }
+          for (let i = visibleCount; i < 5; i += 1) {
+            const trigger = getTriggerNode(i);
+            if (trigger) trigger.style.display = "none";
+          }
+        }
+
+        function getLocationDetails(name) {
+          const normalized = normalizePlaceName(name);
+          const tierByPlace = {
+            "life house coffee": "Central Knoxville",
+            "wild love bakehouse": "Central Knoxville",
+            "hey bear cafe": "Central Knoxville",
+            "starbucks": "Multiple Locations in Knoxville",
+            "just love coffee cafe": "Central Knoxville",
+            "mahalo": "Multiple Locations in Knoxville",
+            "mahalo coffee roasters": "Multiple Locations in Knoxville",
+            "mia piccola": "South Knoxville",
+            "mia piccola north knoxville": "South Knoxville",
+            "coffee chocolate": "Multiple Locations in Knoxville",
+            "coffee chocolate powell": "Multiple Locations in Knoxville",
+            "velocity coffee roasters": "Central Knoxville",
+            "scooter s coffee": "Multiple Locations in Knoxville",
+            "partial cafe": "Central Knoxville",
+            "fable hollow": "Central Knoxville",
+            "fable hollow coffee bookshoppe": "Central Knoxville",
+            "cultivate coffee flowers": "Central Knoxville",
+            "brewtopia craft coffee": "Central Knoxville",
+            "likewise coffee": "Central Knoxville",
+            "seed coffee co": "Central Knoxville",
+            "awaken coffee": "Central Knoxville",
+            "hello tea house": "Central Knoxville",
+            "tonya rea s tea": "North Knoxville",
+            "the spice tea exchange": "Central Knoxville",
+            "kung fu tea": "Central Knoxville",
+            "tealicious": "Central Knoxville",
+            "bobami": "Central Knoxville",
+            "dutch bros coffee": "Multiple Locations in Knoxville"
+          };
+          const infoMap = {
+            "life house coffee": {
+              area: tierByPlace["life house coffee"],
+              features: "good atmosphere, strong espresso drinks, friendly staff"
+            },
+            "wild love bakehouse": {
+              area: tierByPlace["wild love bakehouse"],
+              features: "seasonal menu, house pastries, cozy atmosphere"
+            },
+            "hey bear cafe": {
+              area: tierByPlace["hey bear cafe"],
+              features: "late hours, boba variety, great hangout vibe"
+            },
+            "starbucks": {
+              area: tierByPlace["starbucks"],
+              features: "reliable menu, mobile ordering, open early"
+            },
+            "just love coffee cafe": {
+              area: tierByPlace["just love coffee cafe"],
+              features: "breakfast options, comfy seating, family-friendly atmosphere"
+            },
+            "mahalo": {
+              area: tierByPlace["mahalo"],
+              features: "single-origin roasts, pour-over bar, calm atmosphere"
+            },
+            "mahalo coffee roasters": {
+              area: tierByPlace["mahalo coffee roasters"],
+              features: "single-origin roasts, pour-over bar, calm atmosphere"
+            },
+            "mia piccola": {
+              area: tierByPlace["mia piccola"],
+              features: "italian-style cafe drinks, cozy seating, neighborhood vibe"
+            },
+            "mia piccola north knoxville": {
+              area: tierByPlace["mia piccola north knoxville"],
+              features: "italian-style cafe drinks, cozy seating, neighborhood vibe"
+            },
+            "coffee chocolate": {
+              area: tierByPlace["coffee chocolate"],
+              features: "coffee + dessert pairings, cozy seating, weekend specials"
+            },
+            "velocity coffee roasters": {
+              area: tierByPlace["velocity coffee roasters"],
+              features: "fresh roasts, balanced espresso, fast service"
+            },
+            "scooter s coffee": {
+              area: tierByPlace["scooter s coffee"],
+              features: "drive-thru convenience, quick service, seasonal drinks"
+            },
+            "starbucks": {
+              area: tierByPlace["starbucks"],
+              features: "mobile order pickup, reliable menu, extended hours"
+            },
+            "partial cafe": {
+              area: tierByPlace["partial cafe"],
+              features: "modern atmosphere, quality espresso, good workspace vibe"
+            },
+            "fable hollow": {
+              area: tierByPlace["fable hollow"],
+              features: "bookshop atmosphere, specialty drinks, cozy corners"
+            },
+            "fable hollow coffee bookshoppe": {
+              area: tierByPlace["fable hollow coffee bookshoppe"],
+              features: "bookshop atmosphere, specialty drinks, cozy corners"
+            },
+            "cultivate coffee flowers": {
+              area: tierByPlace["cultivate coffee flowers"],
+              features: "floral aesthetic, rotating drinks, photo-friendly atmosphere"
+            },
+            "brewtopia craft coffee": {
+              area: tierByPlace["brewtopia craft coffee"],
+              features: "craft-focused menu, seasonal specials, friendly staff"
+            },
+            "likewise coffee": {
+              area: tierByPlace["likewise coffee"],
+              features: "clean cafe atmosphere, quality espresso, chill seating"
+            },
+            "seed coffee co": {
+              area: tierByPlace["seed coffee co"],
+              features: "small-batch coffee, balanced menu, relaxed feel"
+            },
+            "awaken coffee": {
+              area: tierByPlace["awaken coffee"],
+              features: "morning-friendly hours, smooth drinks, welcoming service"
+            },
+            "hey bear cafe": {
+              area: tierByPlace["hey bear cafe"],
+              features: "boba variety, open later, vibrant atmosphere"
+            },
+            "hello tea house": {
+              area: tierByPlace["hello tea house"],
+              features: "milk tea options, fruit tea variety, casual vibe"
+            },
+            "tonya rea s tea": {
+              area: tierByPlace["tonya rea s tea"],
+              features: "tea-focused menu, unique blends, calm atmosphere"
+            },
+            "the spice tea exchange": {
+              area: tierByPlace["the spice tea exchange"],
+              features: "custom tea options, seasonal blends, gift-friendly selection"
+            },
+            "kung fu tea": {
+              area: tierByPlace["kung fu tea"],
+              features: "classic boba menu, quick service, customizable sweetness"
+            },
+            "tealicious": {
+              area: tierByPlace["tealicious"],
+              features: "fruit teas, boba add-ons, upbeat atmosphere"
+            },
+            "bobami": {
+              area: tierByPlace["bobami"],
+              features: "creative boba flavors, snack pairings, fun aesthetic"
+            },
+            "dutch bros coffee": {
+              area: tierByPlace["dutch bros coffee"],
+              features: "high-energy service, signature drinks, open late options"
+            }
+          };
+          if (infoMap[normalized]) return infoMap[normalized];
+          if (/boba|bubble|milk tea|tea house|tealicious|tbaar|christea|kung fu tea/i.test(normalized)) {
+            return {
+              area: "Central Knoxville",
+              features: "boba-friendly menu, flavor customization, social atmosphere"
+            };
+          }
+          if (/tea|chai|tearoom|apothecary|spice/i.test(normalized)) {
+            return {
+              area: "North Knoxville",
+              features: "tea-forward menu, seasonal blends, relaxed atmosphere"
+            };
+          }
+          if (/coffee|cafe|roaster|espresso|brew/i.test(normalized)) {
+            return {
+              area: "Central Knoxville",
+              features: "specialty coffee options, comfortable seating, welcoming atmosphere"
+            };
+          }
+          return {
+            area: "Central Knoxville",
+            features: "seasonal menu, welcoming atmosphere, and solid drink options"
+          };
+        }
+
+        async function fetchGooglePlaceLocation(name, apiKey) {
+          const textQuery = String(name || "").trim();
+          if (!textQuery || !apiKey) return null;
+          const requestBody = {
+            textQuery: textQuery + ", Knoxville TN",
+            maxResultCount: 1
+          };
+          const response = await fetch("https://places.googleapis.com/v1/places:searchText", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-Goog-Api-Key": apiKey,
+              "X-Goog-FieldMask": "places.formattedAddress,places.location"
+            },
+            body: JSON.stringify(requestBody)
+          });
+          if (!response.ok) return null;
+          const data = await response.json();
+          const place = Array.isArray(data.places) ? data.places[0] : null;
+          if (!place) return null;
+          return {
+            address: place.formattedAddress || null,
+            latitude: place.location && typeof place.location.latitude === "number" ? place.location.latitude : null,
+            longitude: place.location && typeof place.location.longitude === "number" ? place.location.longitude : null
+          };
+        }
+
+        async function fetchFallbackLocation(name) {
+          const textQuery = String(name || "").trim();
+          if (!textQuery) return null;
+          const url = "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=" + encodeURIComponent(textQuery + ", Knoxville TN");
+          const response = await fetch(url);
+          if (!response.ok) return null;
+          const data = await response.json();
+          const match = Array.isArray(data) ? data[0] : null;
+          if (!match) return null;
+          const lat = Number(match.lat);
+          const lon = Number(match.lon);
+          return {
+            address: match.display_name || null,
+            latitude: Number.isFinite(lat) ? lat : null,
+            longitude: Number.isFinite(lon) ? lon : null
+          };
+        }
+
+        function buildGoogleMapsUrl(name, locationResult) {
+          if (locationResult && Number.isFinite(locationResult.latitude) && Number.isFinite(locationResult.longitude)) {
+            return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(locationResult.latitude + "," + locationResult.longitude);
+          }
+          return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(String(name || "coffee shop Knoxville TN"));
+        }
+
+        function toShortLocationLabel(address, fallbackArea) {
+          const raw = String(address || "").trim();
+          if (!raw) return "Located in: " + fallbackArea;
+          const parts = raw.split(",").map(function (part) { return part.trim(); }).filter(Boolean);
+          if (!parts.length) return "Located in: " + fallbackArea;
+          if (parts.length === 1) {
+            if (/^\d/.test(parts[0])) return "Located in: " + fallbackArea;
+            return "Located in: " + parts[0];
+          }
+          const cleaned = parts.filter(function (part) {
+            if (!part) return false;
+            if (/^\d/.test(part)) return false;
+            if (/^\d{5}(?:-\d{4})?$/.test(part)) return false;
+            if (/\d/.test(part)) return false;
+            if (/^(tn|tenn|tennessee)$/i.test(part)) return false;
+            if (/^(tn|tenn|tennessee)\s+\d+/i.test(part)) return false;
+            if (/^tennessee$/i.test(part)) return false;
+            return true;
+          });
+          if (!cleaned.length) return "Located in: " + fallbackArea;
+          const cityLike = cleaned[cleaned.length - 1];
+          const neighborhood = cleaned.length > 1 ? cleaned[cleaned.length - 2] : null;
+          if (!cityLike || /^\d/.test(cityLike)) return "Located in: " + fallbackArea;
+          if (neighborhood && neighborhood !== cityLike && !/knoxville/i.test(neighborhood)) {
+            return "Located in: " + neighborhood + ", " + cityLike;
+          }
+          return "Located in: " + cityLike;
+        }
+
+        function formatPlaceTitle(name) {
+          const raw = String(name || "").trim();
+          if (!raw) return "Location";
+          if (/^mia\s+picol+l?a(?:\s*-\s*.*)?$/i.test(raw)) return "Mia Piccola";
+          if (/^mahalo\s+coffee\s+roasters$/i.test(raw)) return "Mahalo";
+          if (/^fable\s+hollow\s+coffee\s*(?:&|and)\s*bookshoppe$/i.test(raw)) return "Fable Hollow";
+          return raw;
+        }
+
+        async function hydrateLocationModal(name) {
+          const apiKey = getGooglePlacesApiKey();
+          let locationResult = null;
+          try {
+            if (apiKey) {
+              locationResult = await fetchGooglePlaceLocation(name, apiKey);
+            }
+            if (!locationResult) {
+              locationResult = await fetchFallbackLocation(name);
+            }
+          } catch (_error) {
+            locationResult = null;
+          }
+          if (locationModal.hidden || locationModalTitle.textContent !== formatPlaceTitle(name)) return;
+          locationModalMapLink.href = buildGoogleMapsUrl(name, locationResult);
+        }
+
+        function openLocationModal(name) {
+          const title = formatPlaceTitle(name);
+          const details = getLocationDetails(title);
+          locationModalTitle.textContent = title;
+          locationModalSubtitle.textContent = "Located in: " + details.area;
+          locationModalCopy.textContent = "Features: " + details.features + ".";
+          locationModalMapLink.href = buildGoogleMapsUrl(title, null);
+          locationModal.hidden = false;
+          screen.classList.add("is-location-modal-open");
+          hydrateLocationModal(title);
+        }
+
+        function closeLocationModal() {
+          locationModal.hidden = true;
+          screen.classList.remove("is-location-modal-open");
+        }
+
+        function syncBgBottomHeight(visibleCount) {
+          if (!bgBottom) return;
+          const bottomPadding = 24;
+          const lastTop = getRowTop(visibleCount - 1);
+          const needed = lastTop + 129 - 357 + bottomPadding;
+          bgBottom.style.height = Math.max(850, needed) + "px";
+        }
+
+        const GOOGLE_PLACES_API_KEY = "";
+        let latestPhotoRequestId = 0;
+
+        function buildPhotoUrl(name) {
+          const normalized = normalizePlaceName(name);
+          if (/energy|power|fuel/i.test(normalized)) return "./assets/empty-cup.png";
+          return "./assets/partial-cafe.png";
+        }
+
+        function getGooglePlacesApiKey() {
+          if (GOOGLE_PLACES_API_KEY) return GOOGLE_PLACES_API_KEY;
+          const fromSession = sessionStorage.getItem("drinkindexGooglePlacesApiKey");
+          if (fromSession) return fromSession;
+          const fromLocal = localStorage.getItem("drinkindexGooglePlacesApiKey");
+          if (fromLocal) return fromLocal;
+          return "";
+        }
+
+        function getStoredCoords() {
+          const rawCoords = sessionStorage.getItem("drinkindexCoords");
+          if (!rawCoords) return null;
+          try {
+            const parsed = JSON.parse(rawCoords);
+            if (parsed && typeof parsed.lat === "number" && typeof parsed.lon === "number") {
+              return parsed;
+            }
+          } catch (_error) {
+            return null;
+          }
+          return null;
+        }
+
+        async function fetchGooglePlacePhoto(name, coords, apiKey) {
+          const textQuery = String(name || "").trim();
+          if (!textQuery) return null;
+
+          const requestBody = {
+            textQuery: textQuery,
+            maxResultCount: 1
+          };
+
+          if (coords && typeof coords.lat === "number" && typeof coords.lon === "number") {
+            requestBody.locationBias = {
+              circle: {
+                center: { latitude: coords.lat, longitude: coords.lon },
+                radius: 18000
+              }
+            };
+          }
+
+          const response = await fetch("https://places.googleapis.com/v1/places:searchText", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-Goog-Api-Key": apiKey,
+              "X-Goog-FieldMask": "places.displayName,places.photos"
+            },
+            body: JSON.stringify(requestBody)
+          });
+
+          if (!response.ok) return null;
+          const data = await response.json();
+          const place = Array.isArray(data.places) ? data.places[0] : null;
+          const photoName = place && Array.isArray(place.photos) && place.photos[0] && place.photos[0].name
+            ? place.photos[0].name
+            : null;
+          if (!photoName) return null;
+          return "https://places.googleapis.com/v1/" + photoName + "/media?maxWidthPx=700&key=" + encodeURIComponent(apiKey);
+        }
+
+        async function loadGooglePlacePhotoMap(names) {
+          const apiKey = getGooglePlacesApiKey();
+          if (!apiKey) return null;
+          const coords = getStoredCoords();
+          const photoMap = {};
+          const cacheKey = "drinkindexGooglePlacePhotoCache";
+          let cache = {};
+          try {
+            cache = JSON.parse(sessionStorage.getItem(cacheKey) || "{}") || {};
+          } catch (_error) {
+            cache = {};
+          }
+
+          const uniqueNames = [];
+          names.forEach(function (name) {
+            const normalized = normalizePlaceName(name);
+            if (!normalized || uniqueNames.includes(normalized)) return;
+            uniqueNames.push(normalized);
+          });
+
+          await Promise.all(uniqueNames.map(async function (normalizedName) {
+            const rawName = names.find(function (name) {
+              return normalizePlaceName(name) === normalizedName;
+            });
+            if (!rawName) return;
+
+            if (cache[normalizedName]) {
+              photoMap[normalizedName] = cache[normalizedName];
+              return;
+            }
+
+            try {
+              const photoUrl = await fetchGooglePlacePhoto(rawName, coords, apiKey);
+              if (!photoUrl) return;
+              cache[normalizedName] = photoUrl;
+              photoMap[normalizedName] = photoUrl;
+            } catch (_error) {
+              // Keep fallback image when Google Places photo fetch fails.
+            }
+          }));
+
+          try {
+            sessionStorage.setItem(cacheKey, JSON.stringify(cache));
+          } catch (_error) {
+            // Ignore storage write failures.
+          }
+
+          return photoMap;
+        }
+
+        function setPlacePhotos(names, photoMap) {
+          names.forEach(function (_name, index) {
+            const photo = getPhotoNode(index);
+            if (!photo) return;
+            const placeName = names[index] || "";
+            const normalized = normalizePlaceName(placeName);
+            const fromUploaded = normalized ? uploadedPhotoByPlace[normalized] : null;
+            const fromGoogle = photoMap && normalized ? photoMap[normalized] : null;
+            photo.src = fromUploaded || fromGoogle || buildPhotoUrl(placeName);
+          });
+        }
+
+        function setPlaceMugs(names) {
+          names.forEach(function (_name, index) {
+            const tray = getMugTrayNode(index);
+            if (!tray) return;
+            tray.innerHTML = "";
+            tray.classList.remove("mug-count-4", "mug-count-5");
+            const placeName = names[index] || "";
+            const normalized = normalizePlaceName(placeName);
+            const mugKeys = placeMugLookup[normalized] && placeMugLookup[normalized].length
+              ? placeMugLookup[normalized]
+              : selectedKeys;
+            const displayKeys = mugKeys.slice(0, 5);
+            if (displayKeys.length >= 5) tray.classList.add("mug-count-5");
+            else if (displayKeys.length === 4) tray.classList.add("mug-count-4");
+            displayKeys.forEach(function (key, index) {
+              if (!mugMap[key]) return;
+              const mug = document.createElement("img");
+              mug.className = "df-place-mug" + (key === "orange" ? " df-place-mug--orange" : "");
+              mug.src = mugMap[key].src;
+              mug.alt = "";
+              mug.style.position = "relative";
+              mug.style.zIndex = String(displayKeys.length - index);
+              tray.appendChild(mug);
+            });
+          });
+        }
+
+        function setPlaceLabels(list) {
+          const fallback = ["Life House Coffee", "Wild Love Bakehouse", "Hey Bear Cafe", "", ""];
+          const targetCount = Math.min(maxVisiblePlaces, Math.max(minVisiblePlaces, list.length));
+          const names = [];
+          const displayNames = [];
+          for (let i = 0; i < targetCount; i += 1) {
+            const baseName = list[i] || fallback[i] || "";
+            names.push(baseName);
+            displayNames.push(formatPlaceNameForCard(baseName));
+          }
+          currentPlaceNames.length = 0;
+          displayNames.forEach(function (name) {
+            currentPlaceNames.push(name);
+          });
+          if (/^life\s+house\s+coffee$/i.test(String(displayNames[0] || "").trim())) {
+            namePopular.textContent = "Life House Coffee";
+          } else {
+            setTwoLineText(namePopular, displayNames[0]);
+          }
+          const line2 = splitTwoLines(displayNames[1]);
+          name2a.textContent = line2[0];
+          name2b.textContent = line2[1];
+          if (/^hey\s+bear\s+cafe$/i.test(String(displayNames[2] || "").trim())) {
+            name3.textContent = "Hey Bear Cafe";
+          } else {
+            setTwoLineText(name3, displayNames[2]);
+          }
+          setTwoLineText(location4, displayNames[3]);
+          setTwoLineText(location5, displayNames[4]);
+          for (let i = 5; i < names.length; i += 1) {
+            const row = ensureExtraRow(i);
+            setTwoLineText(row.name, displayNames[i]);
+          }
+          displayNames.forEach(function (name, index) {
+            const trigger = getTriggerNode(index);
+            if (!trigger) return;
+            trigger.setAttribute("aria-label", "Open location details for " + (name || "location"));
+          });
+          hideUnusedRows(names.length);
+          syncBgBottomHeight(names.length);
+          setPlacePhotos(names);
+          setPlaceMugs(names);
+          const requestId = ++latestPhotoRequestId;
+          loadGooglePlacePhotoMap(names).then(function (photoMap) {
+            if (!photoMap || requestId !== latestPhotoRequestId) return;
+            setPlacePhotos(names, photoMap);
+          }).catch(function () {
+            // Keep fallback photos if Google photo retrieval fails.
+          });
+        }
+
+        function extractName(item) {
+          if (!item) return null;
+          const raw = item.name || item.display_name || "";
+          const first = raw.split(",")[0].trim();
+          if (!first) return null;
+          if (isBlockedPlaceName(first)) return null;
+          return first;
+        }
+
+        async function searchTermNearby(term, coords, options) {
+          const opts = options || {};
+          const latDelta = typeof opts.latDelta === "number" ? opts.latDelta : 0.06;
+          const resultLimit = typeof opts.limit === "number" ? opts.limit : 8;
+          const bounded = opts.bounded !== false;
+          const lonDelta = 0.06 / Math.max(Math.cos((coords.lat * Math.PI) / 180), 0.2);
+          const minLat = coords.lat - latDelta;
+          const maxLat = coords.lat + latDelta;
+          const minLon = coords.lon - lonDelta;
+          const maxLon = coords.lon + lonDelta;
+          const url =
+            "https://nominatim.openstreetmap.org/search?" +
+            "format=jsonv2&limit=" + resultLimit + "&bounded=" + (bounded ? "1" : "0") +
+            "&q=" + encodeURIComponent(term) +
+            "&viewbox=" + encodeURIComponent(minLon + "," + minLat + "," + maxLon + "," + maxLat);
+          const response = await fetch(url);
+          if (!response.ok) return [];
+          const data = await response.json();
+          if (!Array.isArray(data)) return [];
+          return data
+            .map(function (item) {
+              const name = extractName(item);
+              if (!name) return null;
+              return {
+                name: name,
+                displayName: (item.display_name || "").toLowerCase(),
+                lat: Number(item.lat),
+                lon: Number(item.lon),
+                queryTerm: term
+              };
+            })
+            .filter(Boolean);
+        }
+
+        function distanceKm(aLat, aLon, bLat, bLon) {
+          const toRad = function (deg) { return (deg * Math.PI) / 180; };
+          const dLat = toRad(bLat - aLat);
+          const dLon = toRad(bLon - aLon);
+          const lat1 = toRad(aLat);
+          const lat2 = toRad(bLat);
+          const hav =
+            Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
+          return 6371 * 2 * Math.atan2(Math.sqrt(hav), Math.sqrt(1 - hav));
+        }
+
+        function scorePlace(place, selectedKeys, coords) {
+          const haystack = (place.name + " " + place.displayName).toLowerCase();
+          let score = 0;
+
+          selectedKeys.forEach(function (key) {
+            const terms = mugToSearchTerms[key] || [];
+            const categoryMatchers = mugCategories[key] || [];
+            const preferredMatchers = mugPreferredPlaceNames[key] || [];
+
+            terms.forEach(function (term) {
+              const t = term.toLowerCase();
+              if (haystack.includes(t)) {
+                score += term === place.queryTerm ? 3 : 2;
+              }
+            });
+
+            categoryMatchers.forEach(function (matcher) {
+              if (matcher.test(haystack)) score += 1;
+            });
+
+            preferredMatchers.forEach(function (matcher) {
+              if (matcher.test(haystack)) score += 8;
+            });
+          });
+
+          if (Number.isFinite(place.lat) && Number.isFinite(place.lon)) {
+            const km = distanceKm(coords.lat, coords.lon, place.lat, place.lon);
+            if (km < 1.2) score += 3;
+            else if (km < 3) score += 2;
+            else if (km < 6) score += 1;
+          }
+
+          return score;
+        }
+
+        function rotateList(list, offset) {
+          if (!Array.isArray(list) || !list.length) return [];
+          const size = list.length;
+          const shift = ((offset % size) + size) % size;
+          if (!shift) return list.slice();
+          return list.slice(shift).concat(list.slice(0, shift));
+        }
+
+        function rotatePlacesForSelection(names, selectedKeys) {
+          if (!Array.isArray(names) || names.length < 2) return Array.isArray(names) ? names.slice() : [];
+          const sortedKeys = (selectedKeys || []).slice().sort().join("|") || "default";
+          const rotationKey = "drinkindexDrinkFinderRotation:" + sortedKeys;
+          let count = 0;
+          try {
+            count = Number(sessionStorage.getItem(rotationKey) || "0");
+            if (!Number.isFinite(count) || count < 0) count = 0;
+          } catch (_error) {
+            count = 0;
+          }
+          const rotated = rotateList(names, count);
+          try {
+            sessionStorage.setItem(rotationKey, String((count + 1) % names.length));
+          } catch (_error) {
+            // Ignore storage write failures and keep the current order.
+          }
+          return rotated;
+        }
+
+        async function loadDrinkSpecificPlaces(selectedKeys) {
+          const rawCoords = sessionStorage.getItem("drinkindexCoords");
+          if (!rawCoords) return;
+          let coords = null;
+          try {
+            const parsed = JSON.parse(rawCoords);
+            if (parsed && typeof parsed.lat === "number" && typeof parsed.lon === "number") {
+              coords = parsed;
+            }
+          } catch (_error) {
+            return;
+          }
+          if (!coords) return;
+
+          const terms = [];
+          selectedKeys.forEach(function (key) {
+            const mapped = mugToSearchTerms[key] || [];
+            mapped.forEach(function (term) {
+              if (!terms.includes(term)) terms.push(term);
+            });
+          });
+          if (!terms.length) return;
+
+          const cacheKey = "drinkindexDrinkFinderCache";
+          const cacheLookupKey = JSON.stringify({
+            mugs: selectedKeys.slice().sort(),
+            lat: Number(coords.lat).toFixed(3),
+            lon: Number(coords.lon).toFixed(3)
+          });
+          try {
+            const cached = JSON.parse(sessionStorage.getItem(cacheKey) || "null");
+            if (cached && cached.key === cacheLookupKey && Array.isArray(cached.names) && cached.names.length) {
+              const filteredCachedNames = filterBlockedPlaceNames(cached.names).slice(0, 10);
+              const rotatedCachedNames = rotatePlacesForSelection(filteredCachedNames, selectedKeys);
+              setPlaceLabels(rotatedCachedNames);
+              return;
+            }
+          } catch (_cacheError) {
+            // Ignore malformed cache and recompute.
+          }
+
+          const resultGroups = await Promise.all(
+            terms.map(function (term) {
+              return searchTermNearby(term, coords).catch(function () {
+                return [];
+              });
+            })
+          );
+
+          const seen = new Set();
+          const merged = [];
+          resultGroups.forEach(function (places) {
+            places.forEach(function (place) {
+              const key = place.name.toLowerCase();
+              if (seen.has(key)) return;
+              seen.add(key);
+              merged.push({
+                name: place.name,
+                score: scorePlace(place, selectedKeys, coords)
+              });
+            });
+          });
+
+          merged.sort(function (a, b) {
+            return b.score - a.score;
+          });
+
+          if (merged.length < 10) {
+            const supplementalTerms = [];
+            selectedKeys.forEach(function (key) {
+              const mapped = mugToSearchTerms[key] || [];
+              if (mapped[0] && !supplementalTerms.includes(mapped[0])) supplementalTerms.push(mapped[0]);
+            });
+            if (!supplementalTerms.includes("cafe")) supplementalTerms.push("cafe");
+
+            const supplementalGroups = await Promise.all(
+              supplementalTerms.map(function (term) {
+                return searchTermNearby(term, coords, { latDelta: 0.15, limit: 20, bounded: false }).catch(function () {
+                  return [];
+                });
+              })
+            );
+
+            supplementalGroups.forEach(function (places) {
+              places.forEach(function (place) {
+                const key = place.name.toLowerCase();
+                if (seen.has(key)) return;
+                seen.add(key);
+                merged.push({
+                  name: place.name,
+                  score: scorePlace(place, selectedKeys, coords)
+                });
+              });
+            });
+
+            merged.sort(function (a, b) {
+              return b.score - a.score;
+            });
+          }
+
+          if (merged.length || selectedKeys.some(function (k) { return (mugCuratedPlaces[k] || []).length > 0; })) {
+            const rankedNames = merged.map(function (item) { return item.name; });
+            const curatedNames = [];
+            const curatedBuckets = selectedKeys.map(function (key) {
+              return (mugCuratedPlaces[key] || []).slice();
+            });
+            const maxBucketLength = curatedBuckets.reduce(function (max, bucket) {
+              return Math.max(max, bucket.length);
+            }, 0);
+            for (let i = 0; i < maxBucketLength; i += 1) {
+              curatedBuckets.forEach(function (bucket) {
+                const name = bucket[i];
+                if (!name) return;
+                if (!curatedNames.includes(name)) curatedNames.push(name);
+              });
+            }
+            const output = [];
+            curatedNames.forEach(function (name) {
+              if (!output.includes(name)) output.push(name);
+            });
+            rankedNames.forEach(function (name) {
+              if (!output.includes(name)) output.push(name);
+            });
+            const bestNames = filterBlockedPlaceNames(output).slice(0, 10);
+            const rotatedBestNames = rotatePlacesForSelection(bestNames, selectedKeys);
+            setPlaceLabels(rotatedBestNames);
+            try {
+              sessionStorage.setItem(cacheKey, JSON.stringify({ key: cacheLookupKey, names: bestNames }));
+            } catch (_cacheWriteErr) {
+              // No-op if storage unavailable.
+            }
+          }
+        }
+
+        function getSelectedMugs() {
+          const query = new URLSearchParams(window.location.search);
+          const mugsParam = query.get("mugs");
+          if (mugsParam) {
+            return mugsParam
+              .split(",")
+              .map(function (value) { return value.trim(); })
+              .filter(function (value) { return mugMap[value]; });
+          }
+          try {
+            const fromStorage = JSON.parse(sessionStorage.getItem("drinkindexSelectedMugs") || "[]");
+            if (Array.isArray(fromStorage)) {
+              return fromStorage.filter(function (value) { return mugMap[value]; });
+            }
+          } catch (_error) {
+            // Ignore parse error and fallback.
+          }
+          const single = query.get("mug");
+          if (single && mugMap[single]) return [single];
+          return ["blue"];
+        }
+
+        const selectedKeys = getSelectedMugs();
+
+        includeLabel.textContent =
+          selectedKeys.length > 1
+            ? selectedKeys.length + " chosen drinks"
+            : mugMap[selectedKeys[0]].label;
+
+        selectedKeys.forEach(function (key) {
+          const item = document.createElement("img");
+          item.className = "df-selected-mug" + (key === "orange" ? " df-selected-mug--orange" : "");
+          item.src = mugMap[key].src;
+          item.alt = mugMap[key].label;
+          mugWrap.appendChild(item);
+        });
+
+        loadDrinkSpecificPlaces(selectedKeys).catch(function () {
+          // Keep fallback names if request fails.
+        });
+
+        locationModal.addEventListener("click", function (event) {
+          if (event.target === locationModal) closeLocationModal();
+        });
+
+        for (let i = 0; i < maxVisiblePlaces; i += 1) {
+          const trigger = getTriggerNode(i);
+          if (!trigger) continue;
+          (function (index) {
+            trigger.addEventListener("click", function () {
+              openLocationModal(currentPlaceNames[index] || "Location");
+            });
+          })(i);
+        }
+      })();
+    </script>
+  </body>
+</html>

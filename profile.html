@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="device-scale-slot">
+      <div class="iphone-17-device">
+        <div class="iphone-17-rail iphone-17-rail--left" aria-hidden="true"></div>
+        <div class="iphone-17-rail iphone-17-rail--right" aria-hidden="true"></div>
+        <div class="iphone-17-frame">
+          <div class="iphone-17-island" aria-hidden="true"></div>
+          <main class="phone profile-screen">
+            <div class="profile-scroll">
+              <div class="profile-scroll-inner">
+            <div class="profile-layer profile-bg-top"></div>
+            <div class="profile-layer profile-bg-mid"></div>
+
+            <p class="profile-title profile-title-drink">Drink</p>
+            <p class="profile-title profile-title-journal">Journal</p>
+            <img class="profile-layer profile-star-a" src="https://www.figma.com/api/mcp/asset/9679b513-1111-4569-ace1-e918c6866098" alt="" />
+            <img class="profile-layer profile-star-b" src="https://www.figma.com/api/mcp/asset/d9420877-9d31-4974-b89d-0fdacf5ab612" alt="" />
+
+            <div class="profile-filter-bar"></div>
+            <p class="profile-filter-text" id="profile-filter-text">All</p>
+            <button class="profile-filter-trigger" id="profile-filter-trigger" type="button" aria-label="Open sip filters" aria-expanded="false">
+              <span class="profile-filter-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="profile-filter-menu" id="profile-filter-menu" hidden>
+              <button class="profile-filter-option" type="button" data-filter-label="First Sips">First Sips</button>
+              <button class="profile-filter-option" type="button" data-filter-label="Latest Sips">Latest Sips</button>
+              <button class="profile-filter-option" type="button" data-filter-label="Favorite Sips">Favorite Sips</button>
+            </div>
+
+            <img class="profile-photo profile-photo-a" src="https://www.figma.com/api/mcp/asset/100b17ac-7c9a-4140-80db-ef9c5151db3c" alt="Drink journal photo 1" />
+            <img class="profile-photo profile-photo-b" src="https://www.figma.com/api/mcp/asset/98b5c71e-85dc-4dc2-b809-7686179f0413" alt="Drink journal photo 2" />
+            <img class="profile-photo profile-photo-c" src="https://www.figma.com/api/mcp/asset/a453b425-2a96-4033-91d9-edfee4112d70" alt="Drink journal photo 3" />
+            <img class="profile-photo profile-photo-d" src="https://www.figma.com/api/mcp/asset/5b5a3dd2-f629-4695-ad2a-cbe804dcf177" alt="Drink journal photo 4" />
+            <img class="profile-photo profile-photo-e" src="https://www.figma.com/api/mcp/asset/1c0abc52-8d08-4a45-8cd6-80327c5c33ef" alt="Drink journal photo 5" />
+            <img class="profile-photo profile-photo-f is-hidden" src="https://www.figma.com/api/mcp/asset/1c0abc52-8d08-4a45-8cd6-80327c5c33ef" alt="Drink journal photo 6" />
+            <button class="profile-dots profile-dots-a profile-dots-btn" type="button" data-entry-id="1" aria-label="Open journal entry 1"><span></span><span></span><span></span><img class="profile-dot-star" src="./assets/favorite-outline.png" alt="" aria-hidden="true" /></button>
+            <button class="profile-dots profile-dots-b profile-dots-btn" type="button" data-entry-id="2" aria-label="Open journal entry 2"><span></span><span></span><span></span><img class="profile-dot-star" src="./assets/favorite-outline.png" alt="" aria-hidden="true" /></button>
+            <button class="profile-dots profile-dots-c profile-dots-btn" type="button" data-entry-id="3" aria-label="Open journal entry 3"><span></span><span></span><span></span><img class="profile-dot-star" src="./assets/favorite-outline.png" alt="" aria-hidden="true" /></button>
+            <button class="profile-dots profile-dots-d profile-dots-btn" type="button" data-entry-id="4" aria-label="Open journal entry 4"><span></span><span></span><span></span><img class="profile-dot-star" src="./assets/favorite-outline.png" alt="" aria-hidden="true" /></button>
+            <button class="profile-dots profile-dots-e profile-dots-btn" type="button" data-entry-id="5" aria-label="Open journal entry 5"><span></span><span></span><span></span><img class="profile-dot-star" src="./assets/favorite-outline.png" alt="" aria-hidden="true" /></button>
+            <button class="profile-dots profile-dots-f profile-dots-btn is-hidden" type="button" data-entry-id="6" aria-label="Open journal entry 6"><span></span><span></span><span></span><img class="profile-dot-star" src="./assets/favorite-outline.png" alt="" aria-hidden="true" /></button>
+            <button class="profile-upload-trigger" id="profile-upload-trigger" type="button" aria-label="Upload a drink photo">
+              <span class="profile-upload-plus" aria-hidden="true"></span>
+            </button>
+            <input class="profile-upload-input" id="profile-upload-input" type="file" accept="image/*" />
+              </div>
+            </div>
+
+            <section class="profile-entry-modal" id="profile-entry-modal" hidden role="dialog" aria-modal="true" aria-labelledby="profile-entry-title">
+              <div class="profile-entry-card">
+                <img class="profile-entry-image" id="profile-entry-image" src="https://www.figma.com/api/mcp/asset/d351be95-536e-49cf-bf68-efd6b089387a" alt="Journal entry image" />
+                <button class="profile-entry-favorite" id="profile-entry-favorite" type="button" aria-label="Favorite this entry">
+                  <img class="profile-entry-favorite-icon" id="profile-entry-favorite-icon" src="./assets/favorite-outline.png" alt="" aria-hidden="true" />
+                </button>
+                <button class="profile-entry-edit" id="profile-entry-edit" type="button" aria-label="Edit this entry">
+                  <img src="./assets/edit-symbol.png" alt="" aria-hidden="true" />
+                </button>
+                <p class="profile-entry-date" id="profile-entry-date">Date: add date</p>
+                <h3 class="profile-entry-title" id="profile-entry-title">Drink Name: add drink</h3>
+                <p class="profile-entry-note" id="profile-entry-note">Note: add your note here.</p>
+              </div>
+            </section>
+
+            <div class="p3-menu-bar"></div>
+            <img class="p3-nav-figma p3-nav-figma--home-outline" src="https://www.figma.com/api/mcp/asset/fdce71a9-de3a-409b-a5e1-1d2861e65736" alt="" aria-hidden="true" />
+            <img class="p3-nav-figma p3-nav-figma--home-door" src="https://www.figma.com/api/mcp/asset/0af53790-ceb4-49cf-a253-40317e5dcae6" alt="" aria-hidden="true" />
+            <img class="p3-nav-figma p3-nav-figma--sticker" src="https://www.figma.com/api/mcp/asset/8cfb0de2-3fad-46c4-b49e-5455b02a03d8" alt="" aria-hidden="true" />
+            <img class="p3-nav-figma p3-nav-figma--sip-cup" src="https://www.figma.com/api/mcp/asset/4400277d-d0f2-493b-9293-8413c256a862" alt="" aria-hidden="true" />
+            <img class="p3-nav-figma p3-nav-figma--sip-handle" src="https://www.figma.com/api/mcp/asset/9143d1b8-5b61-486e-8510-8a57ed2e694c" alt="" aria-hidden="true" />
+            <img class="p3-nav-figma p3-nav-figma--sip-steam p3-nav-figma--sip-steam-l" src="https://www.figma.com/api/mcp/asset/c3f87d79-9f67-4d92-b814-0ff15a05ee62" alt="" aria-hidden="true" />
+            <img class="p3-nav-figma p3-nav-figma--sip-steam p3-nav-figma--sip-steam-c" src="https://www.figma.com/api/mcp/asset/c3f87d79-9f67-4d92-b814-0ff15a05ee62" alt="" aria-hidden="true" />
+            <img class="p3-nav-figma p3-nav-figma--sip-steam p3-nav-figma--sip-steam-r" src="https://www.figma.com/api/mcp/asset/c3f87d79-9f67-4d92-b814-0ff15a05ee62" alt="" aria-hidden="true" />
+            <img class="p3-nav-figma p3-nav-figma--profile" src="https://www.figma.com/api/mcp/asset/133a126c-de51-4923-ac69-f36c962c95bc" alt="" aria-hidden="true" />
+
+            <a class="p3-home-hit" href="./homepage.html" aria-label="Go to home" onclick="sessionStorage.setItem('drinkindexSkipSplashOnce','true')"></a>
+            <a class="p3-star-hit" href="./stickercollection.html" aria-label="Go to sticker collection"></a>
+            <a class="p3-page3-hit" href="./drinkoptions.html" aria-label="Go to drink options" onclick="sessionStorage.setItem('drinkLocationPromptPending', 'true')"></a>
+            <a class="p3-profile-hit" href="./profile.html" aria-current="page" aria-label="Current page: journal"></a>
+            <span class="p3-nav-label p3-nav-label--home" aria-hidden="true">Home</span>
+            <span class="p3-nav-label p3-nav-label--stickers" aria-hidden="true">Stickers</span>
+            <span class="p3-nav-label p3-nav-label--sips" aria-hidden="true">Sips</span>
+            <span class="p3-nav-label p3-nav-label--profile" aria-hidden="true">Journal</span>
+          </main>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const trigger = document.getElementById("profile-filter-trigger");
+        const menu = document.getElementById("profile-filter-menu");
+        const label = document.getElementById("profile-filter-text");
+        const screen = document.querySelector(".profile-screen");
+        const entryModal = document.getElementById("profile-entry-modal");
+        const entryFavorite = document.getElementById("profile-entry-favorite");
+        const entryFavoriteIcon = document.getElementById("profile-entry-favorite-icon");
+        const entryEdit = document.getElementById("profile-entry-edit");
+        const entryImage = document.getElementById("profile-entry-image");
+        const entryDate = document.getElementById("profile-entry-date");
+        const entryTitle = document.getElementById("profile-entry-title");
+        const entryNote = document.getElementById("profile-entry-note");
+        const uploadTrigger = document.getElementById("profile-upload-trigger");
+        const uploadInput = document.getElementById("profile-upload-input");
+        const photoSlots = [
+          document.querySelector(".profile-photo-a"),
+          document.querySelector(".profile-photo-b"),
+          document.querySelector(".profile-photo-c"),
+          document.querySelector(".profile-photo-d"),
+          document.querySelector(".profile-photo-e"),
+          document.querySelector(".profile-photo-f")
+        ];
+        const dotButtons = Array.from(document.querySelectorAll(".profile-dots-btn"));
+        if (!trigger || !menu || !label || !screen || !entryModal || !entryFavorite || !entryFavoriteIcon || !entryEdit || !entryImage || !entryDate || !entryTitle || !entryNote || !uploadTrigger || !uploadInput || photoSlots.some(function (slot) { return !slot; })) return;
+        const favoriteOutlineSrc = "./assets/favorite-outline.png";
+        const favoriteFilledSrc = "./assets/favorite-filled.png";
+        const uploadEntryId = "6";
+
+        const entryData = {
+          1: {
+            image: "https://www.figma.com/api/mcp/asset/d351be95-536e-49cf-bf68-efd6b089387a",
+            date: "Date: add date",
+            title: "Drink Name: add drink",
+            note: "Note: add your note here."
+          },
+          2: {
+            image: "https://www.figma.com/api/mcp/asset/525f7f8e-8477-4531-94c8-03a1d1f45753",
+            date: "Date: add date",
+            title: "Drink Name: add drink",
+            note: "Note: add your note here."
+          },
+          3: {
+            image: "https://www.figma.com/api/mcp/asset/496e2495-3e66-40b9-baa4-e67955d47885",
+            date: "Date: add date",
+            title: "Drink Name: add drink",
+            note: "Note: add your note here."
+          },
+          4: {
+            image: "https://www.figma.com/api/mcp/asset/c63a436d-3508-4ecb-a524-49ab94b395b0",
+            date: "Date: add date",
+            title: "Drink Name: add drink",
+            note: "Note: add your note here."
+          },
+          5: {
+            image: "https://www.figma.com/api/mcp/asset/1c0abc52-8d08-4a45-8cd6-80327c5c33ef",
+            date: "Date: add date",
+            title: "Drink Name: add drink",
+            note: "Note: add your note here."
+          },
+          6: {
+            image: "https://www.figma.com/api/mcp/asset/1c0abc52-8d08-4a45-8cd6-80327c5c33ef",
+            date: "Date: add date",
+            title: "Drink Name: add drink",
+            note: "Note: add your note here."
+          }
+        };
+        const entryStorageKey = "drinkindexProfileEntryData";
+        let currentEntryId = "1";
+        let savedEntryData = {};
+
+        try {
+          const rawSavedEntries = localStorage.getItem(entryStorageKey);
+          const parsedSavedEntries = rawSavedEntries ? JSON.parse(rawSavedEntries) : {};
+          if (parsedSavedEntries && typeof parsedSavedEntries === "object") {
+            savedEntryData = parsedSavedEntries;
+          }
+        } catch (_error) {
+          savedEntryData = {};
+        }
+
+        function getEntryDetails(entryId) {
+          const key = String(entryId || "1");
+          const defaults = entryData[key] || entryData[1];
+          const saved = savedEntryData[key] || {};
+          return {
+            image: saved.image || defaults.image,
+            date: saved.date || defaults.date,
+            title: saved.title || defaults.title,
+            note: saved.note || defaults.note,
+            favorite: Boolean(saved.favorite)
+          };
+        }
+
+        function saveEntryDetails(entryId, details) {
+          const key = String(entryId || "1");
+          savedEntryData[key] = {
+            image: details.image,
+            date: details.date,
+            title: details.title,
+            note: details.note,
+            favorite: Boolean(details.favorite)
+          };
+          try {
+            localStorage.setItem(entryStorageKey, JSON.stringify(savedEntryData));
+          } catch (_error) {
+            // Ignore storage write failures.
+          }
+        }
+
+        function getVisibleEntryIds() {
+          const baseIds = ["1", "2", "3", "4", "5"];
+          const uploaded = savedEntryData[uploadEntryId];
+          if (uploaded && uploaded.image) {
+            baseIds.push(uploadEntryId);
+          }
+          return baseIds;
+        }
+
+        function parseEntryDateValue(rawDateText) {
+          const input = String(rawDateText || "").trim();
+          if (!input) return null;
+          const stripped = input.replace(/^date\s*:\s*/i, "").trim();
+          if (!stripped) return null;
+          const timestamp = Date.parse(stripped);
+          return Number.isFinite(timestamp) ? timestamp : null;
+        }
+
+        function closeMenu() {
+          menu.hidden = true;
+          trigger.setAttribute("aria-expanded", "false");
+        }
+
+        function openMenu() {
+          menu.hidden = false;
+          trigger.setAttribute("aria-expanded", "true");
+        }
+
+        function closeEntryModal() {
+          entryModal.hidden = true;
+          screen.classList.remove("is-entry-open");
+        }
+
+        function openEntryModal(entryId) {
+          currentEntryId = String(entryId || "1");
+          const details = getEntryDetails(currentEntryId);
+          entryImage.src = details.image;
+          entryDate.textContent = details.date;
+          entryTitle.textContent = details.title;
+          entryNote.textContent = details.note;
+          entryFavorite.classList.toggle("is-favorite", details.favorite);
+          entryFavoriteIcon.src = details.favorite ? favoriteFilledSrc : favoriteOutlineSrc;
+          entryFavorite.setAttribute("aria-label", details.favorite ? "Unfavorite this entry" : "Favorite this entry");
+          entryModal.hidden = false;
+          screen.classList.add("is-entry-open");
+        }
+
+        function applyEntryFilter(filterLabel) {
+          const ids = getVisibleEntryIds();
+          let ordered = ids.slice();
+          if (/first/i.test(filterLabel)) {
+            ordered.sort(function (a, b) {
+              const aDate = parseEntryDateValue(getEntryDetails(a).date);
+              const bDate = parseEntryDateValue(getEntryDetails(b).date);
+              if (aDate !== null && bDate !== null && aDate !== bDate) return aDate - bDate;
+              if (aDate !== null && bDate === null) return -1;
+              if (aDate === null && bDate !== null) return 1;
+              return Number(a) - Number(b);
+            });
+          } else if (/latest/i.test(filterLabel)) {
+            ordered.sort(function (a, b) {
+              const aDate = parseEntryDateValue(getEntryDetails(a).date);
+              const bDate = parseEntryDateValue(getEntryDetails(b).date);
+              if (aDate !== null && bDate !== null && aDate !== bDate) return bDate - aDate;
+              if (aDate !== null && bDate === null) return -1;
+              if (aDate === null && bDate !== null) return 1;
+              return Number(b) - Number(a);
+            });
+          } else if (/favorite/i.test(filterLabel)) {
+            ordered.sort(function (a, b) {
+              const aFav = getEntryDetails(a).favorite ? 1 : 0;
+              const bFav = getEntryDetails(b).favorite ? 1 : 0;
+              if (aFav !== bFav) return bFav - aFav;
+              const aDate = parseEntryDateValue(getEntryDetails(a).date);
+              const bDate = parseEntryDateValue(getEntryDetails(b).date);
+              if (aDate !== null && bDate !== null && aDate !== bDate) return bDate - aDate;
+              if (aDate !== null && bDate === null) return -1;
+              if (aDate === null && bDate !== null) return 1;
+              return Number(a) - Number(b);
+            });
+          }
+
+          photoSlots.forEach(function (slot, index) {
+            const id = ordered[index];
+            const dotButton = dotButtons[index];
+            if (!dotButton) return;
+            if (!id) {
+              slot.classList.add("is-hidden");
+              dotButton.classList.add("is-hidden");
+              return;
+            }
+            slot.classList.remove("is-hidden");
+            dotButton.classList.remove("is-hidden");
+            const details = getEntryDetails(id);
+            slot.src = details.image;
+            slot.setAttribute("alt", "Drink journal photo " + id);
+            dotButton.setAttribute("data-entry-id", id);
+            dotButton.setAttribute("aria-label", "Open journal entry " + id);
+            dotButton.classList.toggle("is-favorite", details.favorite);
+            const star = dotButton.querySelector(".profile-dot-star");
+            if (star) {
+              star.src = details.favorite ? favoriteFilledSrc : favoriteOutlineSrc;
+            }
+          });
+        }
+
+        function setUploadedImage(dataUrl) {
+          if (!dataUrl) return;
+          const now = new Date();
+          const dateText = "Date: " + now.toLocaleDateString();
+          const details = getEntryDetails(uploadEntryId);
+          saveEntryDetails(uploadEntryId, {
+            image: dataUrl,
+            date: dateText,
+            title: details.title || "Drink Name: add drink",
+            note: details.note || "Note: add your note here.",
+            favorite: details.favorite
+          });
+          applyEntryFilter(label.textContent || "All");
+        }
+
+        function editCurrentEntry() {
+          const details = getEntryDetails(currentEntryId);
+          const nextDate = window.prompt("Edit the date text", details.date);
+          if (nextDate === null) return;
+          const nextTitle = window.prompt("Edit the drink name text", details.title);
+          if (nextTitle === null) return;
+          const nextNote = window.prompt("Edit the note text", details.note);
+          if (nextNote === null) return;
+
+          const updated = {
+            image: details.image,
+            date: nextDate.trim() || details.date,
+            title: nextTitle.trim() || details.title,
+            note: nextNote.trim() || details.note,
+            favorite: details.favorite
+          };
+          saveEntryDetails(currentEntryId, updated);
+          openEntryModal(currentEntryId);
+          applyEntryFilter(label.textContent || "All -");
+        }
+
+        trigger.addEventListener("click", function (event) {
+          event.stopPropagation();
+          if (menu.hidden) openMenu();
+          else closeMenu();
+        });
+
+        menu.querySelectorAll(".profile-filter-option").forEach(function (option) {
+          option.addEventListener("click", function () {
+            const nextLabel = option.getAttribute("data-filter-label");
+            if (nextLabel) {
+              label.textContent = nextLabel;
+              applyEntryFilter(nextLabel);
+            }
+            closeMenu();
+          });
+        });
+
+        document.addEventListener("click", function (event) {
+          if (menu.hidden) return;
+          const target = event.target;
+          if (!(target instanceof Element)) return;
+          if (menu.contains(target) || trigger.contains(target)) return;
+          closeMenu();
+        });
+
+        dotButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            openEntryModal(button.getAttribute("data-entry-id"));
+          });
+        });
+
+        uploadTrigger.addEventListener("click", function () {
+          uploadInput.click();
+        });
+
+        uploadInput.addEventListener("change", function () {
+          const file = uploadInput.files && uploadInput.files[0];
+          if (!file || !file.type || file.type.indexOf("image/") !== 0) {
+            uploadInput.value = "";
+            return;
+          }
+          const reader = new FileReader();
+          reader.onload = function () {
+            if (typeof reader.result !== "string") return;
+            setUploadedImage(reader.result);
+          };
+          reader.readAsDataURL(file);
+          uploadInput.value = "";
+        });
+
+        entryEdit.addEventListener("click", function (event) {
+          event.stopPropagation();
+          editCurrentEntry();
+        });
+
+        entryFavorite.addEventListener("click", function (event) {
+          event.stopPropagation();
+          const details = getEntryDetails(currentEntryId);
+          const updated = {
+            image: details.image,
+            date: details.date,
+            title: details.title,
+            note: details.note,
+            favorite: !details.favorite
+          };
+          saveEntryDetails(currentEntryId, updated);
+          openEntryModal(currentEntryId);
+          applyEntryFilter(label.textContent || "All -");
+        });
+
+        entryModal.addEventListener("click", function (event) {
+          if (event.target === entryModal) closeEntryModal();
+        });
+
+        applyEntryFilter(label.textContent || "All -");
+      })();
+    </script>
+  </body>
+</html>
