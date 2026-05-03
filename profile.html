@@ -57,16 +57,44 @@
 
             <section class="profile-entry-modal" id="profile-entry-modal" hidden role="dialog" aria-modal="true" aria-labelledby="profile-entry-title">
               <div class="profile-entry-card">
-                <img class="profile-entry-image" id="profile-entry-image" src="https://www.figma.com/api/mcp/asset/d351be95-536e-49cf-bf68-efd6b089387a" alt="Journal entry image" />
-                <button class="profile-entry-favorite" id="profile-entry-favorite" type="button" aria-label="Favorite this entry">
-                  <img class="profile-entry-favorite-icon" id="profile-entry-favorite-icon" src="./assets/favorite-outline.png" alt="" aria-hidden="true" />
-                </button>
-                <button class="profile-entry-edit" id="profile-entry-edit" type="button" aria-label="Edit this entry">
-                  <img src="./assets/edit-symbol.png" alt="" aria-hidden="true" />
-                </button>
-                <p class="profile-entry-date" id="profile-entry-date">Date: add date</p>
-                <h3 class="profile-entry-title" id="profile-entry-title">Drink Name: add drink</h3>
-                <p class="profile-entry-note" id="profile-entry-note">Note: add your note here.</p>
+                <div class="profile-entry-scrap-inner">
+                  <figure class="profile-entry-photo-wrap">
+                    <img
+                      class="profile-entry-tape profile-entry-tape--left"
+                      src="./assets/journal-tape.png"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                    <img
+                      class="profile-entry-tape profile-entry-tape--right"
+                      src="./assets/journal-tape.png"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                    <span class="profile-entry-pin" aria-hidden="true"></span>
+                    <img
+                      class="profile-entry-image"
+                      id="profile-entry-image"
+                      src="https://www.figma.com/api/mcp/asset/d351be95-536e-49cf-bf68-efd6b089387a"
+                      alt="Journal entry image"
+                    />
+                    <div class="profile-entry-photo-actions">
+                      <button class="profile-entry-favorite" id="profile-entry-favorite" type="button" aria-label="Favorite this entry">
+                        <img class="profile-entry-favorite-icon" id="profile-entry-favorite-icon" src="./assets/favorite-outline.png" alt="" aria-hidden="true" />
+                      </button>
+                      <button class="profile-entry-edit" id="profile-entry-edit" type="button" aria-label="Edit this entry">
+                        <img src="./assets/edit-symbol.png" alt="" aria-hidden="true" />
+                      </button>
+                    </div>
+                  </figure>
+                  <div class="profile-entry-scrap-body">
+                    <p class="profile-entry-date" id="profile-entry-date">Date: add date</p>
+                    <h3 class="profile-entry-title" id="profile-entry-title">Drink Name: add drink</h3>
+                    <div class="profile-entry-note-paper">
+                      <p class="profile-entry-note" id="profile-entry-note">Note: add your note here.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
 
