@@ -2074,7 +2074,7 @@ body {
 
 .profile-scroll-inner {
   position: relative;
-  min-height: 1075px;
+  min-height: 1185px;
   padding-bottom: 20px;
 }
 
@@ -2120,18 +2120,18 @@ body {
 }
 
 .profile-star-a {
-  left: 248px;
-  top: 20px;
-  width: 56px;
-  height: 56px;
+  left: 198px;
+  top: 4px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
 }
 
 .profile-star-b {
-  left: 304px;
-  top: 54px;
-  width: 73px;
-  height: 73px;
+  left: 246px;
+  top: 32px;
+  width: 86px;
+  height: 86px;
   object-fit: contain;
 }
 
@@ -2225,42 +2225,42 @@ body {
 
 .profile-photo-a {
   left: 17px;
-  top: 238px;
+  top: 224px;
   width: 167px;
   height: 208px;
 }
 
 .profile-photo-b {
   left: 204px;
-  top: 257px;
+  top: 243px;
   width: 186px;
   height: 248px;
 }
 
 .profile-photo-c {
   left: 17px;
-  top: 474px;
+  top: 480px;
   width: 177px;
   height: 221px;
 }
 
 .profile-photo-d {
   left: 211px;
-  top: 533px;
+  top: 541px;
   width: 173.308868px;
   height: 231px;
 }
 
 .profile-photo-e {
   left: 13px;
-  top: 736px;
+  top: 750px;
   width: 181px;
   height: 176px;
 }
 
 .profile-photo-f {
   left: 204px;
-  top: 708px;
+  top: 766px;
   width: 186px;
   height: 248px;
 }
@@ -2269,13 +2269,14 @@ body {
   position: absolute;
   display: inline-flex;
   align-items: center;
-  gap: 3px;
-  height: 16px;
+  gap: 5px;
+  min-height: 24px;
+  height: 24px;
 }
 
 .profile-dots > span:not(.profile-dot-star) {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border: 2px solid #66b9de;
   border-radius: 50%;
   box-sizing: border-box;
@@ -2289,26 +2290,26 @@ body {
 }
 
 .profile-dot-star {
-  margin-left: 4px;
+  margin-left: 6px;
   display: inline-block;
   align-self: center;
-  width: 14px;
-  height: 14px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
-  transform: translateY(-1.5px);
+  transform: translateY(-0.5px);
 }
 
-.profile-dots-a { left: 138px; top: 454px; }
-.profile-dots-b { left: 346px; top: 513px; }
-.profile-dots-c { left: 147px; top: 703px; }
-.profile-dots-d { left: 337px; top: 772px; }
-.profile-dots-e { left: 148px; top: 920px; }
-.profile-dots-f { left: 346px; top: 964px; }
+.profile-dots-a { left: 108px; top: 436px; }
+.profile-dots-b { left: 316px; top: 495px; }
+.profile-dots-c { left: 117px; top: 705px; }
+.profile-dots-d { left: 307px; top: 776px; }
+.profile-dots-e { left: 118px; top: 930px; }
+.profile-dots-f { left: 316px; top: 1018px; }
 
 .profile-upload-trigger {
   position: absolute;
   left: 151px;
-  top: 992px;
+  top: 1052px;
   width: 100px;
   height: 100px;
   border: 0;
