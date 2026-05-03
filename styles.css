@@ -2120,17 +2120,19 @@ body {
 }
 
 .profile-star-a {
-  left: 241px;
-  top: 23px;
+  left: 248px;
+  top: 20px;
   width: 56px;
   height: 56px;
+  object-fit: contain;
 }
 
 .profile-star-b {
-  left: 297px;
-  top: 57px;
+  left: 304px;
+  top: 54px;
   width: 73px;
   height: 73px;
+  object-fit: contain;
 }
 
 .profile-filter-bar {
@@ -2296,17 +2298,17 @@ body {
   transform: translateY(-1.5px);
 }
 
-.profile-dots-a { left: 138px; top: 449px; }
-.profile-dots-b { left: 346px; top: 509px; }
-.profile-dots-c { left: 147px; top: 699px; }
-.profile-dots-d { left: 337px; top: 767px; }
-.profile-dots-e { left: 148px; top: 915px; }
-.profile-dots-f { left: 346px; top: 960px; }
+.profile-dots-a { left: 138px; top: 454px; }
+.profile-dots-b { left: 346px; top: 513px; }
+.profile-dots-c { left: 147px; top: 703px; }
+.profile-dots-d { left: 337px; top: 772px; }
+.profile-dots-e { left: 148px; top: 920px; }
+.profile-dots-f { left: 346px; top: 964px; }
 
 .profile-upload-trigger {
   position: absolute;
   left: 151px;
-  top: 986px;
+  top: 992px;
   width: 100px;
   height: 100px;
   border: 0;
