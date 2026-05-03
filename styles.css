@@ -770,8 +770,8 @@ body {
   border: 0;
   padding: 0;
   background: transparent;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
   color: #54add5;
 }
@@ -1533,20 +1533,20 @@ body {
 }
 
 .p2-card-edit {
-  left: 342px;
-  top: 435px;
-  width: 24px;
-  height: 24px;
+  left: 334px;
+  top: 427px;
+  width: 40px;
+  height: 40px;
   z-index: 2;
   object-fit: contain;
 }
 
 .p2-card-edit-trigger {
   position: absolute;
-  left: 342px;
-  top: 435px;
-  width: 24px;
-  height: 24px;
+  left: 334px;
+  top: 427px;
+  width: 40px;
+  height: 40px;
   z-index: 4;
   border: 0;
   background: transparent;
