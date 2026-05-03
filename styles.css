@@ -6,8 +6,10 @@
   --text-blue: #4ea1d0;
   --text-gold: #f4c00a;
   --frame-width: min(402px, 100vw);
-  --frame-height: 874px;
-  --homepage-nav-height: 85px;
+  --frame-height: 908px;
+  /* Bottom nav: flush with bottom of phone; all positions use --nav-bar-top */
+  --homepage-nav-height: 70px;
+  --nav-bar-top: calc(var(--frame-height) - var(--homepage-nav-height));
   --homepage-font: "please-display-vf", "Arial Rounded MT Bold", Arial, sans-serif;
   /* Bottom tab: 4 equal columns; icon centers and labels use the same column bounds */
   --nav-col: calc(var(--frame-width) / 4);
@@ -21,6 +23,12 @@
   --nav-sip-steam-l: calc(var(--nav-cup-l) + 2.99px);
   --nav-sip-steam-c: calc(var(--nav-cup-l) + 11.3px);
   --nav-sip-steam-r: calc(var(--nav-cup-l) + 19.62px);
+  /* Bottom nav: full width so blue meets screen edges; curve only on top */
+  --nav-bar-radius-top: 22px;
+  /* Shift Home / Stickers / Journal (not Sips) down within the tab bar */
+  --nav-outer-tabs-nudge: 6px;
+  /* Caption under icons: keep high enough that descenders stay inside the bar */
+  --nav-label-from-top: 43px;
   /* Device chrome: unscaled outer size = screen + bezel */
   --iphone-bezel: 0px;
   --iphone-device-width: calc(var(--frame-width) + var(--iphone-bezel) * 2);
@@ -392,7 +400,7 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 85px;
+  height: var(--homepage-nav-height);
   background: var(--nav-blue);
   display: flex;
   align-items: center;
@@ -557,15 +565,15 @@ body {
 .hp-menu-bar {
   position: absolute;
   z-index: 3;
-  left: -14px;
-  top: 789px;
-  width: 427px;
-  height: 85px;
-  border-radius: 13px;
-  background: transparent;
-  background-image: url("https://www.figma.com/api/mcp/asset/49fb873c-3dd5-4271-997e-5dbb2b52995b");
-  background-size: cover;
-  background-position: center;
+  left: 0;
+  top: var(--nav-bar-top);
+  width: var(--frame-width);
+  height: var(--homepage-nav-height);
+  border-radius: var(--nav-bar-radius-top) var(--nav-bar-radius-top) 0 0;
+  background: var(--panel-blue);
+  box-shadow:
+    0 -4px 10px rgba(0, 0, 0, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
 .hp-star-a {
@@ -1173,36 +1181,36 @@ body {
 .p2-home-hit,
 .p3-home-hit {
   left: 0;
-  top: 789px;
+  top: var(--nav-bar-top);
   width: var(--nav-col);
-  height: 85px;
+  height: var(--homepage-nav-height);
 }
 
 .hp-star-hit,
 .p2-star-hit,
 .p3-star-hit {
   left: var(--nav-col);
-  top: 789px;
+  top: var(--nav-bar-top);
   width: var(--nav-col);
-  height: 85px;
+  height: var(--homepage-nav-height);
 }
 
 .hp-page3-hit,
 .p2-page3-hit,
 .p3-page3-hit {
   left: calc(2 * var(--nav-col));
-  top: 789px;
+  top: var(--nav-bar-top);
   width: var(--nav-col);
-  height: 85px;
+  height: var(--homepage-nav-height);
 }
 
 .hp-profile-hit,
 .p2-profile-hit,
 .p3-profile-hit {
   left: calc(3 * var(--nav-col));
-  top: 789px;
+  top: var(--nav-bar-top);
   width: var(--nav-col);
-  height: 85px;
+  height: var(--homepage-nav-height);
 }
 
 .hp-nav-figma,
@@ -1215,38 +1223,33 @@ body {
   object-fit: contain;
 }
 
+/* Home icon: same frame as Stickers tab */
 .hp-nav-figma--home-outline,
 .p2-nav-figma--home-outline,
 .p3-nav-figma--home-outline {
-  left: calc(var(--nav-ix0) - 20.21px);
-  top: 806px;
-  width: 40.41756px;
-  height: 40.41748px;
-}
-
-.hp-nav-figma--home-door,
-.p2-nav-figma--home-door,
-.p3-nav-figma--home-door {
-  left: calc(var(--nav-ix0) - 20.21px + 13.62px);
-  top: 832.27133px;
-  width: 13.17243px;
-  height: 14.14612px;
+  left: calc(var(--nav-ix0) - 21px);
+  top: calc(var(--nav-bar-top) + 4px + var(--nav-outer-tabs-nudge));
+  width: 42px;
+  height: 38px;
+  object-fit: contain;
+  border: 0;
+  box-shadow: none;
 }
 
 .hp-nav-figma--sticker,
 .p2-nav-figma--sticker,
 .p3-nav-figma--sticker {
   left: calc(var(--nav-ix1) - 21px);
-  top: 807px;
+  top: calc(var(--nav-bar-top) + 4px + var(--nav-outer-tabs-nudge));
   width: 42px;
-  height: 41px;
+  height: 38px;
 }
 
 .hp-nav-figma--sip-cup,
 .p2-nav-figma--sip-cup,
 .p3-nav-figma--sip-cup {
   left: var(--nav-cup-l);
-  top: 822.46387px;
+  top: calc(var(--nav-bar-top) + 21px);
   width: 29.92516px;
   height: 22.92773px;
 }
@@ -1255,7 +1258,7 @@ body {
 .p2-nav-figma--sip-handle,
 .p3-nav-figma--sip-handle {
   left: var(--nav-sip-handle-l);
-  top: 825.73921px;
+  top: calc(var(--nav-bar-top) + 24px);
   width: 9.97505px;
   height: 13.10156px;
 }
@@ -1263,7 +1266,7 @@ body {
 .hp-nav-figma--sip-steam,
 .p2-nav-figma--sip-steam,
 .p3-nav-figma--sip-steam {
-  top: 811px;
+  top: calc(var(--nav-bar-top) + 11px);
   width: 4px;
   height: 4px;
 }
@@ -1291,9 +1294,9 @@ body {
 .p3-nav-figma--profile {
   /* Slightly under export size so it clears the “Profile” label */
   left: calc(var(--nav-ix3) - 19px);
-  top: 806px;
+  top: calc(var(--nav-bar-top) + 3px + var(--nav-outer-tabs-nudge));
   width: 38px;
-  height: 38px;
+  height: 36px;
 }
 
 .hp-nav-label,
@@ -1316,7 +1319,7 @@ body {
 .p2-nav-label--home,
 .p3-nav-label--home {
   left: 0;
-  top: 849px;
+  top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge));
   width: var(--nav-col);
   text-align: center;
 }
@@ -1325,7 +1328,7 @@ body {
 .p2-nav-label--stickers,
 .p3-nav-label--stickers {
   left: var(--nav-col);
-  top: 849px;
+  top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge));
   width: var(--nav-col);
   text-align: center;
 }
@@ -1334,7 +1337,7 @@ body {
 .p2-nav-label--sips,
 .p3-nav-label--sips {
   left: calc(2 * var(--nav-col));
-  top: 849px;
+  top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge));
   width: var(--nav-col);
   text-align: center;
 }
@@ -1343,7 +1346,7 @@ body {
 .p2-nav-label--profile,
 .p3-nav-label--profile {
   left: calc(3 * var(--nav-col));
-  top: 849px;
+  top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge));
   width: var(--nav-col);
   text-align: center;
 }
@@ -1351,9 +1354,9 @@ body {
 .hp-nav-links {
   position: absolute;
   left: 0;
-  top: 789px;
+  top: var(--nav-bar-top);
   width: 402px;
-  height: 85px;
+  height: var(--homepage-nav-height);
 }
 
 .hp-link {
@@ -1736,15 +1739,15 @@ body {
   /* Match homepage menu bar */
   position: absolute;
   z-index: 3;
-  left: -14px;
-  top: 789px;
-  width: 427px;
-  height: 85px;
-  border-radius: 13px;
-  background: transparent;
-  background-image: url("https://www.figma.com/api/mcp/asset/49fb873c-3dd5-4271-997e-5dbb2b52995b");
-  background-size: cover;
-  background-position: center;
+  left: 0;
+  top: var(--nav-bar-top);
+  width: var(--frame-width);
+  height: var(--homepage-nav-height);
+  border-radius: var(--nav-bar-radius-top) var(--nav-bar-radius-top) 0 0;
+  background: var(--panel-blue);
+  box-shadow:
+    0 -4px 10px rgba(0, 0, 0, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
 .p2-home-icon {
@@ -1972,15 +1975,15 @@ body {
   /* Match .hp-menu-bar (index) */
   position: absolute;
   z-index: 3;
-  left: -14px;
-  top: 789px;
-  width: 427px;
-  height: 85px;
-  border-radius: 13px;
-  background: transparent;
-  background-image: url("https://www.figma.com/api/mcp/asset/49fb873c-3dd5-4271-997e-5dbb2b52995b");
-  background-size: cover;
-  background-position: center;
+  left: 0;
+  top: var(--nav-bar-top);
+  width: var(--frame-width);
+  height: var(--homepage-nav-height);
+  border-radius: var(--nav-bar-radius-top) var(--nav-bar-radius-top) 0 0;
+  background: var(--panel-blue);
+  box-shadow:
+    0 -4px 10px rgba(0, 0, 0, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
 .p3-permission-modal {
@@ -2059,7 +2062,7 @@ body {
   left: 0;
   right: 0;
   top: 0;
-  bottom: 85px;
+  bottom: var(--homepage-nav-height);
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -2471,7 +2474,7 @@ body {
   left: 0;
   right: 0;
   top: 0;
-  bottom: 85px;
+  bottom: var(--homepage-nav-height);
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -2834,15 +2837,15 @@ body {
 .df-menu-bar {
   position: absolute;
   z-index: 3;
-  left: -14px;
-  top: 789px;
-  width: 427px;
-  height: 85px;
-  border-radius: 13px;
-  background: transparent;
-  background-image: url("https://www.figma.com/api/mcp/asset/49fb873c-3dd5-4271-997e-5dbb2b52995b");
-  background-size: cover;
-  background-position: center;
+  left: 0;
+  top: var(--nav-bar-top);
+  width: var(--frame-width);
+  height: var(--homepage-nav-height);
+  border-radius: var(--nav-bar-radius-top) var(--nav-bar-radius-top) 0 0;
+  background: var(--panel-blue);
+  box-shadow:
+    0 -4px 10px rgba(0, 0, 0, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
 .df-home-hit,
@@ -2856,30 +2859,30 @@ body {
 
 .df-home-hit {
   left: 0;
-  top: 789px;
+  top: var(--nav-bar-top);
   width: var(--nav-col);
-  height: 85px;
+  height: var(--homepage-nav-height);
 }
 
 .df-star-hit {
   left: var(--nav-col);
-  top: 789px;
+  top: var(--nav-bar-top);
   width: var(--nav-col);
-  height: 85px;
+  height: var(--homepage-nav-height);
 }
 
 .df-page3-hit {
   left: calc(2 * var(--nav-col));
-  top: 789px;
+  top: var(--nav-bar-top);
   width: var(--nav-col);
-  height: 85px;
+  height: var(--homepage-nav-height);
 }
 
 .df-profile-hit {
   left: calc(3 * var(--nav-col));
-  top: 789px;
+  top: var(--nav-bar-top);
   width: var(--nav-col);
-  height: 85px;
+  height: var(--homepage-nav-height);
 }
 
 .df-nav-figma {
@@ -2890,16 +2893,23 @@ body {
   object-fit: contain;
 }
 
-.df-nav-figma--home-outline { left: calc(var(--nav-ix0) - 20.21px); top: 806px; width: 40.41756px; height: 40.41748px; }
-.df-nav-figma--home-door { left: calc(var(--nav-ix0) - 20.21px + 13.62px); top: 832.27133px; width: 13.17243px; height: 14.14612px; }
-.df-nav-figma--sticker { left: calc(var(--nav-ix1) - 21px); top: 807px; width: 42px; height: 41px; }
-.df-nav-figma--sip-cup { left: var(--nav-cup-l); top: 822.46387px; width: 29.92516px; height: 22.92773px; }
-.df-nav-figma--sip-handle { left: var(--nav-sip-handle-l); top: 825.73921px; width: 9.97505px; height: 13.10156px; }
-.df-nav-figma--sip-steam { top: 811px; width: 4px; height: 4px; }
+.df-nav-figma--home-outline {
+  left: calc(var(--nav-ix0) - 21px);
+  top: calc(var(--nav-bar-top) + 4px + var(--nav-outer-tabs-nudge));
+  width: 42px;
+  height: 38px;
+  object-fit: contain;
+  border: 0;
+  box-shadow: none;
+}
+.df-nav-figma--sticker { left: calc(var(--nav-ix1) - 21px); top: calc(var(--nav-bar-top) + 4px + var(--nav-outer-tabs-nudge)); width: 42px; height: 38px; }
+.df-nav-figma--sip-cup { left: var(--nav-cup-l); top: calc(var(--nav-bar-top) + 21px); width: 29.92516px; height: 22.92773px; }
+.df-nav-figma--sip-handle { left: var(--nav-sip-handle-l); top: calc(var(--nav-bar-top) + 24px); width: 9.97505px; height: 13.10156px; }
+.df-nav-figma--sip-steam { top: calc(var(--nav-bar-top) + 11px); width: 4px; height: 4px; }
 .df-nav-figma--sip-steam-l { left: var(--nav-sip-steam-l); }
 .df-nav-figma--sip-steam-c { left: var(--nav-sip-steam-c); }
 .df-nav-figma--sip-steam-r { left: var(--nav-sip-steam-r); }
-.df-nav-figma--profile { left: calc(var(--nav-ix3) - 19px); top: 806px; width: 38px; height: 38px; }
+.df-nav-figma--profile { left: calc(var(--nav-ix3) - 19px); top: calc(var(--nav-bar-top) + 3px + var(--nav-outer-tabs-nudge)); width: 38px; height: 36px; }
 
 .df-nav-label {
   position: absolute;
@@ -2914,7 +2924,7 @@ body {
   font-variation-settings: "wght" 300;
 }
 
-.df-nav-label--home { left: 0; top: 849px; width: var(--nav-col); text-align: center; }
-.df-nav-label--stickers { left: var(--nav-col); top: 849px; width: var(--nav-col); text-align: center; }
-.df-nav-label--sips { left: calc(2 * var(--nav-col)); top: 849px; width: var(--nav-col); text-align: center; }
-.df-nav-label--profile { left: calc(3 * var(--nav-col)); top: 849px; width: var(--nav-col); text-align: center; }
+.df-nav-label--home { left: 0; top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
+.df-nav-label--stickers { left: var(--nav-col); top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
+.df-nav-label--sips { left: calc(2 * var(--nav-col)); top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
+.df-nav-label--profile { left: calc(3 * var(--nav-col)); top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
