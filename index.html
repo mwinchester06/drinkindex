@@ -43,8 +43,8 @@
           <p class="hp-title hp-title-line1">What are we</p>
           <p class="hp-title hp-title-line2">sipping today?</p>
 
-          <img class="hp-layer hp-star-a" src="./assets/hp-star-a.png" width="63" height="63" alt="" aria-hidden="true" />
-          <img class="hp-layer hp-star-b" src="./assets/hp-star-b.png" width="83" height="83" alt="" aria-hidden="true" />
+          <img class="hp-layer hp-star-a" src="./assets/starlightblue.png" width="63" height="63" alt="" aria-hidden="true" />
+          <img class="hp-layer hp-star-b" src="./assets/starblue.png" width="83" height="83" alt="" aria-hidden="true" />
           <p class="hp-layer hp-sticker-heading hp-sticker-heading-line1">Sticker Collection</p>
           <div class="hp-layer hp-sticker-display" id="hp-sticker-display" aria-label="Selected stickers"></div>
           <img class="hp-layer hp-sticker-edit-icon" src="./assets/edit-symbol.png" width="48" height="48" alt="" aria-hidden="true" />
@@ -240,14 +240,13 @@
 
         const homepageStickerKey = "drinkindexHomepageStickers";
         const stickerOptions = [
-          { id: "blue", src: "./assets/homepage-sticker-blue.png", alt: "Blue sticker" },
           { id: "hello", src: "./assets/homepage-sticker-hello.png", alt: "Hello sticker" },
           { id: "sleepy", src: "./assets/homepage-sticker-sleepy.png", alt: "Sleepy sticker" }
         ];
         const stickerMap = {};
         stickerOptions.forEach(function (item) { stickerMap[item.id] = item; });
         const selectedStickerIds = new Set();
-        const maxStickerSelection = Math.min(4, stickerOptions.length);
+        const maxStickerSelection = Math.min(2, stickerOptions.length);
         const homepageUploadedPhotoByPlace = {
           "life house coffee": "./assets/life-house-coffee.png",
           "wild love bakehouse": "./assets/wild-love-bakehouse.png",
@@ -335,7 +334,7 @@
 
         function ensureStickerSelection() {
           if (selectedStickerIds.size) return;
-          const defaults = ["blue", "hello", "sleepy"];
+          const defaults = ["hello", "sleepy"];
           defaults.forEach(function (id) { selectedStickerIds.add(id); });
         }
 
@@ -369,7 +368,7 @@
 
         function renderStickerDisplay() {
           stickerDisplay.innerHTML = "";
-          const preferredOrder = ["blue", "hello", "sleepy"];
+          const preferredOrder = ["hello", "sleepy"];
           const orderedIds = preferredOrder.filter(function (id) { return selectedStickerIds.has(id); });
           orderedIds.slice(0, maxStickerSelection).forEach(function (id, index) {
             const option = stickerMap[id];
