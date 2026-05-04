@@ -455,8 +455,8 @@ body {
 .homepage-scroll-inner {
   position: relative;
   width: var(--frame-width);
-  min-height: 1310px;
-  padding-bottom: 190px;
+  min-height: 1230px;
+  padding-bottom: 110px;
 }
 
 .hp-layer {
@@ -1437,7 +1437,7 @@ body {
 
 .p2-bg-bottom {
   left: 0;
-  top: 450px;
+  top: 478px;
   width: 402px;
   height: 412px;
   border-radius: 13px;
@@ -1507,7 +1507,7 @@ body {
 .p2-card {
   position: absolute;
   left: 13px;
-  top: 165px;
+  top: 193px;
   width: 371px;
   height: 267px;
   border-radius: 13px;
@@ -1611,7 +1611,7 @@ body {
 .p2-card-edit {
   position: absolute;
   left: 318px;
-  top: 373px;
+  top: 401px;
   width: 64px;
   height: 64px;
   z-index: 20;
@@ -1621,7 +1621,7 @@ body {
 .p2-card-edit-trigger {
   position: absolute;
   left: 318px;
-  top: 373px;
+  top: 401px;
   width: 64px;
   height: 64px;
   z-index: 21;
@@ -1633,7 +1633,7 @@ body {
 .p2-grid-sticker {
   position: absolute;
   left: -2px;
-  top: 486px;
+  top: 514px;
   width: 126px;
   height: 84px;
   transform: rotate(-7.67deg);
@@ -1646,7 +1646,7 @@ body {
 .p2-grid-sleepy {
   position: absolute;
   left: 133px;
-  top: 464px;
+  top: 492px;
   width: 124px;
   height: 113px;
   object-fit: contain;
@@ -1667,7 +1667,7 @@ body {
 
 .p2-sticker-trigger--hello {
   left: -2px;
-  top: 486px;
+  top: 514px;
   width: 126px;
   height: 84px;
   transform: rotate(-7.67deg);
@@ -1676,7 +1676,7 @@ body {
 
 .p2-sticker-trigger--sleepy {
   left: 133px;
-  top: 464px;
+  top: 492px;
   width: 124px;
   height: 113px;
 }
@@ -1690,34 +1690,34 @@ body {
 
 .p2-grid-box-a {
   left: 21px;
-  top: 532px;
+  top: 560px;
   visibility: hidden;
 }
 
 .p2-grid-box-b {
   left: 148px;
-  top: 532px;
+  top: 560px;
   visibility: hidden;
 }
 
 .p2-grid-box-c {
   left: 290px;
-  top: 532px;
+  top: 560px;
 }
 
 .p2-grid-box-d {
   left: 21px;
-  top: 652px;
+  top: 680px;
 }
 
 .p2-grid-box-e {
   left: 148px;
-  top: 652px;
+  top: 680px;
 }
 
 .p2-grid-box-f {
   left: 290px;
-  top: 652px;
+  top: 680px;
 }
 
 .p2-star-picker {
@@ -1944,7 +1944,7 @@ body {
 .p3-board {
   position: absolute;
   left: 24px;
-  top: 194px;
+  top: 220px;
   z-index: 1;
   width: 352px;
   height: 532px;
@@ -1977,7 +1977,7 @@ body {
 .p3-mug-picker-chip {
   position: absolute;
   left: 192px;
-  top: 576px;
+  top: 602px;
   width: 104px;
   height: 109px;
   z-index: 3;
@@ -1990,7 +1990,7 @@ body {
 .p3-mug-picker-go {
   position: absolute;
   left: 293px;
-  top: 610px;
+  top: 636px;
   width: 48px;
   height: 48px;
   z-index: 4;
@@ -2015,28 +2015,28 @@ body {
 
 .p3-mug-pink {
   left: 56px;
-  top: 225px;
+  top: 251px;
   width: 140px;
   height: 145px;
 }
 
 .p3-mug-green {
   left: 210px;
-  top: 225px;
+  top: 251px;
   width: 140px;
   height: 143px;
 }
 
 .p3-mug-blue {
   left: 53px;
-  top: 388px;
+  top: 414px;
   width: 141px;
   height: 145px;
 }
 
 .p3-mug-purple {
   left: 208px;
-  top: 388px;
+  top: 414px;
   width: 142px;
   height: 145px;
 }
@@ -2044,7 +2044,7 @@ body {
 .p3-mug-orange {
   /* Match orangemug layout box (same slot as former mug-orange); image is high-res. */
   left: 50px;
-  top: 556px;
+  top: 582px;
   width: 142px;
   height: 144px;
 }
@@ -2737,7 +2737,7 @@ body {
   left: 0;
   top: 357px;
   width: 402px;
-  height: calc(948px + var(--homepage-nav-height));
+  height: calc(820px + var(--homepage-nav-height));
   border-radius: 13px;
   background: #fff6cb;
   box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.15);
