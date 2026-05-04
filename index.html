@@ -515,7 +515,7 @@
           green: "./assets/mug-green.png",
           blue: "./assets/mug-blue.png",
           purple: "./assets/mug-purple.png",
-          orange: "./assets/mug-orange.png"
+          orange: "./assets/orangemug.png"
         };
 
         function renderMugTray(targetNode, mugKeys) {
@@ -523,7 +523,7 @@
           (mugKeys || []).slice(0, 5).forEach(function (mugKey) {
             const img = document.createElement("img");
             img.className = "hp-place-mug hp-place-mug--" + mugKey;
-            img.src = mugSrcByKey[mugKey] || "./assets/mug-orange.png";
+            img.src = mugSrcByKey[mugKey] || "./assets/orangemug.png";
             img.alt = "";
             targetNode.appendChild(img);
           });

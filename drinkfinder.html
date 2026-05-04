@@ -140,8 +140,8 @@
             label: "purple drink"
           },
           orange: {
-            src: "./assets/mug-orange.png",
-            label: "orange drink"
+            src: "./assets/orangemug.png",
+            label: "other drink"
           }
         };
 
@@ -150,7 +150,7 @@
           green: ["matcha", "green tea latte", "matcha latte"],
           blue: ["tea", "chai", "chai latte", "tea house", "teahouse"],
           purple: ["boba", "bubble tea", "milk tea", "tapioca"],
-          orange: ["energy drink", "juice bar", "smoothie bar", "caffeine bar"]
+          orange: ["juice bar", "smoothie bar", "nutrition", "specialty drink", "energy drink"]
         };
 
         const mugCategories = {
@@ -158,7 +158,7 @@
           green: [/matcha/i, /tea/i, /cafe/i],
           blue: [/tea/i, /chai/i, /teahouse/i, /tea house/i],
           purple: [/boba/i, /bubble tea/i, /milk tea/i, /tea/i],
-          orange: [/juice/i, /smoothie/i, /energy/i, /cafe/i]
+          orange: [/juice/i, /smoothie/i, /nutrition/i, /energy\s*drink/i]
         };
 
         const mugPreferredPlaceNames = {
