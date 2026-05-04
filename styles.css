@@ -478,13 +478,13 @@ body {
 
 .hp-title-line1 {
   left: 14px;
-  top: 58px;
+  top: 26px;
   width: 249px;
 }
 
 .hp-title-line2 {
   left: 13px;
-  top: 100px;
+  top: 68px;
   width: 280px;
 }
 
@@ -492,7 +492,7 @@ body {
   left: 0;
   top: 0;
   width: 402px;
-  height: 190px;
+  height: 148px;
   border-radius: 13px;
   background: #fff6cb;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
@@ -500,7 +500,7 @@ body {
 
 .hp-bg-lower {
   left: 0;
-  top: 357px;
+  top: 315px;
   width: 402px;
   height: calc(760px + var(--homepage-nav-height));
   border-radius: 13px;
@@ -510,7 +510,7 @@ body {
 
 .hp-card-sticker {
   left: 10px;
-  top: 218px;
+  top: 176px;
   width: 379px;
   height: 106px;
   border-radius: 13px;
@@ -519,7 +519,7 @@ body {
 
 .hp-card-popular {
   left: 10px;
-  top: 430px;
+  top: 388px;
   width: 379px;
   height: 129px;
   border-radius: 13px;
@@ -528,7 +528,7 @@ body {
 
 .hp-card-location2 {
   left: 10px;
-  top: 595px;
+  top: 553px;
   width: 379px;
   height: 129px;
   border-radius: 13px;
@@ -537,7 +537,7 @@ body {
 
 .hp-card-location3 {
   left: 14px;
-  top: 760px;
+  top: 718px;
   width: 379px;
   height: 129px;
   border-radius: 13px;
@@ -546,7 +546,7 @@ body {
 
 .hp-card-location4 {
   left: 14px;
-  top: 926px;
+  top: 884px;
   width: 379px;
   height: 129px;
   border-radius: 13px;
@@ -555,7 +555,7 @@ body {
 
 .hp-card-location5 {
   left: 14px;
-  top: 1092px;
+  top: 1050px;
   width: 379px;
   height: 129px;
   border-radius: 13px;
@@ -578,14 +578,14 @@ body {
 
 .hp-star-a {
   left: 238px;
-  top: 34px;
+  top: 12px;
   width: 90px;
   height: auto;
 }
 
 .hp-star-b {
   left: 291px;
-  top: 76px;
+  top: 54px;
   width: 118px;
   height: auto;
 }
@@ -606,7 +606,7 @@ body {
 
 .hp-sticker-heading-line1 {
   left: 14px;
-  top: 224px;
+  top: 182px;
   font-size: 24px;
 }
 
@@ -638,7 +638,7 @@ body {
 
 .hp-sticker-display {
   left: 16px;
-  top: 252px;
+  top: 210px;
   width: 260px;
   height: 72px;
   z-index: 2;
@@ -670,7 +670,7 @@ body {
 
 .hp-sticker-edit-icon {
   left: 338px;
-  top: 278px;
+  top: 236px;
   width: 48px;
   height: 48px;
   z-index: 6;
@@ -683,7 +683,7 @@ body {
   background: transparent;
   cursor: pointer;
   left: 332px;
-  top: 272px;
+  top: 230px;
   width: 48px;
   height: 48px;
   z-index: 7;
@@ -815,7 +815,7 @@ body {
 
 .hp-popular-title-text {
   left: 16px;
-  top: 368px;
+  top: 326px;
   width: 248px;
   margin: 0;
   color: #54add5;
@@ -826,7 +826,7 @@ body {
 
 .hp-popular-photo {
   left: 10px;
-  top: 430px;
+  top: 388px;
   width: 201px;
   height: 129px;
   border-radius: 13px 0 0 13px;
@@ -835,7 +835,7 @@ body {
 
 .hp-popular-heading {
   left: 218px;
-  top: 458px;
+  top: 416px;
   width: 151px;
   margin: 0;
   color: #54add5;
@@ -896,7 +896,7 @@ body {
 
 .hp-location2-photo-shell {
   left: 10px;
-  top: 595px;
+  top: 553px;
   width: 201px;
   height: 129px;
   border-radius: 13px 0 0 13px;
@@ -930,12 +930,12 @@ body {
 }
 
 .hp-location2-name-line1 {
-  top: 626px;
+  top: 584px;
   width: 151px;
 }
 
 .hp-location2-name-line2 {
-  top: 646px;
+  top: 604px;
   left: 218px;
   width: 151px;
   height: 28px;
@@ -976,7 +976,7 @@ body {
 
 .hp-location3-photo-shell {
   left: 10px;
-  top: 760px;
+  top: 718px;
   width: 201px;
   height: 129px;
   border-radius: 13px 0 0 13px;
@@ -997,7 +997,7 @@ body {
   position: absolute;
   margin: 0;
   left: 218px;
-  top: 797px;
+  top: 755px;
   width: 151px;
   color: #54add5;
   font-size: 24px;
@@ -1079,27 +1079,27 @@ body {
 
 .hp-place-mugs-1 {
   left: 246px;
-  top: 411px;
+  top: 369px;
 }
 
 .hp-place-mugs-2 {
   left: 246px;
-  top: 576px;
+  top: 534px;
 }
 
 .hp-place-mugs-3 {
   left: 247px;
-  top: 741px;
+  top: 699px;
 }
 
 .hp-place-mugs-4 {
   left: 247px;
-  top: 906px;
+  top: 864px;
 }
 
 .hp-place-mugs-5 {
   left: 247px;
-  top: 1072px;
+  top: 1030px;
 }
 
 .hp-location4-photo-shell,
@@ -1112,11 +1112,11 @@ body {
 }
 
 .hp-location4-photo-shell {
-  top: 925px;
+  top: 883px;
 }
 
 .hp-location5-photo-shell {
-  top: 1091px;
+  top: 1049px;
 }
 
 .hp-location4-photo,
@@ -1144,11 +1144,11 @@ body {
 }
 
 .hp-location4-name {
-  top: 962px;
+  top: 920px;
 }
 
 .hp-location5-name {
-  top: 1128px;
+  top: 1086px;
 }
 
 .hp-location4-rating-row,
@@ -1430,14 +1430,14 @@ body {
   left: 0;
   top: 0;
   width: 402px;
-  height: 190px;
+  height: 148px;
   border-radius: 13px;
   background: #fff6cb;
 }
 
 .p2-bg-bottom {
   left: 0;
-  top: 492px;
+  top: 450px;
   width: 402px;
   height: 412px;
   border-radius: 13px;
@@ -1450,14 +1450,14 @@ body {
   left: 0;
   top: 0;
   width: 402px;
-  height: 190px;
+  height: 148px;
   z-index: 12;
   pointer-events: none;
 }
 
 .p2-star-main {
   left: 238px;
-  top: 34px;
+  top: 12px;
   width: 90px;
   height: auto;
   z-index: 3;
@@ -1465,7 +1465,7 @@ body {
 
 .p2-star-small {
   left: 291px;
-  top: 76px;
+  top: 54px;
   width: 118px;
   height: auto;
   z-index: 3;
@@ -1486,13 +1486,13 @@ body {
 
 .p2-title-sticker {
   left: 15px;
-  top: 53px;
+  top: 15px;
   max-width: 220px;
 }
 
 .p2-title-collection {
   left: 36px;
-  top: 107px;
+  top: 69px;
   max-width: 340px;
 }
 
@@ -1507,7 +1507,7 @@ body {
 .p2-card {
   position: absolute;
   left: 13px;
-  top: 207px;
+  top: 165px;
   width: 371px;
   height: 267px;
   border-radius: 13px;
@@ -1611,7 +1611,7 @@ body {
 .p2-card-edit {
   position: absolute;
   left: 318px;
-  top: 415px;
+  top: 373px;
   width: 64px;
   height: 64px;
   z-index: 20;
@@ -1621,7 +1621,7 @@ body {
 .p2-card-edit-trigger {
   position: absolute;
   left: 318px;
-  top: 415px;
+  top: 373px;
   width: 64px;
   height: 64px;
   z-index: 21;
@@ -1633,7 +1633,7 @@ body {
 .p2-grid-sticker {
   position: absolute;
   left: -2px;
-  top: 528px;
+  top: 486px;
   width: 126px;
   height: 84px;
   transform: rotate(-7.67deg);
@@ -1646,7 +1646,7 @@ body {
 .p2-grid-sleepy {
   position: absolute;
   left: 133px;
-  top: 506px;
+  top: 464px;
   width: 124px;
   height: 113px;
   object-fit: contain;
@@ -1667,7 +1667,7 @@ body {
 
 .p2-sticker-trigger--hello {
   left: -2px;
-  top: 528px;
+  top: 486px;
   width: 126px;
   height: 84px;
   transform: rotate(-7.67deg);
@@ -1676,7 +1676,7 @@ body {
 
 .p2-sticker-trigger--sleepy {
   left: 133px;
-  top: 506px;
+  top: 464px;
   width: 124px;
   height: 113px;
 }
@@ -1886,7 +1886,7 @@ body {
   top: 0;
   z-index: 2;
   width: 402px;
-  height: 190px;
+  height: 148px;
   background: #fff6cb;
   border-radius: 0 0 13px 13px;
   pointer-events: none;
@@ -1908,13 +1908,13 @@ body {
 
 .p3-headline-drink {
   left: 13px;
-  top: 48px;
+  top: 10px;
   width: 121px;
 }
 
 .p3-headline-menu {
   left: 41px;
-  top: 101px;
+  top: 63px;
   width: 183px;
 }
 
@@ -1928,14 +1928,14 @@ body {
 
 .p3-header-star--a {
   left: 238px;
-  top: 34px;
+  top: 12px;
   width: 90px;
   height: auto;
 }
 
 .p3-header-star--b {
   left: 291px;
-  top: 76px;
+  top: 54px;
   width: 118px;
   height: auto;
 }
@@ -1944,7 +1944,7 @@ body {
 .p3-board {
   position: absolute;
   left: 24px;
-  top: 236px;
+  top: 194px;
   z-index: 1;
   width: 352px;
   height: 532px;
@@ -1977,7 +1977,7 @@ body {
 .p3-mug-picker-chip {
   position: absolute;
   left: 192px;
-  top: 618px;
+  top: 576px;
   width: 104px;
   height: 109px;
   z-index: 3;
@@ -1990,7 +1990,7 @@ body {
 .p3-mug-picker-go {
   position: absolute;
   left: 293px;
-  top: 652px;
+  top: 610px;
   width: 48px;
   height: 48px;
   z-index: 4;
@@ -2015,28 +2015,28 @@ body {
 
 .p3-mug-pink {
   left: 56px;
-  top: 267px;
+  top: 225px;
   width: 140px;
   height: 145px;
 }
 
 .p3-mug-green {
   left: 210px;
-  top: 267px;
+  top: 225px;
   width: 140px;
   height: 143px;
 }
 
 .p3-mug-blue {
   left: 53px;
-  top: 430px;
+  top: 388px;
   width: 141px;
   height: 145px;
 }
 
 .p3-mug-purple {
   left: 208px;
-  top: 430px;
+  top: 388px;
   width: 142px;
   height: 145px;
 }
@@ -2044,7 +2044,7 @@ body {
 .p3-mug-orange {
   /* Match orangemug layout box (same slot as former mug-orange); image is high-res. */
   left: 50px;
-  top: 598px;
+  top: 556px;
   width: 142px;
   height: 144px;
 }
@@ -2199,7 +2199,7 @@ body {
 /* Header stars match other pages' shared starlightblue/starblue layout. */
 .profile-star-a {
   left: 238px;
-  top: 34px;
+  top: 12px;
   width: 90px;
   height: auto;
   object-fit: contain;
@@ -2207,7 +2207,7 @@ body {
 
 .profile-star-b {
   left: 291px;
-  top: 76px;
+  top: 54px;
   width: 118px;
   height: auto;
   object-fit: contain;
