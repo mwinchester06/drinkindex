@@ -42,8 +42,20 @@
   --screen-glass-edge: rgba(255, 255, 255, 0.38);
 }
 
+/* Desktop/laptop only: zoom app out slightly so full frame (incl. menu bar) is visible. */
+@media (pointer: fine) and (min-width: 900px) {
+  :root {
+    --device-scale: min(0.92, calc((100vh - 24px) / 908px), calc(100vw / 402px));
+  }
+
+  body {
+    align-items: center;
+  }
+}
+
 html {
   height: 100%;
+  overflow: hidden;
 }
 
 * {
@@ -54,12 +66,12 @@ body {
   margin: 0;
   min-height: 100%;
   min-height: 100dvh;
-  overflow: auto;
+  overflow: hidden;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   padding: 0;
-  background: #fdf0af;
+  background: #f8dce8;
   font-family: var(--homepage-font);
 }
 
@@ -455,7 +467,7 @@ body {
 .homepage-scroll-inner {
   position: relative;
   width: var(--frame-width);
-  min-height: 1230px;
+  min-height: 1290px;
   padding-bottom: 110px;
 }
 
@@ -502,7 +514,7 @@ body {
   left: 0;
   top: 315px;
   width: 402px;
-  height: calc(760px + var(--homepage-nav-height));
+  height: calc(920px + var(--homepage-nav-height));
   border-radius: 13px;
   background: #fff6cb;
   box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.15);
