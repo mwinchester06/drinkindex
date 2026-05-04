@@ -606,13 +606,7 @@ body {
 
 .hp-sticker-heading-line1 {
   left: 14px;
-  top: 218px;
-  font-size: 26px;
-}
-
-.hp-sticker-heading-line2 {
-  left: 20px;
-  top: 246px;
+  top: 224px;
   font-size: 26px;
 }
 
@@ -681,7 +675,7 @@ body {
 }
 
 .hp-sticker-edit-icon {
-  left: 328px;
+  left: 338px;
   top: 278px;
   width: 48px;
   height: 48px;
@@ -694,7 +688,7 @@ body {
   padding: 0;
   background: transparent;
   cursor: pointer;
-  left: 322px;
+  left: 332px;
   top: 272px;
   width: 48px;
   height: 48px;
@@ -1067,9 +1061,9 @@ body {
 }
 
 .hp-place-mugs img {
-  width: 40px;
-  height: 42px;
-  margin-left: -8px;
+  width: 46px;
+  height: 48px;
+  margin-left: -9px;
   object-fit: contain;
 }
 
@@ -1078,10 +1072,10 @@ body {
 }
 
 .hp-place-mugs .hp-place-mug--orange {
-  width: 40px;
-  height: 42px;
+  width: 46px;
+  height: 48px;
   transform: none;
-  margin-left: -8px;
+  margin-left: -9px;
   margin-bottom: 0;
 }
 
