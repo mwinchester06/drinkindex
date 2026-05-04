@@ -1987,39 +1987,39 @@ body {
 }
 
 .p3-mug-pink {
-  left: 62px;
-  top: 273px;
-  width: 127px;
-  height: 132px;
+  left: 56px;
+  top: 267px;
+  width: 140px;
+  height: 145px;
 }
 
 .p3-mug-green {
-  left: 216px;
-  top: 273px;
-  width: 127px;
-  height: 130px;
+  left: 210px;
+  top: 267px;
+  width: 140px;
+  height: 143px;
 }
 
 .p3-mug-blue {
-  left: 59px;
-  top: 436px;
-  width: 128px;
-  height: 132px;
+  left: 53px;
+  top: 430px;
+  width: 141px;
+  height: 145px;
 }
 
 .p3-mug-purple {
-  left: 214px;
-  top: 436px;
-  width: 129px;
-  height: 132px;
+  left: 208px;
+  top: 430px;
+  width: 142px;
+  height: 145px;
 }
 
 .p3-mug-orange {
   /* Match orangemug layout box (same slot as former mug-orange); image is high-res. */
-  left: 41px;
-  top: 602px;
-  width: 130px;
-  height: 132px;
+  left: 50px;
+  top: 598px;
+  width: 142px;
+  height: 144px;
 }
 
 
