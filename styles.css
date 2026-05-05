@@ -7,9 +7,7 @@
   --text-gold: #f4c00a;
   --frame-width: min(402px, 100vw);
   --frame-height: 908px;
-  /* Bottom nav: flush with bottom of phone; all positions use --nav-bar-top */
   --homepage-nav-height: 70px;
-  --nav-bar-top: calc(var(--frame-height) - var(--homepage-nav-height));
   --homepage-font: "please-display-vf", "Arial Rounded MT Bold", Arial, sans-serif;
   /* Location cards: shared line rhythm so <br> titles match two-line absolute titles */
   --hp-location-name-line-height: 1.38;
@@ -35,14 +33,8 @@
   --iphone-bezel: 0px;
   --iphone-device-width: calc(var(--frame-width) + var(--iphone-bezel) * 2);
   --iphone-device-height: calc(var(--frame-height) + var(--iphone-bezel) * 2);
-  /* Phone-first scaling: fit both width and height so bottom nav stays on-screen (esp. mobile Safari). */
-  --device-scale: min(
-    min(1, calc(100vw / var(--iphone-device-width))),
-    calc(
-      (100svh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 16px)
-      / var(--iphone-device-height)
-    )
-  );
+  /* Width-fit scale; tab bar uses viewport-fixed strip on touch (see .phone-tab-strip). */
+  --device-scale: min(1, calc(100vw / var(--iphone-device-width)));
   --iphone-outer-radius: 0px;
   --iphone-screen-radius: 0px;
   --screen-glass-highlight: rgba(255, 255, 255, 0.52);
@@ -66,6 +58,61 @@
 
   .device-scale-slot {
     transform: translateY(18px);
+  }
+}
+
+/* Phones / narrow windows: no transform shrink — full logical width; bottom nav sticks to viewport. */
+@media (pointer: coarse), (max-width: 899px) {
+  .iphone-17-device {
+    transform: none;
+    width: var(--frame-width);
+    height: var(--iphone-device-height);
+  }
+
+  .device-scale-slot {
+    width: var(--frame-width);
+    height: var(--iphone-device-height);
+  }
+
+  .phone-tab-strip {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: none;
+    height: calc(var(--homepage-nav-height) + env(safe-area-inset-bottom, 0px));
+    box-sizing: border-box;
+    z-index: 100;
+  }
+
+  .homepage-scroll-inner {
+    padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .profile-scroll,
+  .df-scroll {
+    bottom: calc(var(--homepage-nav-height) + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Tab hit targets span safe-area extension below icons */
+  .phone-tab-strip .hp-home-hit,
+  .phone-tab-strip .hp-star-hit,
+  .phone-tab-strip .hp-page3-hit,
+  .phone-tab-strip .hp-profile-hit,
+  .phone-tab-strip .p2-home-hit,
+  .phone-tab-strip .p2-star-hit,
+  .phone-tab-strip .p2-page3-hit,
+  .phone-tab-strip .p2-profile-hit,
+  .phone-tab-strip .p3-home-hit,
+  .phone-tab-strip .p3-star-hit,
+  .phone-tab-strip .p3-page3-hit,
+  .phone-tab-strip .p3-profile-hit,
+  .phone-tab-strip .df-home-hit,
+  .phone-tab-strip .df-star-hit,
+  .phone-tab-strip .df-page3-hit,
+  .phone-tab-strip .df-profile-hit {
+    height: 100%;
   }
 }
 
@@ -188,7 +235,7 @@ body {
 .splash-screen {
   position: absolute;
   inset: 0;
-  z-index: 100;
+  z-index: 200;
   display: grid;
   place-items: center;
   background: #f0e8b1;
@@ -589,13 +636,28 @@ body {
   background: #c3e7fb;
 }
 
+/* Bottom tabs: desktop = bottom of phone frame; phones = viewport-fixed (media query overrides). */
+.phone-tab-strip {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: var(--frame-width);
+  height: var(--homepage-nav-height);
+  z-index: 15;
+  pointer-events: none;
+}
+
+.phone-tab-strip > * {
+  pointer-events: auto;
+}
+
 .hp-menu-bar {
   position: absolute;
   z-index: 3;
   left: 0;
-  top: var(--nav-bar-top);
-  width: var(--frame-width);
-  height: var(--homepage-nav-height);
+  top: 0;
+  width: 100%;
+  height: 100%;
   border-radius: var(--nav-bar-radius-top) var(--nav-bar-radius-top) 0 0;
   background: var(--panel-blue);
   box-shadow:
@@ -719,7 +781,7 @@ body {
 .hp-sticker-picker {
   position: absolute;
   inset: 0;
-  z-index: 20;
+  z-index: 150;
   display: grid;
   place-items: center;
   padding: 18px;
@@ -731,9 +793,7 @@ body {
 }
 
 .homepage-frame.is-sticker-picker-open .homepage-scroll,
-.homepage-frame.is-sticker-picker-open .hp-menu-bar,
-.homepage-frame.is-sticker-picker-open .hp-nav-figma,
-.homepage-frame.is-sticker-picker-open .hp-nav-label {
+.homepage-frame.is-sticker-picker-open .phone-tab-strip {
   filter: blur(6px);
 }
 
@@ -1224,7 +1284,7 @@ body {
 .p2-home-hit,
 .p3-home-hit {
   left: 0;
-  top: var(--nav-bar-top);
+  top: 0;
   width: var(--nav-col);
   height: var(--homepage-nav-height);
 }
@@ -1233,7 +1293,7 @@ body {
 .p2-star-hit,
 .p3-star-hit {
   left: var(--nav-col);
-  top: var(--nav-bar-top);
+  top: 0;
   width: var(--nav-col);
   height: var(--homepage-nav-height);
 }
@@ -1242,7 +1302,7 @@ body {
 .p2-page3-hit,
 .p3-page3-hit {
   left: calc(2 * var(--nav-col));
-  top: var(--nav-bar-top);
+  top: 0;
   width: var(--nav-col);
   height: var(--homepage-nav-height);
 }
@@ -1251,7 +1311,7 @@ body {
 .p2-profile-hit,
 .p3-profile-hit {
   left: calc(3 * var(--nav-col));
-  top: var(--nav-bar-top);
+  top: 0;
   width: var(--nav-col);
   height: var(--homepage-nav-height);
 }
@@ -1271,7 +1331,7 @@ body {
 .p2-nav-figma--home-outline,
 .p3-nav-figma--home-outline {
   left: calc(var(--nav-ix0) - 21px);
-  top: calc(var(--nav-bar-top) + 4px + var(--nav-outer-tabs-nudge));
+  top: calc(4px + var(--nav-outer-tabs-nudge));
   width: 42px;
   height: 38px;
   object-fit: contain;
@@ -1283,7 +1343,7 @@ body {
 .p2-nav-figma--sticker,
 .p3-nav-figma--sticker {
   left: calc(var(--nav-ix1) - 21px);
-  top: calc(var(--nav-bar-top) + 4px + var(--nav-outer-tabs-nudge));
+  top: calc(4px + var(--nav-outer-tabs-nudge));
   width: 42px;
   height: 38px;
 }
@@ -1292,7 +1352,7 @@ body {
 .p2-nav-figma--sip-cup,
 .p3-nav-figma--sip-cup {
   left: var(--nav-cup-l);
-  top: calc(var(--nav-bar-top) + 21px);
+  top: 21px;
   width: 29.92516px;
   height: 22.92773px;
 }
@@ -1301,7 +1361,7 @@ body {
 .p2-nav-figma--sip-handle,
 .p3-nav-figma--sip-handle {
   left: var(--nav-sip-handle-l);
-  top: calc(var(--nav-bar-top) + 24px);
+  top: 24px;
   width: 9.97505px;
   height: 13.10156px;
 }
@@ -1310,7 +1370,7 @@ body {
 .hp-nav-figma--sip-steam,
 .p2-nav-figma--sip-steam,
 .p3-nav-figma--sip-steam {
-  top: calc(var(--nav-bar-top) + 12px);
+  top: 12px;
   width: 4px;
   height: 7px;
   object-fit: fill;
@@ -1339,7 +1399,7 @@ body {
 .p3-nav-figma--profile {
   /* Slightly under export size so it clears the “Profile” label */
   left: calc(var(--nav-ix3) - 19px);
-  top: calc(var(--nav-bar-top) + 3px + var(--nav-outer-tabs-nudge));
+  top: calc(3px + var(--nav-outer-tabs-nudge));
   width: 38px;
   height: 36px;
 }
@@ -1364,7 +1424,7 @@ body {
 .p2-nav-label--home,
 .p3-nav-label--home {
   left: 0;
-  top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge));
+  top: calc(var(--nav-label-from-top) + var(--nav-outer-tabs-nudge));
   width: var(--nav-col);
   text-align: center;
 }
@@ -1373,7 +1433,7 @@ body {
 .p2-nav-label--stickers,
 .p3-nav-label--stickers {
   left: var(--nav-col);
-  top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge));
+  top: calc(var(--nav-label-from-top) + var(--nav-outer-tabs-nudge));
   width: var(--nav-col);
   text-align: center;
 }
@@ -1390,7 +1450,7 @@ body {
 .p2-nav-label--sips,
 .p3-nav-label--sips {
   left: calc(2 * var(--nav-col));
-  top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge));
+  top: calc(var(--nav-label-from-top) + var(--nav-outer-tabs-nudge));
   width: var(--nav-col);
   text-align: center;
 }
@@ -1399,7 +1459,7 @@ body {
 .p2-nav-label--profile,
 .p3-nav-label--profile {
   left: calc(3 * var(--nav-col));
-  top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge));
+  top: calc(var(--nav-label-from-top) + var(--nav-outer-tabs-nudge));
   width: var(--nav-col);
   text-align: center;
 }
@@ -1407,8 +1467,8 @@ body {
 .hp-nav-links {
   position: absolute;
   left: 0;
-  top: var(--nav-bar-top);
-  width: 402px;
+  top: 0;
+  width: var(--frame-width);
   height: var(--homepage-nav-height);
 }
 
@@ -1751,7 +1811,7 @@ body {
 .p2-star-picker {
   position: absolute;
   inset: 0;
-  z-index: 30;
+  z-index: 150;
   display: grid;
   place-items: center;
   background: rgba(0, 0, 0, 0.18);
@@ -1803,7 +1863,7 @@ body {
 .p2-sticker-modal {
   position: absolute;
   inset: 0;
-  z-index: 40;
+  z-index: 150;
   display: grid;
   place-items: center;
   padding: 18px;
@@ -1846,9 +1906,9 @@ body {
   position: absolute;
   z-index: 3;
   left: 0;
-  top: var(--nav-bar-top);
-  width: var(--frame-width);
-  height: var(--homepage-nav-height);
+  top: 0;
+  width: 100%;
+  height: 100%;
   border-radius: var(--nav-bar-radius-top) var(--nav-bar-radius-top) 0 0;
   background: var(--panel-blue);
   box-shadow:
@@ -2083,9 +2143,9 @@ body {
   position: absolute;
   z-index: 3;
   left: 0;
-  top: var(--nav-bar-top);
-  width: var(--frame-width);
-  height: var(--homepage-nav-height);
+  top: 0;
+  width: 100%;
+  height: 100%;
   border-radius: var(--nav-bar-radius-top) var(--nav-bar-radius-top) 0 0;
   background: var(--panel-blue);
   box-shadow:
@@ -2096,7 +2156,7 @@ body {
 .p3-permission-modal {
   position: absolute;
   inset: 0;
-  z-index: 20;
+  z-index: 150;
   display: grid;
   place-items: center;
   padding: 16px;
@@ -2471,7 +2531,7 @@ body {
 .profile-entry-modal {
   position: absolute;
   inset: 0;
-  z-index: 25;
+  z-index: 150;
   display: grid;
   place-items: center;
   padding: 18px;
@@ -2483,9 +2543,7 @@ body {
 }
 
 .profile-screen.is-entry-open .profile-scroll,
-.profile-screen.is-entry-open .p3-menu-bar,
-.profile-screen.is-entry-open .p3-nav-figma,
-.profile-screen.is-entry-open .p3-nav-label {
+.profile-screen.is-entry-open .phone-tab-strip {
   filter: blur(6px);
 }
 
@@ -3042,7 +3100,7 @@ body {
 .df-location-modal {
   position: absolute;
   inset: 0;
-  z-index: 30;
+  z-index: 150;
   display: grid;
   place-items: center;
   padding: 18px;
@@ -3090,9 +3148,7 @@ body {
 }
 
 .df-screen.is-location-modal-open .df-scroll,
-.df-screen.is-location-modal-open .df-menu-bar,
-.df-screen.is-location-modal-open .df-nav-figma,
-.df-screen.is-location-modal-open .df-nav-label {
+.df-screen.is-location-modal-open .phone-tab-strip {
   filter: blur(6px);
 }
 
@@ -3100,9 +3156,9 @@ body {
   position: absolute;
   z-index: 3;
   left: 0;
-  top: var(--nav-bar-top);
-  width: var(--frame-width);
-  height: var(--homepage-nav-height);
+  top: 0;
+  width: 100%;
+  height: 100%;
   border-radius: var(--nav-bar-radius-top) var(--nav-bar-radius-top) 0 0;
   background: var(--panel-blue);
   box-shadow:
@@ -3121,28 +3177,28 @@ body {
 
 .df-home-hit {
   left: 0;
-  top: var(--nav-bar-top);
+  top: 0;
   width: var(--nav-col);
   height: var(--homepage-nav-height);
 }
 
 .df-star-hit {
   left: var(--nav-col);
-  top: var(--nav-bar-top);
+  top: 0;
   width: var(--nav-col);
   height: var(--homepage-nav-height);
 }
 
 .df-page3-hit {
   left: calc(2 * var(--nav-col));
-  top: var(--nav-bar-top);
+  top: 0;
   width: var(--nav-col);
   height: var(--homepage-nav-height);
 }
 
 .df-profile-hit {
   left: calc(3 * var(--nav-col));
-  top: var(--nav-bar-top);
+  top: 0;
   width: var(--nav-col);
   height: var(--homepage-nav-height);
 }
@@ -3157,18 +3213,18 @@ body {
 
 .df-nav-figma--home-outline {
   left: calc(var(--nav-ix0) - 21px);
-  top: calc(var(--nav-bar-top) + 4px + var(--nav-outer-tabs-nudge));
+  top: calc(4px + var(--nav-outer-tabs-nudge));
   width: 42px;
   height: 38px;
   object-fit: contain;
   border: 0;
   box-shadow: none;
 }
-.df-nav-figma--sticker { left: calc(var(--nav-ix1) - 21px); top: calc(var(--nav-bar-top) + 4px + var(--nav-outer-tabs-nudge)); width: 42px; height: 38px; }
-.df-nav-figma--sip-cup { left: var(--nav-cup-l); top: calc(var(--nav-bar-top) + 21px); width: 29.92516px; height: 22.92773px; }
-.df-nav-figma--sip-handle { left: var(--nav-sip-handle-l); top: calc(var(--nav-bar-top) + 24px); width: 9.97505px; height: 13.10156px; }
+.df-nav-figma--sticker { left: calc(var(--nav-ix1) - 21px); top: calc(4px + var(--nav-outer-tabs-nudge)); width: 42px; height: 38px; }
+.df-nav-figma--sip-cup { left: var(--nav-cup-l); top: 21px; width: 29.92516px; height: 22.92773px; }
+.df-nav-figma--sip-handle { left: var(--nav-sip-handle-l); top: 24px; width: 9.97505px; height: 13.10156px; }
 .df-nav-figma--sip-steam {
-  top: calc(var(--nav-bar-top) + 12px);
+  top: 12px;
   width: 4px;
   height: 7px;
   object-fit: fill;
@@ -3176,7 +3232,7 @@ body {
 .df-nav-figma--sip-steam-l { left: var(--nav-sip-steam-l); }
 .df-nav-figma--sip-steam-c { left: var(--nav-sip-steam-c); }
 .df-nav-figma--sip-steam-r { left: var(--nav-sip-steam-r); }
-.df-nav-figma--profile { left: calc(var(--nav-ix3) - 19px); top: calc(var(--nav-bar-top) + 3px + var(--nav-outer-tabs-nudge)); width: 38px; height: 36px; }
+.df-nav-figma--profile { left: calc(var(--nav-ix3) - 19px); top: calc(3px + var(--nav-outer-tabs-nudge)); width: 38px; height: 36px; }
 
 .df-nav-label {
   position: absolute;
@@ -3191,7 +3247,7 @@ body {
   font-variation-settings: "wght" 300;
 }
 
-.df-nav-label--home { left: 0; top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
-.df-nav-label--stickers { left: var(--nav-col); top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
-.df-nav-label--sips { left: calc(2 * var(--nav-col)); top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
-.df-nav-label--profile { left: calc(3 * var(--nav-col)); top: calc(var(--nav-bar-top) + var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
+.df-nav-label--home { left: 0; top: calc(var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
+.df-nav-label--stickers { left: var(--nav-col); top: calc(var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
+.df-nav-label--sips { left: calc(2 * var(--nav-col)); top: calc(var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
+.df-nav-label--profile { left: calc(3 * var(--nav-col)); top: calc(var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }

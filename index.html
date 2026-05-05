@@ -97,6 +97,7 @@
 
         </div>
       </div>
+      <div class="phone-tab-strip" role="navigation" aria-label="Main">
       <div class="hp-menu-bar"></div>
       <!-- Figma homepage menu (96:110) — assets from get_design_context -->
       <img
@@ -147,6 +148,20 @@
         alt=""
         aria-hidden="true"
       />
+      <a class="hp-home-hit" href="./index.html" aria-current="page" aria-label="Current page: home"></a>
+      <a class="hp-star-hit" href="./stickercollection.html" aria-label="Go to sticker collection"></a>
+      <a
+        class="hp-page3-hit"
+        href="./drinkoptions.html"
+        aria-label="Go to drink options"
+        onclick="sessionStorage.setItem('drinkLocationPromptPending', 'true')"
+      ></a>
+      <a class="hp-profile-hit" href="./profile.html" aria-label="Go to journal"></a>
+      <span class="hp-nav-label hp-nav-label--home" aria-hidden="true">Home</span>
+      <span class="hp-nav-label hp-nav-label--stickers" aria-hidden="true">Stickers</span>
+      <span class="hp-nav-label hp-nav-label--sips" aria-hidden="true">Sips</span>
+      <span class="hp-nav-label hp-nav-label--profile" aria-hidden="true">Journal</span>
+      </div>
       <section class="hp-sticker-picker" id="hp-sticker-picker" hidden role="dialog" aria-modal="true" aria-label="Choose homepage stickers">
         <div class="hp-sticker-picker-panel">
           <div class="hp-sticker-picker-grid" id="hp-sticker-picker-grid"></div>
@@ -166,19 +181,6 @@
         </div>
       </section>
 
-      <a class="hp-home-hit" href="./index.html" aria-current="page" aria-label="Current page: home"></a>
-      <a class="hp-star-hit" href="./stickercollection.html" aria-label="Go to sticker collection"></a>
-      <a
-        class="hp-page3-hit"
-        href="./drinkoptions.html"
-        aria-label="Go to drink options"
-        onclick="sessionStorage.setItem('drinkLocationPromptPending', 'true')"
-      ></a>
-      <a class="hp-profile-hit" href="./profile.html" aria-label="Go to journal"></a>
-      <span class="hp-nav-label hp-nav-label--home" aria-hidden="true">Home</span>
-      <span class="hp-nav-label hp-nav-label--stickers" aria-hidden="true">Stickers</span>
-      <span class="hp-nav-label hp-nav-label--sips" aria-hidden="true">Sips</span>
-      <span class="hp-nav-label hp-nav-label--profile" aria-hidden="true">Journal</span>
           </main>
         </div>
       </div>
