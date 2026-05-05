@@ -2663,7 +2663,7 @@ body {
 
 .profile-entry-tape--right {
   right: 16px;
-  top: 14px;
+  top: 2px;
   /* Same asset as left; opposite tilt only (no mirror flips). */
   transform: rotate(28deg);
   transform-origin: 12% 92%;
@@ -2682,7 +2682,7 @@ body {
 
   .profile-entry-tape--right {
     right: 12px;
-    top: 10px;
+    top: 0;
   }
 }
 
