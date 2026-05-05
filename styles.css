@@ -2641,28 +2641,48 @@ body {
   position: absolute;
   z-index: 4;
   display: block;
-  width: 156px;
+  width: 92px;
   height: auto;
-  max-height: 62px;
+  max-height: none;
   object-fit: contain;
   pointer-events: none;
   opacity: 0.98;
   filter: drop-shadow(0 2px 4px rgba(40, 50, 70, 0.18));
 }
 
-/* Mounting tape on the upper-left / upper-right of the photo (polaroid window) */
+/*
+ * Tape sits on the top corners of the polaroid (white frame), slightly overlapping
+ * the border — same layout inside the scaled phone on mobile and desktop.
+ */
 .profile-entry-tape--left {
-  left: -34px;
-  top: 10px;
-  transform: rotate(-24deg);
-  transform-origin: 0 45%;
+  left: -8px;
+  top: -20px;
+  transform: rotate(-28deg);
+  transform-origin: 88% 92%;
 }
 
 .profile-entry-tape--right {
-  right: 44px;
-  top: -6px;
-  transform: rotate(24deg) scaleX(-1);
-  transform-origin: 100% 40%;
+  right: -18px;
+  top: -10px;
+  transform: rotate(28deg) scaleX(-1);
+  transform-origin: 12% 92%;
+}
+
+/* Slightly larger tape when the modal is shown on a full desktop viewport (outside scaled phone is rare; keeps parity if card ever scales up). */
+@media (pointer: fine) and (min-width: 900px) {
+  .profile-entry-tape {
+    width: 102px;
+  }
+
+  .profile-entry-tape--left {
+    left: -10px;
+    top: -22px;
+  }
+
+  .profile-entry-tape--right {
+    right: -22px;
+    top: -12px;
+  }
 }
 
 .profile-entry-photo-wrap {
