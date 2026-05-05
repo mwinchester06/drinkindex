@@ -254,7 +254,7 @@
         const stickerMap = {};
         stickerOptions.forEach(function (item) { stickerMap[item.id] = item; });
         const selectedStickerIds = new Set();
-        const maxStickerSelection = Math.min(2, stickerOptions.length);
+        const maxStickerSelection = stickerOptions.length;
         const homepageUploadedPhotoByPlace = {
           "life house coffee": "./assets/life-house-coffee.png",
           "wild love bakehouse": "./assets/wild-love-bakehouse.png",
@@ -342,7 +342,7 @@
 
         function ensureStickerSelection() {
           if (selectedStickerIds.size) return;
-          const defaults = ["hello", "birthday"];
+          const defaults = ["hello"];
           defaults.forEach(function (id) { selectedStickerIds.add(id); });
         }
 
@@ -361,19 +361,6 @@
             // Ignore malformed storage entries.
           }
           ensureStickerSelection();
-          // One-time migration: old default pair was hello+sleepy.
-          // If a user still has that exact pair saved, promote birthday as the new default.
-          if (
-            Array.isArray(loadedFromStorage) &&
-            loadedFromStorage.length === 2 &&
-            loadedFromStorage.includes("hello") &&
-            loadedFromStorage.includes("sleepy") &&
-            !loadedFromStorage.includes("birthday")
-          ) {
-            selectedStickerIds.delete("sleepy");
-            selectedStickerIds.add("birthday");
-            saveSelectedStickers();
-          }
           while (selectedStickerIds.size > maxStickerSelection) {
             const removable = Array.from(selectedStickerIds).pop();
             if (!removable) break;
@@ -410,7 +397,7 @@
             const id = button.getAttribute("data-sticker-id");
             button.classList.toggle("is-selected", selectedStickerIds.has(id));
           });
-          const ready = selectedStickerIds.size === maxStickerSelection;
+          const ready = selectedStickerIds.size >= 1;
           stickerPickerGo.classList.toggle("is-disabled", !ready);
           stickerPickerGo.disabled = !ready;
         }
@@ -431,7 +418,7 @@
               const id = option.id;
               if (selectedStickerIds.has(id)) {
                 selectedStickerIds.delete(id);
-              } else if (selectedStickerIds.size < maxStickerSelection) {
+              } else {
                 selectedStickerIds.add(id);
               }
               syncPickerUi();
@@ -609,7 +596,7 @@
           if (event.target === stickerPicker) closeStickerPicker();
         });
         stickerPickerGo.addEventListener("click", function () {
-          if (selectedStickerIds.size !== maxStickerSelection) return;
+          if (selectedStickerIds.size < 1) return;
           saveSelectedStickers();
           renderStickerDisplay();
           closeStickerPicker();
