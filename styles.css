@@ -71,7 +71,8 @@
  * *small* viewport. 100vh on iOS is often the large viewport (toolbar collapsed), which
  * makes scale too big and clips the bottom nav when the URL bar is visible.
  */
-@media (pointer: coarse), (max-width: 899px) {
+/* Touch phones/tablets only — laptops (fine pointer) keep the desktop block above. */
+@media (pointer: coarse) {
   :root {
     --device-scale: min(
       min(1, calc(100vw / var(--iphone-device-width))),
@@ -80,6 +81,12 @@
         / var(--iphone-device-height)
       )
     );
+  }
+
+  body {
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
   }
 
   .phone-tab-strip {
@@ -114,21 +121,13 @@
     height: 100%;
   }
 
-  /* Wider than .phone so the bar meets screen edges when the frame is letterboxed */
-  .phone-tab-strip {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    width: calc(100vw / var(--device-scale));
-  }
-
   .phone-tab-strip-inner {
     padding-bottom: 8px;
   }
 }
 
 @supports (height: 100svh) {
-  @media (pointer: coarse), (max-width: 899px) {
+  @media (pointer: coarse) {
     :root {
       --device-scale: min(
         min(1, calc(100vw / var(--iphone-device-width))),
@@ -677,14 +676,17 @@ body {
   pointer-events: none;
 }
 
-/* 402px-aligned icons/hits; bar can be wider on phones (see touch media query). */
+/* 402px-aligned icons/hits; centered in strip without transform (avoids extra stacking contexts). */
 .phone-tab-strip-inner {
   position: absolute;
-  left: 50%;
+  left: 0;
+  right: 0;
   top: 0;
-  transform: translateX(-50%);
   width: var(--frame-width);
+  max-width: 100%;
   height: 100%;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 4;
   pointer-events: none;
   box-sizing: border-box;
@@ -3298,15 +3300,3 @@ body {
 .df-nav-label--stickers { left: var(--nav-col); top: calc(var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
 .df-nav-label--sips { left: calc(2 * var(--nav-col)); top: calc(var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
 .df-nav-label--profile { left: calc(3 * var(--nav-col)); top: calc(var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
-
-/*
- * Phones: full-bleed tab strip is wider than 402px. overflow-y:hidden on .phone forces
- * overflow-x to compute as auto (CSS overflow rule), and .df-screen overflow:hidden
- * overrides .phone — both clip the strip to a sliver. Let the screen paint outside
- * its box; scroll layers (.df-scroll, .profile-scroll, .homepage-scroll) keep content.
- */
-@media (pointer: coarse), (max-width: 899px) {
-  main.phone {
-    overflow: visible;
-  }
-}
