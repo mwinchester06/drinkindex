@@ -10,7 +10,7 @@
   --homepage-nav-height: 70px;
   --homepage-font: "please-display-vf", "Arial Rounded MT Bold", Arial, sans-serif;
   /* Location cards: shared line rhythm so <br> titles match two-line absolute titles */
-  --hp-location-name-line-height: 1.38;
+  --hp-location-name-line-height: 1.52;
   /* Bottom tab: 4 equal columns; icon centers and labels use the same column bounds */
   --nav-col: calc(var(--frame-width) / 4);
   --nav-ix0: calc(0.5 * (var(--frame-width) / 4));
@@ -112,6 +112,23 @@
   .phone-tab-strip .df-page3-hit,
   .phone-tab-strip .df-profile-hit {
     height: 100%;
+  }
+
+  /* Wider than .phone so the bar meets screen edges when the frame is letterboxed */
+  .phone-tab-strip {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: calc(100vw / var(--device-scale));
+  }
+
+  .phone {
+    overflow-x: visible;
+    overflow-y: hidden;
+  }
+
+  .phone-tab-strip-inner {
+    padding-bottom: 8px;
   }
 }
 
@@ -665,7 +682,19 @@ body {
   pointer-events: none;
 }
 
-.phone-tab-strip > * {
+/* 402px-aligned icons/hits; bar can be wider on phones (see touch media query). */
+.phone-tab-strip-inner {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: var(--frame-width);
+  height: 100%;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.phone-tab-strip-inner > * {
   pointer-events: auto;
 }
 
