@@ -308,7 +308,7 @@
           if (/^just\s+love\s+coffee\s+cafe(?:\s*-\s*knoxville)?$/i.test(raw)) return "Just Love Coffee";
           if (/^intrepid\s+nitro\s+coffee\s+and\s+tea\s+bar$/i.test(raw)) return "Intrepid Nitro";
           if (/^komma\s+tea\s*-\s*west\s+town\s+mall$/i.test(raw)) return "Komma Tea";
-          if (/^kyuramen\s*x\s*tbaar\s*-\s*knoxville$/i.test(raw)) return "Kyuramen x TBaar";
+          if (/^kyuramen\s+x\s*tbaar\b/i.test(raw)) return "Kyuramen x TBaar";
           if (/^hey\s+bear\s+cafe\s+at\s+kern'?s\s+food\s+hall$/i.test(raw)) return "Hey Bear Cafe";
           return raw.replace(/\s*-\s*(north|south|central)\s+knoxville$/i, "").trim();
         }
@@ -475,7 +475,7 @@
         const maxVisiblePlaces = 5;
 
         function getRowTop(index) {
-          return 387 + index * 166;
+          return 345 + index * 166;
         }
 
         function ensureExtraRow(index) {
@@ -883,7 +883,7 @@
           if (!bgBottom) return;
           const bottomPadding = 24;
           const lastTop = getRowTop(visibleCount - 1);
-          const needed = lastTop + 129 - 357 + bottomPadding;
+          const needed = lastTop + 129 - 315 + bottomPadding;
           bgBottom.style.height = Math.max(640, needed) + "px";
         }
 

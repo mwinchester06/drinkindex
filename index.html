@@ -40,8 +40,10 @@
           <div class="hp-layer hp-card-location4"></div>
           <div class="hp-layer hp-card-location5"></div>
 
-          <p class="hp-title hp-title-line1">What are we</p>
-          <p class="hp-title hp-title-line2">sipping today?</p>
+          <p class="hp-title hp-title-hero">
+            What are we<br />
+            sipping today?
+          </p>
 
           <img class="hp-layer hp-star-a" src="./assets/starlightblue.png" width="63" height="63" alt="" aria-hidden="true" />
           <img class="hp-layer hp-star-b" src="./assets/starblue.png" width="83" height="83" alt="" aria-hidden="true" />
@@ -429,8 +431,25 @@
           screen.classList.remove("is-sticker-picker-open");
         }
 
+        function formatPlaceNameForHome(name) {
+          const raw = String(name || "").trim();
+          if (!raw) return raw;
+          if (/^mia\s+piccola/i.test(raw)) return "Mia Piccola";
+          if (/^mia\s+piccola\s*-\s*north\s+knoxville$/i.test(raw)) return "Mia Piccola";
+          if (/^mahalo\s+coffee\s+roasters$/i.test(raw)) return "Mahalo";
+          if (/^fable\s+hollow\s+coffee\s*(?:&|and)\s*bookshoppe$/i.test(raw)) return "Fable Hollow";
+          if (/^velocity\s+coffee\s*(?:&|and)\s*roasters$/i.test(raw)) return "Velocity";
+          if (/^coffee\s*(?:&|and)\s*chocolate(?:\s+powell)?$/i.test(raw)) return "Coffee & Chocolate";
+          if (/^just\s+love\s+coffee\s+cafe(?:\s*-\s*knoxville)?$/i.test(raw)) return "Just Love Coffee";
+          if (/^intrepid\s+nitro\s+coffee\s+and\s+tea\s+bar$/i.test(raw)) return "Intrepid Nitro";
+          if (/^komma\s+tea\s*-\s*west\s+town\s+mall$/i.test(raw)) return "Komma Tea";
+          if (/^kyuramen\s+x\s*tbaar\b/i.test(raw)) return "Kyuramen x TBaar";
+          if (/^hey\s+bear\s+cafe\s+at\s+kern'?s\s+food\s+hall$/i.test(raw)) return "Hey Bear Cafe";
+          return raw.replace(/\s*-\s*(north|south|central)\s+knoxville$/i, "").trim();
+        }
+
         function splitNameTwoLines(name) {
-          const cleaned = (name || "").trim();
+          const cleaned = formatPlaceNameForHome((name || "").trim());
           if (!cleaned) return ["Wild Love", "Bakehouse"];
           if (/^scooter'?s\s+coffee$/i.test(cleaned)) return ["Scooter's Coffee", ""];
           if (/^fable\s+hollow$/i.test(cleaned)) return ["Fable Hollow", ""];
@@ -539,7 +558,7 @@
           const selected = pickRandomPlaces(pool, 5);
           const places = selected.length === 5 ? selected : defaults;
 
-          popularHeading.textContent = places[0].name;
+          popularHeading.textContent = formatPlaceNameForHome(places[0].name);
           popularPhoto.src = places[0].photoSrc;
           const location2 = splitNameTwoLines(places[1].name);
           location2Line1.textContent = location2[0] || "";

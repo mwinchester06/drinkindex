@@ -40,6 +40,10 @@
   --screen-glass-highlight: rgba(255, 255, 255, 0.52);
   --screen-glass-tint: rgba(185, 215, 255, 0.22);
   --screen-glass-edge: rgba(255, 255, 255, 0.38);
+  /* Pale-beige header headlines — shared weight/size across screens */
+  --screen-headline-size: 54px;
+  --screen-headline-weight: 450;
+  --screen-headline-vf-wght: 450;
 }
 
 /* Desktop/laptop only: zoom app out slightly so full frame (incl. menu bar) is visible. */
@@ -484,24 +488,23 @@ body {
   position: absolute;
   margin: 0;
   color: #54add5;
-  font-size: 48px;
-  line-height: 1;
   font-family: var(--homepage-font);
-  font-weight: 500;
+  font-weight: var(--screen-headline-weight);
   font-synthesis: none;
-  font-variation-settings: "wght" 500;
+  font-variation-settings: "wght" var(--screen-headline-vf-wght);
 }
 
-.hp-title-line1 {
+/* One block + explicit line break: line 2 keeps "sipping today?" together */
+.hp-title-hero {
   left: 14px;
-  top: 26px;
-  width: 249px;
-}
-
-.hp-title-line2 {
-  left: 13px;
-  top: 68px;
-  width: 280px;
+  top: 22px;
+  width: 252px;
+  font-size: 44px;
+  line-height: 1;
+  /* Match .p3-headline / .p2-title axis weight (Please Display VF) */
+  font-weight: var(--screen-headline-weight);
+  font-synthesis: none;
+  font-variation-settings: "wght" var(--screen-headline-vf-wght);
 }
 
 .hp-bg-top {
@@ -1492,10 +1495,10 @@ body {
   position: absolute;
   z-index: 1;
   font-family: var(--homepage-font);
-  font-weight: 450;
+  font-weight: var(--screen-headline-weight);
   font-synthesis: none;
-  font-variation-settings: "wght" 450;
-  font-size: 60px;
+  font-variation-settings: "wght" var(--screen-headline-vf-wght);
+  font-size: var(--screen-headline-size);
   line-height: 1;
   color: #54add5;
 }
@@ -1913,24 +1916,24 @@ body {
   z-index: 3;
   margin: 0;
   font-family: var(--homepage-font);
-  font-weight: 500;
+  font-weight: var(--screen-headline-weight);
   font-synthesis: none;
-  font-variation-settings: "wght" 500;
-  font-size: 60px;
-  line-height: normal;
+  font-variation-settings: "wght" var(--screen-headline-vf-wght);
+  font-size: var(--screen-headline-size);
+  line-height: 1;
   color: #54add5;
   pointer-events: none;
 }
 
 .p3-headline-drink {
   left: 13px;
-  top: 10px;
+  top: 15px;
   width: 121px;
 }
 
 .p3-headline-menu {
   left: 41px;
-  top: 63px;
+  top: 69px;
   width: 183px;
 }
 
@@ -2198,18 +2201,21 @@ body {
   margin: 0;
   color: #54add5;
   font-family: var(--homepage-font);
-  font-size: 60px;
+  font-size: var(--screen-headline-size);
   line-height: 1;
+  font-weight: var(--screen-headline-weight);
+  font-synthesis: none;
+  font-variation-settings: "wght" var(--screen-headline-vf-wght);
 }
 
 .profile-title-drink {
   left: 17px;
-  top: 24px;
+  top: 15px;
 }
 
 .profile-title-journal {
   left: 45px;
-  top: 77px;
+  top: 69px;
 }
 
 /* Header stars match other pages' shared starlightblue/starblue layout. */
@@ -2743,7 +2749,7 @@ body {
   left: 0;
   top: 0;
   width: 402px;
-  height: 190px;
+  height: 148px;
   border-radius: 13px;
   background: #fff6cb;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
@@ -2751,7 +2757,7 @@ body {
 
 .df-bg-bottom {
   left: 0;
-  top: 357px;
+  top: 315px;
   width: 402px;
   height: calc(820px + var(--homepage-nav-height));
   border-radius: 13px;
@@ -2764,28 +2770,29 @@ body {
   position: absolute;
   color: #54add5;
   font-family: var(--homepage-font);
-  font-size: 60px;
+  font-size: var(--screen-headline-size);
   line-height: 1;
-  font-weight: 500;
-  font-variation-settings: "wght" 500;
+  font-weight: var(--screen-headline-weight);
+  font-synthesis: none;
+  font-variation-settings: "wght" var(--screen-headline-vf-wght);
 }
 
 .df-title-top {
   left: 14px;
-  top: 59px;
-  width: 233px;
+  top: 15px;
+  width: 280px;
 }
 
 .df-title-bottom {
-  left: 51px;
-  top: 111px;
-  width: 233px;
+  left: 36px;
+  top: 69px;
+  width: 320px;
 }
 
 .df-include-label {
   position: absolute;
   left: 218px;
-  top: 271px;
+  top: 229px;
   width: 160px;
   margin: 0;
   text-transform: capitalize;
@@ -2798,14 +2805,14 @@ body {
 
 .df-star-main {
   left: 252px;
-  top: 34px;
+  top: 12px;
   width: 82px;
   height: auto;
 }
 
 .df-star-small {
   left: 291px;
-  top: 70px;
+  top: 48px;
   width: 108px;
   height: auto;
 }
@@ -2813,7 +2820,7 @@ body {
 .df-back-arrow {
   position: absolute;
   left: 31px;
-  top: 251px;
+  top: 209px;
   width: 40px;
   height: 40px;
   z-index: 8;
@@ -2831,7 +2838,7 @@ body {
 .df-include-shell-outer {
   position: absolute;
   left: 9px;
-  top: 209px;
+  top: 167px;
   width: 380px;
   height: 117px;
   border-radius: 13px;
@@ -2841,7 +2848,7 @@ body {
 .df-include-shell-inner {
   position: absolute;
   left: 9px;
-  top: 209px;
+  top: 167px;
   width: 380px;
   height: 117px;
   border-radius: 13px;
@@ -2851,7 +2858,7 @@ body {
 .df-selected-mugs {
   position: absolute;
   left: 27px;
-  top: 222px;
+  top: 180px;
   width: 343px;
   height: 92px;
   z-index: 2;
@@ -2883,11 +2890,11 @@ body {
   background: #c3e7fb;
 }
 
-.df-card-a { left: 10px; top: 387px; }
-.df-card-b { left: 10px; top: 552px; }
-.df-card-c { left: 11px; top: 723px; }
-.df-card-d { left: 11px; top: 888px; }
-.df-card-e { left: 11px; top: 1054px; }
+.df-card-a { left: 10px; top: 345px; }
+.df-card-b { left: 10px; top: 510px; }
+.df-card-c { left: 11px; top: 681px; }
+.df-card-d { left: 11px; top: 846px; }
+.df-card-e { left: 11px; top: 1012px; }
 
 .df-card-trigger {
   position: absolute;
@@ -2902,11 +2909,11 @@ body {
   cursor: pointer;
 }
 
-.df-card-trigger-a { left: 10px; top: 387px; }
-.df-card-trigger-b { left: 10px; top: 552px; }
-.df-card-trigger-c { left: 11px; top: 723px; }
-.df-card-trigger-d { left: 11px; top: 888px; }
-.df-card-trigger-e { left: 11px; top: 1054px; }
+.df-card-trigger-a { left: 10px; top: 345px; }
+.df-card-trigger-b { left: 10px; top: 510px; }
+.df-card-trigger-c { left: 11px; top: 681px; }
+.df-card-trigger-d { left: 11px; top: 846px; }
+.df-card-trigger-e { left: 11px; top: 1012px; }
 
 .df-photo {
   position: absolute;
@@ -2916,11 +2923,11 @@ body {
   object-fit: cover;
 }
 
-.df-photo-a { left: 10px; top: 387px; }
-.df-photo-b { left: 10px; top: 552px; }
-.df-photo-c { left: 11px; top: 723px; }
-.df-photo-d { left: 11px; top: 888px; }
-.df-photo-e { left: 11px; top: 1054px; }
+.df-photo-a { left: 10px; top: 345px; }
+.df-photo-b { left: 10px; top: 510px; }
+.df-photo-c { left: 11px; top: 681px; }
+.df-photo-d { left: 11px; top: 846px; }
+.df-photo-e { left: 11px; top: 1012px; }
 
 .df-name {
   position: absolute;
@@ -2934,10 +2941,10 @@ body {
   font-variation-settings: "wght" 400;
 }
 
-.df-name-popular { left: 218px; top: 415px; width: 151px; }
-.df-name-2a { left: 218px; top: 583px; width: 110px; }
-.df-name-2b { left: 219px; top: 603px; width: 110px; }
-.df-name-3 { left: 219px; top: 760px; width: 120px; }
+.df-name-popular { left: 218px; top: 373px; width: 151px; }
+.df-name-2a { left: 218px; top: 541px; width: 110px; }
+.df-name-2b { left: 219px; top: 561px; width: 110px; }
+.df-name-3 { left: 219px; top: 718px; width: 120px; }
 
 .df-location-text {
   position: absolute;
@@ -2952,8 +2959,8 @@ body {
   font-variation-settings: "wght" 400;
 }
 
-.df-location-4 { left: 219px; top: 925px; }
-.df-location-5 { left: 219px; top: 1091px; }
+.df-location-4 { left: 219px; top: 883px; }
+.df-location-5 { left: 219px; top: 1049px; }
 
 .df-place-mugs {
   position: absolute;
@@ -2966,11 +2973,11 @@ body {
   min-height: 30px;
 }
 
-.df-place-mugs-a { left: 246px; top: 368px; }
-.df-place-mugs-b { left: 246px; top: 533px; }
-.df-place-mugs-c { left: 247px; top: 704px; }
-.df-place-mugs-d { left: 247px; top: 869px; }
-.df-place-mugs-e { left: 247px; top: 1035px; }
+.df-place-mugs-a { left: 246px; top: 326px; }
+.df-place-mugs-b { left: 246px; top: 491px; }
+.df-place-mugs-c { left: 247px; top: 662px; }
+.df-place-mugs-d { left: 247px; top: 827px; }
+.df-place-mugs-e { left: 247px; top: 993px; }
 
 /* Five icons need more horizontal room than the default 141px tray; otherwise JS adds
    .mug-count-5 and everything shrinks. Widen and nudge left so the right edge stays aligned. */
