@@ -77,7 +77,36 @@
             <div class="p2-grid-box p2-grid-box-e"></div>
             <div class="p2-grid-box p2-grid-box-f"></div>
 
-            <div class="phone-tab-strip" role="navigation" aria-label="Main">
+            <section class="p2-star-picker" id="p2-star-picker" hidden aria-label="Choose your star">
+              <div class="p2-star-picker-panel">
+                <button class="p2-star-choice p2-star-choice--pink" type="button" data-star-src="./assets/star-pink.png" aria-label="Choose pink star">
+                  <img src="./assets/star-pink.png" alt="" />
+                </button>
+                <button class="p2-star-choice p2-star-choice--blue" type="button" data-star-src="./assets/star-blue.png" aria-label="Choose blue star">
+                  <img src="./assets/star-blue.png" alt="" />
+                </button>
+                <button class="p2-star-choice p2-star-choice--green" type="button" data-star-src="./assets/star-green.png" aria-label="Choose green star">
+                  <img src="./assets/star-green.png" alt="" />
+                </button>
+                <button class="p2-star-choice p2-star-choice--orange" type="button" data-star-src="./assets/star-orange.png" aria-label="Choose orange star">
+                  <img src="./assets/star-orange.png" alt="" />
+                </button>
+                <button class="p2-star-choice p2-star-choice--purple" type="button" data-star-src="./assets/star-purple.png" aria-label="Choose purple star">
+                  <img src="./assets/star-purple.png" alt="" />
+                </button>
+                <button class="p2-star-choice p2-star-choice--rainbow" type="button" data-star-src="./assets/star-rainbow.png" aria-label="Choose rainbow star">
+                  <img src="./assets/star-rainbow.png" alt="" />
+                </button>
+              </div>
+            </section>
+            <section class="p2-sticker-modal" id="p2-sticker-modal" hidden role="dialog" aria-modal="true" aria-labelledby="p2-sticker-modal-title">
+              <div class="p2-sticker-modal-card">
+                <h3 class="p2-sticker-modal-title" id="p2-sticker-modal-title">Sticker</h3>
+                <p class="p2-sticker-modal-copy" id="p2-sticker-modal-copy">You earned this sticker!</p>
+              </div>
+            </section>
+          </main>
+      <div class="phone-tab-strip" role="navigation" aria-label="Main">
             <div class="p2-menu-bar"></div>
             <img
               class="p2-nav-figma p2-nav-figma--home-outline"
@@ -145,37 +174,7 @@
             <span class="p2-nav-label p2-nav-label--stickers" aria-hidden="true">Stickers</span>
             <span class="p2-nav-label p2-nav-label--sips" aria-hidden="true">Sips</span>
             <span class="p2-nav-label p2-nav-label--profile" aria-hidden="true">Journal</span>
-            </div>
-
-            <section class="p2-star-picker" id="p2-star-picker" hidden aria-label="Choose your star">
-              <div class="p2-star-picker-panel">
-                <button class="p2-star-choice p2-star-choice--pink" type="button" data-star-src="./assets/star-pink.png" aria-label="Choose pink star">
-                  <img src="./assets/star-pink.png" alt="" />
-                </button>
-                <button class="p2-star-choice p2-star-choice--blue" type="button" data-star-src="./assets/star-blue.png" aria-label="Choose blue star">
-                  <img src="./assets/star-blue.png" alt="" />
-                </button>
-                <button class="p2-star-choice p2-star-choice--green" type="button" data-star-src="./assets/star-green.png" aria-label="Choose green star">
-                  <img src="./assets/star-green.png" alt="" />
-                </button>
-                <button class="p2-star-choice p2-star-choice--orange" type="button" data-star-src="./assets/star-orange.png" aria-label="Choose orange star">
-                  <img src="./assets/star-orange.png" alt="" />
-                </button>
-                <button class="p2-star-choice p2-star-choice--purple" type="button" data-star-src="./assets/star-purple.png" aria-label="Choose purple star">
-                  <img src="./assets/star-purple.png" alt="" />
-                </button>
-                <button class="p2-star-choice p2-star-choice--rainbow" type="button" data-star-src="./assets/star-rainbow.png" aria-label="Choose rainbow star">
-                  <img src="./assets/star-rainbow.png" alt="" />
-                </button>
-              </div>
-            </section>
-            <section class="p2-sticker-modal" id="p2-sticker-modal" hidden role="dialog" aria-modal="true" aria-labelledby="p2-sticker-modal-title">
-              <div class="p2-sticker-modal-card">
-                <h3 class="p2-sticker-modal-title" id="p2-sticker-modal-title">Sticker</h3>
-                <p class="p2-sticker-modal-copy" id="p2-sticker-modal-copy">You earned this sticker!</p>
-              </div>
-            </section>
-          </main>
+      </div>
         </div>
       </div>
     </div>

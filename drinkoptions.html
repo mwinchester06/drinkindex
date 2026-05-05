@@ -43,7 +43,20 @@
               </button>
             </div>
 
-            <div class="phone-tab-strip" role="navigation" aria-label="Main">
+            <section class="p3-permission-modal" id="p3-permission-modal" role="dialog" aria-modal="true" aria-label="Location permission request">
+              <div class="p3-permission-card">
+                <header class="p3-permission-header">
+                  <h2>Allow “StarSips” to use your location?</h2>
+                  <p>Location access is required to find fun drinks near you.</p>
+                </header>
+                <div class="p3-permission-map"></div>
+                <button class="p3-permission-action" id="p3-allow-once" type="button">Allow Once</button>
+                <button class="p3-permission-action" id="p3-allow-while-using" type="button">Allow While Using App</button>
+                <button class="p3-permission-action" id="p3-dont-allow" type="button">Don’t Allow</button>
+              </div>
+            </section>
+          </main>
+      <div class="phone-tab-strip" role="navigation" aria-label="Main">
             <div class="p3-menu-bar"></div>
             <img
               class="p3-nav-figma p3-nav-figma--home-outline"
@@ -106,21 +119,7 @@
             <span class="p3-nav-label p3-nav-label--stickers" aria-hidden="true">Stickers</span>
             <span class="p3-nav-label p3-nav-label--sips" aria-hidden="true">Sips</span>
             <span class="p3-nav-label p3-nav-label--profile" aria-hidden="true">Journal</span>
-            </div>
-
-            <section class="p3-permission-modal" id="p3-permission-modal" role="dialog" aria-modal="true" aria-label="Location permission request">
-              <div class="p3-permission-card">
-                <header class="p3-permission-header">
-                  <h2>Allow “StarSips” to use your location?</h2>
-                  <p>Location access is required to find fun drinks near you.</p>
-                </header>
-                <div class="p3-permission-map"></div>
-                <button class="p3-permission-action" id="p3-allow-once" type="button">Allow Once</button>
-                <button class="p3-permission-action" id="p3-allow-while-using" type="button">Allow While Using App</button>
-                <button class="p3-permission-action" id="p3-dont-allow" type="button">Don’t Allow</button>
-              </div>
-            </section>
-          </main>
+      </div>
         </div>
       </div>
     </div>

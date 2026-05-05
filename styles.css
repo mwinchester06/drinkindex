@@ -84,6 +84,8 @@
     height: calc(var(--homepage-nav-height) + env(safe-area-inset-bottom, 0px));
     box-sizing: border-box;
     z-index: 100;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   .homepage-scroll-inner {
@@ -793,7 +795,7 @@ body {
 }
 
 .homepage-frame.is-sticker-picker-open .homepage-scroll,
-.homepage-frame.is-sticker-picker-open .phone-tab-strip {
+.homepage-frame.is-sticker-picker-open ~ .phone-tab-strip {
   filter: blur(6px);
 }
 
@@ -1826,6 +1828,10 @@ body {
   filter: blur(6px);
 }
 
+.page2-screen.is-sticker-modal-open ~ .phone-tab-strip {
+  filter: blur(6px);
+}
+
 /* Blue chooser panel from Figma frame "choseurstar" (102:94). */
 .p2-star-picker-panel {
   position: relative;
@@ -1964,6 +1970,10 @@ body {
 }
 
 .p3-screen.is-permission-open .p3-content {
+  filter: blur(6px);
+}
+
+.p3-screen.is-permission-open ~ .phone-tab-strip {
   filter: blur(6px);
 }
 
@@ -2543,7 +2553,7 @@ body {
 }
 
 .profile-screen.is-entry-open .profile-scroll,
-.profile-screen.is-entry-open .phone-tab-strip {
+.profile-screen.is-entry-open ~ .phone-tab-strip {
   filter: blur(6px);
 }
 
@@ -3148,7 +3158,7 @@ body {
 }
 
 .df-screen.is-location-modal-open .df-scroll,
-.df-screen.is-location-modal-open .phone-tab-strip {
+.df-screen.is-location-modal-open ~ .phone-tab-strip {
   filter: blur(6px);
 }
 
