@@ -2663,9 +2663,8 @@ body {
 
 .profile-entry-tape--right {
   right: -40px;
-  top: -42px;
+  top: -18px;
   transform: rotate(28deg) scaleX(-1) scaleY(-1);
-  /* Pivot near the top corner so vertical flip doesn’t read as “sitting low” on the polaroid */
   transform-origin: 78% 12%;
 }
 
@@ -2682,7 +2681,7 @@ body {
 
   .profile-entry-tape--right {
     right: -48px;
-    top: -50px;
+    top: -24px;
   }
 }
 
