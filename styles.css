@@ -2656,13 +2656,13 @@ body {
  */
 .profile-entry-tape--left {
   left: -8px;
-  top: -20px;
+  top: -40px;
   transform: rotate(-28deg);
   transform-origin: 88% 92%;
 }
 
 .profile-entry-tape--right {
-  right: -18px;
+  right: -40px;
   top: -10px;
   transform: rotate(28deg) scaleX(-1);
   transform-origin: 12% 92%;
@@ -2676,11 +2676,11 @@ body {
 
   .profile-entry-tape--left {
     left: -10px;
-    top: -22px;
+    top: -46px;
   }
 
   .profile-entry-tape--right {
-    right: -22px;
+    right: -48px;
     top: -12px;
   }
 }
