@@ -248,7 +248,8 @@
         const homepageStickerKey = "drinkindexHomepageStickers";
         const stickerOptions = [
           { id: "hello", src: "./assets/homepage-sticker-hello.png", alt: "Hello sticker" },
-          { id: "sleepy", src: "./assets/homepage-sticker-sleepy.png", alt: "Sleepy sticker" }
+          { id: "sleepy", src: "./assets/homepage-sticker-sleepy.png", alt: "Sleepy sticker" },
+          { id: "birthday", src: "./assets/homepage-sticker-birthday.png", alt: "Birthday sticker" }
         ];
         const stickerMap = {};
         stickerOptions.forEach(function (item) { stickerMap[item.id] = item; });
@@ -375,7 +376,7 @@
 
         function renderStickerDisplay() {
           stickerDisplay.innerHTML = "";
-          const preferredOrder = ["hello", "sleepy"];
+          const preferredOrder = ["hello", "sleepy", "birthday"];
           const orderedIds = preferredOrder.filter(function (id) { return selectedStickerIds.has(id); });
           orderedIds.slice(0, maxStickerSelection).forEach(function (id, index) {
             const option = stickerMap[id];
