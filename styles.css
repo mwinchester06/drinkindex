@@ -863,14 +863,17 @@ body {
 .hp-sticker-picker-grid {
   position: absolute;
   inset: 0;
+  z-index: 2;
 }
 
 .hp-sticker-option {
   position: absolute;
+  z-index: 3;
   border: 0;
   padding: 0;
   background: transparent;
   cursor: pointer;
+  pointer-events: auto;
   transition: transform 120ms ease, filter 140ms ease;
   border-radius: 12px;
 }
@@ -916,6 +919,7 @@ body {
 
 .hp-sticker-picker-go {
   position: absolute;
+  z-index: 4;
   right: 19px;
   bottom: 28px;
   border: 0;
