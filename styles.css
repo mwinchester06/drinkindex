@@ -2723,6 +2723,34 @@ body {
   gap: 6px;
 }
 
+/* Handwritten date in the Polaroid margin (below the photo, like pen on the frame). */
+.profile-entry-photo-wrap .profile-entry-date {
+  position: relative;
+  z-index: 2;
+  margin: 8px 0 0;
+  padding: 0 88px 4px 12px;
+  font-family:
+    "Bradley Hand ITC",
+    "Segoe Print",
+    "Snell Roundhand",
+    "Apple Chancery",
+    "Noteworthy",
+    "Marker Felt",
+    cursive;
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: #2a5a7a;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+  transform: rotate(-0.75deg);
+  transform-origin: 10% 50%;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+
 .profile-entry-favorite,
 .profile-entry-edit {
   position: relative;
@@ -2773,20 +2801,7 @@ body {
   font-family: var(--homepage-font);
 }
 
-.profile-entry-date {
-  display: inline-block;
-  margin-top: 2px;
-  padding: 6px 14px 7px;
-  font-size: 17px;
-  line-height: 1;
-  font-weight: 450;
-  font-variation-settings: "wght" 450;
-  letter-spacing: 0.02em;
-  color: #3580a8;
-  background: rgba(126, 196, 234, 0.28);
-  border-radius: 999px;
-  border: 1px solid rgba(84, 173, 213, 0.35);
-}
+/* Legacy pill style removed — date lives on the Polaroid (see .profile-entry-photo-wrap .profile-entry-date). */
 
 .profile-entry-title {
   margin-top: 14px;
