@@ -122,11 +122,6 @@
     width: calc(100vw / var(--device-scale));
   }
 
-  .phone {
-    overflow-x: visible;
-    overflow-y: hidden;
-  }
-
   .phone-tab-strip-inner {
     padding-bottom: 8px;
   }
@@ -3302,3 +3297,15 @@ body {
 .df-nav-label--stickers { left: var(--nav-col); top: calc(var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
 .df-nav-label--sips { left: calc(2 * var(--nav-col)); top: calc(var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
 .df-nav-label--profile { left: calc(3 * var(--nav-col)); top: calc(var(--nav-label-from-top) + var(--nav-outer-tabs-nudge)); width: var(--nav-col); text-align: center; }
+
+/*
+ * Phones: full-bleed tab strip is wider than 402px. overflow-y:hidden on .phone forces
+ * overflow-x to compute as auto (CSS overflow rule), and .df-screen overflow:hidden
+ * overrides .phone — both clip the strip to a sliver. Let the screen paint outside
+ * its box; scroll layers (.df-scroll, .profile-scroll, .homepage-scroll) keep content.
+ */
+@media (pointer: coarse), (max-width: 899px) {
+  main.phone {
+    overflow: visible;
+  }
+}
