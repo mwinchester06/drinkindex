@@ -347,10 +347,12 @@
         }
 
         function loadSelectedStickers() {
+          let loadedFromStorage = [];
           try {
             const raw = localStorage.getItem(homepageStickerKey);
             const list = raw ? JSON.parse(raw) : [];
             if (Array.isArray(list)) {
+              loadedFromStorage = list.slice();
               list.forEach(function (id) {
                 if (stickerMap[id]) selectedStickerIds.add(id);
               });
@@ -359,6 +361,19 @@
             // Ignore malformed storage entries.
           }
           ensureStickerSelection();
+          // One-time migration: old default pair was hello+sleepy.
+          // If a user still has that exact pair saved, promote birthday as the new default.
+          if (
+            Array.isArray(loadedFromStorage) &&
+            loadedFromStorage.length === 2 &&
+            loadedFromStorage.includes("hello") &&
+            loadedFromStorage.includes("sleepy") &&
+            !loadedFromStorage.includes("birthday")
+          ) {
+            selectedStickerIds.delete("sleepy");
+            selectedStickerIds.add("birthday");
+            saveSelectedStickers();
+          }
           while (selectedStickerIds.size > maxStickerSelection) {
             const removable = Array.from(selectedStickerIds).pop();
             if (!removable) break;
