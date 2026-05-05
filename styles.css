@@ -11,6 +11,8 @@
   --homepage-nav-height: 70px;
   --nav-bar-top: calc(var(--frame-height) - var(--homepage-nav-height));
   --homepage-font: "please-display-vf", "Arial Rounded MT Bold", Arial, sans-serif;
+  /* Location cards: shared line rhythm so <br> titles match two-line absolute titles */
+  --hp-location-name-line-height: 1.38;
   /* Bottom tab: 4 equal columns; icon centers and labels use the same column bounds */
   --nav-col: calc(var(--frame-width) / 4);
   --nav-ix0: calc(0.5 * (var(--frame-width) / 4));
@@ -33,8 +35,14 @@
   --iphone-bezel: 0px;
   --iphone-device-width: calc(var(--frame-width) + var(--iphone-bezel) * 2);
   --iphone-device-height: calc(var(--frame-height) + var(--iphone-bezel) * 2);
-  /* Phone-first scaling: fill width to avoid side gutters. */
-  --device-scale: min(1, calc(100vw / 402px));
+  /* Phone-first scaling: fit both width and height so bottom nav stays on-screen (esp. mobile Safari). */
+  --device-scale: min(
+    min(1, calc(100vw / var(--iphone-device-width))),
+    calc(
+      (100svh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 16px)
+      / var(--iphone-device-height)
+    )
+  );
   --iphone-outer-radius: 0px;
   --iphone-screen-radius: 0px;
   --screen-glass-highlight: rgba(255, 255, 255, 0.52);
@@ -859,7 +867,7 @@ body {
   margin: 0;
   color: #54add5;
   font-size: 24px;
-  line-height: 1.12;
+  line-height: var(--hp-location-name-line-height);
   font-family: var(--homepage-font);
   font-weight: 400;
   font-synthesis: none;
@@ -939,7 +947,7 @@ body {
   width: 151px;
   color: #54add5;
   font-size: 24px;
-  line-height: 1.12;
+  line-height: var(--hp-location-name-line-height);
   font-family: var(--homepage-font);
   font-weight: 400;
   font-synthesis: none;
@@ -954,10 +962,9 @@ body {
 }
 
 .hp-location2-name-line2 {
-  top: 604px;
+  top: calc(584px + 1em * var(--hp-location-name-line-height));
   left: 218px;
   width: 151px;
-  height: 28px;
 }
 
 .hp-location2-rating-row {
@@ -1020,7 +1027,7 @@ body {
   width: 151px;
   color: #54add5;
   font-size: 24px;
-  line-height: 1.12;
+  line-height: var(--hp-location-name-line-height);
   font-family: var(--homepage-font);
   font-weight: 400;
   font-synthesis: none;
@@ -1155,9 +1162,11 @@ body {
   width: 151px;
   color: #54add5;
   font-size: 24px;
-  line-height: 1.12;
+  line-height: var(--hp-location-name-line-height);
   font-family: var(--homepage-font);
   font-weight: 400;
+  font-synthesis: none;
+  font-variation-settings: "wght" 400;
   white-space: normal;
   overflow-wrap: break-word;
 }
