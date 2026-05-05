@@ -8,7 +8,7 @@
   --frame-width: min(402px, 100vw);
   --frame-height: 908px;
   --homepage-nav-height: 70px;
-  --homepage-font: "please-display-vf", "Arial Rounded MT Bold", Arial, sans-serif;
+  --homepage-font: var(--font-please-display);
   /* Location cards: shared line rhythm so <br> titles match two-line absolute titles */
   --hp-location-name-line-height: 1.52;
   /* Bottom tab: 4 equal columns; icon centers and labels use the same column bounds */
@@ -1020,7 +1020,7 @@ body {
   height: 20px;
   color: #000;
   text-align: right;
-  font-family: Inter, Arial, sans-serif;
+  font-family: var(--font-inter);
   font-size: 12px;
   line-height: 20px;
   font-weight: 400;
@@ -2727,12 +2727,11 @@ body {
 .profile-entry-photo-wrap .profile-entry-date {
   position: relative;
   z-index: 2;
-  margin: 8px 0 0;
+  margin: 16px 0 0;
   padding: 0 88px 4px 12px;
-  /* Minute from Adobe Fonts kit (use.typekit.net/qkp4irs.css) — postscript name minute-regular */
-  font-family: "minute-regular", cursive;
-  font-size: 17px;
-  line-height: 1.2;
+  font-family: var(--font-minute-script);
+  font-size: 21px;
+  line-height: 1.25;
   font-weight: 400;
   font-style: normal;
   font-synthesis: none;

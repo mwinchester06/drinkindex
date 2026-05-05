@@ -1,0 +1,24 @@
+/*
+ * Drinkindex fonts
+ * ----------------
+ * Self-hosted files in this folder (safe to commit):
+ *   inter-latin-400-normal.woff2 — Inter 400 (SIL Open Font License 1.1)
+ *
+ * Adobe Fonts (Typekit) — keep using the kit link in HTML; do not copy kit WOFFs here:
+ *   please-display-vf, minute-regular, please-vf, please-poster-vf, balneario
+ *   https://use.typekit.net/qkp4irs.css
+ */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./inter-latin-400-normal.woff2") format("woff2");
+}
+
+:root {
+  --font-please-display: "please-display-vf", "Arial Rounded MT Bold", Arial, sans-serif;
+  --font-minute-script: "minute-regular", cursive;
+  --font-inter: "Inter", Arial, sans-serif;
+}
