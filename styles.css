@@ -52,6 +52,11 @@
     --device-scale: min(0.92, calc((100vh - 24px) / 908px), calc(100vw / 402px));
   }
 
+  html,
+  body {
+    overflow: hidden;
+  }
+
   body {
     align-items: center;
   }
@@ -62,15 +67,16 @@
 }
 
 /*
- * Phones / narrow: shrink --device-scale with 100svh so the full 908px frame (incl. tab bar)
- * fits above Safari chrome; html/body overflow:hidden was clipping an unscaled 908px slot.
+ * Phones / narrow: shrink --device-scale so the full frame (incl. tab bar) fits in the
+ * *small* viewport. 100vh on iOS is often the large viewport (toolbar collapsed), which
+ * makes scale too big and clips the bottom nav when the URL bar is visible.
  */
 @media (pointer: coarse), (max-width: 899px) {
   :root {
     --device-scale: min(
       min(1, calc(100vw / var(--iphone-device-width))),
       calc(
-        (100svh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 12px)
+        (100vh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 32px)
         / var(--iphone-device-height)
       )
     );
@@ -109,9 +115,26 @@
   }
 }
 
+@supports (height: 100svh) {
+  @media (pointer: coarse), (max-width: 899px) {
+    :root {
+      --device-scale: min(
+        min(1, calc(100vw / var(--iphone-device-width))),
+        calc(
+          (
+              100svh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 32px
+            ) / var(--iphone-device-height)
+        )
+      );
+    }
+  }
+}
+
 html {
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 * {
@@ -122,7 +145,9 @@ body {
   margin: 0;
   min-height: 100%;
   min-height: 100dvh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -629,14 +654,14 @@ body {
   background: #c3e7fb;
 }
 
-/* Bottom tabs: desktop = bottom of phone frame; phones = viewport-fixed (media query overrides). */
+/* Bottom tabs: above .homepage-scroll (z-index 1) and in-page layers */
 .phone-tab-strip {
   position: absolute;
   left: 0;
   bottom: 0;
   width: var(--frame-width);
   height: var(--homepage-nav-height);
-  z-index: 15;
+  z-index: 60;
   pointer-events: none;
 }
 
@@ -786,7 +811,7 @@ body {
 }
 
 .homepage-frame.is-sticker-picker-open .homepage-scroll,
-.homepage-frame.is-sticker-picker-open ~ .phone-tab-strip {
+.homepage-frame.is-sticker-picker-open .phone-tab-strip {
   filter: blur(6px);
 }
 
@@ -1819,10 +1844,6 @@ body {
   filter: blur(6px);
 }
 
-.page2-screen.is-sticker-modal-open ~ .phone-tab-strip {
-  filter: blur(6px);
-}
-
 /* Blue chooser panel from Figma frame "choseurstar" (102:94). */
 .p2-star-picker-panel {
   position: relative;
@@ -1964,7 +1985,7 @@ body {
   filter: blur(6px);
 }
 
-.p3-screen.is-permission-open ~ .phone-tab-strip {
+.p3-screen.is-permission-open .phone-tab-strip {
   filter: blur(6px);
 }
 
@@ -2544,7 +2565,7 @@ body {
 }
 
 .profile-screen.is-entry-open .profile-scroll,
-.profile-screen.is-entry-open ~ .phone-tab-strip {
+.profile-screen.is-entry-open .phone-tab-strip {
   filter: blur(6px);
 }
 
@@ -3149,7 +3170,7 @@ body {
 }
 
 .df-screen.is-location-modal-open .df-scroll,
-.df-screen.is-location-modal-open ~ .phone-tab-strip {
+.df-screen.is-location-modal-open .phone-tab-strip {
   filter: blur(6px);
 }
 
