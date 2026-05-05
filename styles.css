@@ -61,31 +61,23 @@
   }
 }
 
-/* Phones / narrow windows: no transform shrink — full logical width; bottom nav sticks to viewport. */
+/*
+ * Phones / narrow: shrink --device-scale with 100svh so the full 908px frame (incl. tab bar)
+ * fits above Safari chrome; html/body overflow:hidden was clipping an unscaled 908px slot.
+ */
 @media (pointer: coarse), (max-width: 899px) {
-  .iphone-17-device {
-    transform: none;
-    width: var(--frame-width);
-    height: var(--iphone-device-height);
-  }
-
-  .device-scale-slot {
-    width: var(--frame-width);
-    height: var(--iphone-device-height);
+  :root {
+    --device-scale: min(
+      min(1, calc(100vw / var(--iphone-device-width))),
+      calc(
+        (100svh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 12px)
+        / var(--iphone-device-height)
+      )
+    );
   }
 
   .phone-tab-strip {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    max-width: none;
     height: calc(var(--homepage-nav-height) + env(safe-area-inset-bottom, 0px));
-    box-sizing: border-box;
-    z-index: 100;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
   }
 
   .homepage-scroll-inner {
@@ -97,7 +89,6 @@
     bottom: calc(var(--homepage-nav-height) + env(safe-area-inset-bottom, 0px));
   }
 
-  /* Tab hit targets span safe-area extension below icons */
   .phone-tab-strip .hp-home-hit,
   .phone-tab-strip .hp-star-hit,
   .phone-tab-strip .hp-page3-hit,
