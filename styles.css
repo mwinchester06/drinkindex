@@ -2729,19 +2729,14 @@ body {
   z-index: 2;
   margin: 8px 0 0;
   padding: 0 88px 4px 12px;
-  font-family:
-    "Bradley Hand ITC",
-    "Segoe Print",
-    "Snell Roundhand",
-    "Apple Chancery",
-    "Noteworthy",
-    "Marker Felt",
-    cursive;
+  /* Minute from Adobe Fonts kit (use.typekit.net/qkp4irs.css) — postscript name minute-regular */
+  font-family: "minute-regular", cursive;
   font-size: 17px;
   line-height: 1.2;
-  font-weight: 500;
-  font-style: italic;
-  letter-spacing: 0.04em;
+  font-weight: 400;
+  font-style: normal;
+  font-synthesis: none;
+  letter-spacing: 0.03em;
   color: #2a5a7a;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
   transform: rotate(-0.75deg);
