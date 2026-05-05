@@ -1595,7 +1595,7 @@ body {
 
 .p2-bg-bottom {
   left: 0;
-  top: 558px;
+  top: 640px;
   width: 402px;
   height: 412px;
   border-radius: 13px;
@@ -1791,7 +1791,7 @@ body {
 .p2-grid-sticker {
   position: absolute;
   left: -2px;
-  top: 594px;
+  top: 676px;
   width: 126px;
   height: 84px;
   transform: rotate(-7.67deg);
@@ -1804,7 +1804,7 @@ body {
 .p2-grid-sleepy {
   position: absolute;
   left: 133px;
-  top: 572px;
+  top: 654px;
   width: 124px;
   height: 113px;
   object-fit: contain;
@@ -1815,7 +1815,7 @@ body {
 .p2-grid-birthday {
   position: absolute;
   left: 260px;
-  top: 572px;
+  top: 654px;
   width: 124px;
   height: 113px;
   object-fit: contain;
@@ -1836,7 +1836,7 @@ body {
 
 .p2-sticker-trigger--hello {
   left: -2px;
-  top: 594px;
+  top: 676px;
   width: 126px;
   height: 84px;
   transform: rotate(-7.67deg);
@@ -1845,14 +1845,14 @@ body {
 
 .p2-sticker-trigger--sleepy {
   left: 133px;
-  top: 572px;
+  top: 654px;
   width: 124px;
   height: 113px;
 }
 
 .p2-sticker-trigger--birthday {
   left: 260px;
-  top: 572px;
+  top: 654px;
   width: 124px;
   height: 113px;
 }
