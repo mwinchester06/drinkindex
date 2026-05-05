@@ -385,6 +385,7 @@
             if (!option) return;
             const img = document.createElement("img");
             img.className = "hp-sticker-picked hp-sticker-picked--slot-" + (index + 1);
+            img.classList.add("hp-sticker-picked--" + id);
             img.src = option.src;
             img.alt = option.alt;
             stickerDisplay.appendChild(img);
