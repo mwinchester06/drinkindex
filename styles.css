@@ -901,6 +901,7 @@ body {
   top: auto;
   width: 104px;
   height: 104px;
+  transform: translateX(-14px);
 }
 
 .hp-sticker-option--hello {
@@ -908,7 +909,7 @@ body {
   top: auto;
   width: 118px;
   height: 88px;
-  transform: rotate(-7.67deg);
+  transform: translate(8px, 8px) rotate(-7.67deg);
   transform-origin: center;
 }
 
