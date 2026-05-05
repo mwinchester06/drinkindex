@@ -2585,8 +2585,7 @@ body {
   place-items: center;
   padding: 18px;
   background: rgba(0, 0, 0, 0.22);
-  /* Sampled from user screenshot swatch (center ~#c8e4f8). */
-  --journal-pale-blue: #c8e4f8;
+  --journal-pale-blue: #c3e7fb;
 }
 
 .profile-entry-modal[hidden] {
@@ -2726,7 +2725,7 @@ body {
   position: relative;
   z-index: 2;
   margin: 22px 0 0;
-  padding: 0 88px 4px 12px;
+  padding: 0 92px 4px 12px;
   font-family: var(--font-minute-script);
   font-size: 30px;
   line-height: 1.25;
@@ -2758,8 +2757,8 @@ body {
 }
 
 .profile-entry-favorite {
-  width: 26px;
-  height: 26px;
+  width: 31px;
+  height: 31px;
 }
 
 .profile-entry-edit {
@@ -2800,7 +2799,7 @@ body {
 
 /* Legacy pill style removed — date lives on the Polaroid (see .profile-entry-photo-wrap .profile-entry-date). */
 
-/* Junk-journal scrap: cream paper + pale-blue doodle strip at bottom (matches modal blue). */
+/* Junk-journal scrap: cream paper; doodle sits on same paper at bottom. */
 .profile-entry-note-paper {
   position: relative;
   margin-top: 14px;
@@ -2810,7 +2809,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding: 20px 18px 0;
+  padding: 20px 18px 18px;
   min-height: 176px;
   max-height: 300px;
   overflow-y: auto;
@@ -2846,32 +2845,26 @@ body {
 
 .profile-entry-doodle-rule {
   margin-top: auto;
-  margin-left: -18px;
-  margin-right: -18px;
+  margin-left: 0;
+  margin-right: 0;
   margin-bottom: 0;
-  width: calc(100% + 36px);
-  max-width: none;
+  width: 100%;
+  max-width: 94%;
   align-self: center;
   box-sizing: border-box;
-  padding: 14px 16px 16px;
+  padding: 12px 0 2px;
   line-height: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   pointer-events: none;
   flex-shrink: 0;
-  background: var(--journal-pale-blue);
-  border-radius: 0 0 11px 14px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
 .profile-entry-note-paper .profile-entry-doodle-img {
   width: min(100%, 292px);
   height: auto;
   display: block;
-  mix-blend-mode: lighten;
-  opacity: 1;
-  filter: contrast(1.12) saturate(1.18);
 }
 
 .profile-entry-note-paper .profile-entry-note {
