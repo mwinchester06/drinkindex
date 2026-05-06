@@ -5,8 +5,11 @@
   --nav-blue: #abd3eb;
   --text-blue: #4ea1d0;
   --text-gold: #f4c00a;
+  --iphone16-physical-width-mm: 71.6;
+  --iphone16-physical-height-mm: 147.6;
+  --iphone16-aspect-ratio: calc(var(--iphone16-physical-width-mm) / var(--iphone16-physical-height-mm));
   --frame-width: min(402px, 100vw);
-  --frame-height: 908px;
+  --frame-height: calc(var(--frame-width) / var(--iphone16-aspect-ratio));
   --homepage-nav-height: 70px;
   --homepage-font: var(--font-please-display);
   /* Location cards: shared line rhythm so <br> titles match two-line absolute titles */
@@ -49,7 +52,11 @@
 /* Desktop/laptop only: zoom app out slightly so full frame (incl. menu bar) is visible. */
 @media (pointer: fine) and (min-width: 900px) {
   :root {
-    --device-scale: min(0.92, calc((100vh - 24px) / 908px), calc(100vw / 402px));
+    --device-scale: min(
+      0.92,
+      calc((100vh - 24px) / var(--iphone-device-height)),
+      calc(100vw / var(--iphone-device-width))
+    );
   }
 
   html,
