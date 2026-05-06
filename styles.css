@@ -600,9 +600,9 @@ body {
 
 .hp-bg-top {
   left: 0;
-  top: -8px;
+  top: -16px;
   width: 402px;
-  height: 148px;
+  height: 164px;
   border-radius: 13px;
   background: #fff6cb;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
@@ -620,7 +620,7 @@ body {
 
 .hp-card-sticker {
   left: 10px;
-  top: 168px;
+  top: 162px;
   width: 379px;
   height: 106px;
   border-radius: 13px;
@@ -747,7 +747,7 @@ body {
 
 .hp-sticker-heading-line1 {
   left: 14px;
-  top: 174px;
+  top: 168px;
   font-size: 24px;
 }
 
@@ -779,7 +779,7 @@ body {
 
 .hp-sticker-display {
   left: 16px;
-  top: 202px;
+  top: 196px;
   width: 260px;
   height: 72px;
   z-index: 2;
@@ -824,7 +824,7 @@ body {
 
 .hp-sticker-edit-icon {
   left: 338px;
-  top: 228px;
+  top: 222px;
   width: 48px;
   height: 48px;
   z-index: 6;
@@ -837,7 +837,7 @@ body {
   background: transparent;
   cursor: pointer;
   left: 332px;
-  top: 222px;
+  top: 216px;
   width: 48px;
   height: 48px;
   z-index: 7;
